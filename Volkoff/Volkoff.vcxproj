@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D9A3D4DE-C8D9-450C-BD3A-300AE260C07E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Volkoff</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(SolutionDir)External\Lumino\include;$(SolutionDir)External\Lumino\external\Lumino.Core\include;$(SolutionDir)External\Lumino\external\Lumino.Math\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)External\Lumino\lib\Lumino_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\LuminoCore_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\LuminoMath_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\libvorbis_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\bullet_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\freetype_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\libogg_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\libpng_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\lib\zlib_msvc140x86_static_MTd.lib;$(SolutionDir)External\Lumino\build\external\EffekseerRuntime101\src\Debug\Effekseerd.lib;$(SolutionDir)External\Lumino\build\external\EffekseerRuntime101\src\Debug\EffekseerRendererDX9d.lib;$(SolutionDir)External\Lumino\build\external\EffekseerRuntime101\src\Debug\EffekseerSoundXAudio2d.lib;imagehlp.lib;msacm32.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(SolutionDir)External\Lumino\include;$(SolutionDir)External\Lumino\external\Lumino.Core\include;$(SolutionDir)External\Lumino\external\Lumino.Math\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(SolutionDir)External\Lumino\include;$(SolutionDir)External\Lumino\external\Lumino.Core\include;$(SolutionDir)External\Lumino\external\Lumino.Math\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;$(SolutionDir)External\Lumino\include;$(SolutionDir)External\Lumino\external\Lumino.Core\include;$(SolutionDir)External\Lumino\external\Lumino.Math\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LuminoFoundation\Accessor.h" />
+    <ClInclude Include="LuminoFoundation\Common.h" />
+    <ClInclude Include="LuminoFoundation\GameScene.h" />
+    <ClInclude Include="LuminoFoundation\GameSceneManager.h" />
+    <ClInclude Include="LuminoFoundation\Gateway.h" />
+    <ClInclude Include="LuminoFoundation\LFramework.h" />
+    <ClInclude Include="LuminoFoundation\LGameScene.h" />
+    <ClInclude Include="Source\Camera\CameraManager.h" />
+    <ClInclude Include="Source\Effect\EffectBase.h" />
+    <ClInclude Include="Source\Effect\EffectManager.h" />
+    <ClInclude Include="Source\Effect\Effect_1.h" />
+    <ClInclude Include="Source\Effect\Effect_2.h" />
+    <ClInclude Include="Source\Event\EventManager.h" />
+    <ClInclude Include="Source\Event\EventType.h" />
+    <ClInclude Include="Source\Frontend\CharacterNamePlate.h" />
+    <ClInclude Include="Source\Frontend\DamagePop.h" />
+    <ClInclude Include="Source\Frontend\GameFrontendManager.h" />
+    <ClInclude Include="Source\Frontend\GuideNamePlate.h" />
+    <ClInclude Include="Source\Frontend\NamePlate.h" />
+    <ClInclude Include="Source\Frontend\PlayerStateWindow.h" />
+    <ClInclude Include="Source\Frontend\PointCursor.h" />
+    <ClInclude Include="Source\Frontend\RapidNumber.h" />
+    <ClInclude Include="Source\Game\GameManager.h" />
+    <ClInclude Include="Source\Game\GameServer.h" />
+    <ClInclude Include="Source\Game\GameSession.h" />
+    <ClInclude Include="Source\Lua\lapi.h" />
+    <ClInclude Include="Source\Lua\lauxlib.h" />
+    <ClInclude Include="Source\Lua\lcode.h" />
+    <ClInclude Include="Source\Lua\lctype.h" />
+    <ClInclude Include="Source\Lua\ldebug.h" />
+    <ClInclude Include="Source\Lua\ldo.h" />
+    <ClInclude Include="Source\Lua\lfunc.h" />
+    <ClInclude Include="Source\Lua\lgc.h" />
+    <ClInclude Include="Source\Lua\llex.h" />
+    <ClInclude Include="Source\Lua\llimits.h" />
+    <ClInclude Include="Source\Lua\lmem.h" />
+    <ClInclude Include="Source\Lua\lobject.h" />
+    <ClInclude Include="Source\Lua\lopcodes.h" />
+    <ClInclude Include="Source\Lua\lparser.h" />
+    <ClInclude Include="Source\Lua\lstate.h" />
+    <ClInclude Include="Source\Lua\lstring.h" />
+    <ClInclude Include="Source\Lua\ltable.h" />
+    <ClInclude Include="Source\Lua\ltm.h" />
+    <ClInclude Include="Source\Lua\lua.h" />
+    <ClInclude Include="Source\Lua\lua.hpp" />
+    <ClInclude Include="Source\Lua\luaconf.h" />
+    <ClInclude Include="Source\Lua\lualib.h" />
+    <ClInclude Include="Source\Lua\lundump.h" />
+    <ClInclude Include="Source\Lua\lvm.h" />
+    <ClInclude Include="Source\Lua\lzio.h" />
+    <ClInclude Include="Source\Lua\mbenc.h" />
+    <ClInclude Include="Source\Map\MapManager.h" />
+    <ClInclude Include="Source\Object\AttackedObject.h" />
+    <ClInclude Include="Source\Object\Bullet.h" />
+    <ClInclude Include="Source\Object\Character.h" />
+    <ClInclude Include="Source\Object\CharacterScriptInterface.h" />
+    <ClInclude Include="Source\Object\Enemy.h" />
+    <ClInclude Include="Source\Object\GameObject.h" />
+    <ClInclude Include="Source\Object\GameObjectManager.h" />
+    <ClInclude Include="Source\Object\Gimmick\BottomWall.h" />
+    <ClInclude Include="Source\Object\Gimmick\Box.h" />
+    <ClInclude Include="Source\Object\Gimmick\Door.h" />
+    <ClInclude Include="Source\Object\Gimmick\Duct.h" />
+    <ClInclude Include="Source\Object\Gimmick\Entry.h" />
+    <ClInclude Include="Source\Object\Gimmick\Exit.h" />
+    <ClInclude Include="Source\Object\Gimmick\Exit_Lock.h" />
+    <ClInclude Include="Source\Object\Gimmick\Fort.h" />
+    <ClInclude Include="Source\Object\Gimmick\Ladder.h" />
+    <ClInclude Include="Source\Object\Gimmick\LadderTop.h" />
+    <ClInclude Include="Source\Object\Gimmick\Locker.h" />
+    <ClInclude Include="Source\Object\Gimmick\Manhole.h" />
+    <ClInclude Include="Source\Object\Gimmick\Mine.h" />
+    <ClInclude Include="Source\Object\Gimmick\TopWall.h" />
+    <ClInclude Include="Source\Object\Gimmick\UBW.h" />
+    <ClInclude Include="Source\Object\Gimmick\Vase.h" />
+    <ClInclude Include="Source\Object\Gimmick\Window.h" />
+    <ClInclude Include="Source\Object\Grenade.h" />
+    <ClInclude Include="Source\Object\Item\Cure_L.h" />
+    <ClInclude Include="Source\Object\Item\Cure_M.h" />
+    <ClInclude Include="Source\Object\Item\Cure_S.h" />
+    <ClInclude Include="Source\Object\Item\Key.h" />
+    <ClInclude Include="Source\Object\MidBoss1.h" />
+    <ClInclude Include="Source\Object\MidBoss2.h" />
+    <ClInclude Include="Source\Object\Player.h" />
+    <ClInclude Include="Source\Object\Valfirle.h" />
+    <ClInclude Include="Source\Object\ValfirleToken.h" />
+    <ClInclude Include="Source\Object\Weapon.h" />
+    <ClInclude Include="Source\Scene\SceneGame.h" />
+    <ClInclude Include="Source\Scene\SceneGameover.h" />
+    <ClInclude Include="Source\Scene\SceneRanking.h" />
+    <ClInclude Include="Source\Scene\SceneResult.h" />
+    <ClInclude Include="Source\Scene\SceneStartup.h" />
+    <ClInclude Include="Source\Scene\SceneTitle.h" />
+    <ClInclude Include="Source\Utility\Collision.h" />
+    <ClInclude Include="Source\Utility\FormatText.h" />
+    <ClInclude Include="Source\Utility\NodeList.h" />
+    <ClInclude Include="Source\Utility\Singleton.h" />
+    <ClInclude Include="Source\Utility\Stack.h" />
+    <ClInclude Include="Source\Utility\Util.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LuminoFoundation\Accessor.cpp" />
+    <ClCompile Include="LuminoFoundation\EntryPoint.cpp" />
+    <ClCompile Include="LuminoFoundation\GameScene.cpp" />
+    <ClCompile Include="LuminoFoundation\GameSceneManager.cpp" />
+    <ClCompile Include="LuminoFoundation\Gateway.cpp" />
+    <ClCompile Include="LuminoFoundation\LFramework.cpp" />
+    <ClCompile Include="LuminoFoundation\LGameScene.cpp" />
+    <ClCompile Include="Source\Camera\CameraManager.cpp" />
+    <ClCompile Include="Source\Effect\EffectManager.cpp" />
+    <ClCompile Include="Source\Effect\Effect_1.cpp" />
+    <ClCompile Include="Source\Effect\Effect_2.cpp" />
+    <ClCompile Include="Source\Event\EventListener.cpp" />
+    <ClCompile Include="Source\Event\EventManager.cpp" />
+    <ClCompile Include="Source\Frontend\CharacterNamePlate.cpp" />
+    <ClCompile Include="Source\Frontend\DamagePop.cpp" />
+    <ClCompile Include="Source\Frontend\GameFrontendManager.cpp" />
+    <ClCompile Include="Source\Frontend\GuideNamePlate.cpp" />
+    <ClCompile Include="Source\Frontend\NamePlate.cpp" />
+    <ClCompile Include="Source\Frontend\PlayerStateWindow.cpp" />
+    <ClCompile Include="Source\Game\GameManager.cpp" />
+    <ClCompile Include="Source\Game\GameServer.cpp" />
+    <ClCompile Include="Source\Game\GameSession.cpp" />
+    <ClCompile Include="Source\Lua\lapi.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lauxlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lbaselib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lbitlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lcode.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lcorolib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lctype.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldblib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldebug.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldo.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldump.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lfunc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lgc.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\linit.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\liolib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\llex.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\llex_.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lmathlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lmem.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\loadlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lobject.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lopcodes.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\loslib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lparser.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lstate.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lstring.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lstrlib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ltable.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ltablib.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ltm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lua.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\luac.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lundump.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lvm.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lzio.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\Map\Map.cpp" />
+    <ClCompile Include="Source\Map\MapManager.cpp" />
+    <ClCompile Include="Source\Object\AttackedObject.cpp" />
+    <ClCompile Include="Source\Object\Bullet.cpp" />
+    <ClCompile Include="Source\Object\Character.cpp" />
+    <ClCompile Include="Source\Object\CharacterScriptInterface.cpp" />
+    <ClCompile Include="Source\Object\Enemy.cpp" />
+    <ClCompile Include="Source\Object\GameObject.cpp" />
+    <ClCompile Include="Source\Object\GameObjectManager.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\BottomWall.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Box.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Door.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Duct.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Entry.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Exit.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Exit_Lock.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Fort.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Ladder.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\LadderTop.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Locker.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Manhole.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Mine.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\TopWall.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\UBW.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Vase.cpp" />
+    <ClCompile Include="Source\Object\Gimmick\Window.cpp" />
+    <ClCompile Include="Source\Object\Grenade.cpp" />
+    <ClCompile Include="Source\Object\Item\Cure_L.cpp" />
+    <ClCompile Include="Source\Object\Item\Cure_M.cpp" />
+    <ClCompile Include="Source\Object\Item\Cure_S.cpp" />
+    <ClCompile Include="Source\Object\Item\Key.cpp" />
+    <ClCompile Include="Source\Object\MidBoss1.cpp" />
+    <ClCompile Include="Source\Object\MidBoss2.cpp" />
+    <ClCompile Include="Source\Object\Player.cpp" />
+    <ClCompile Include="Source\Object\Valfirle.cpp" />
+    <ClCompile Include="Source\Object\ValfirleToken.cpp" />
+    <ClCompile Include="Source\Object\Weapon.cpp" />
+    <ClCompile Include="Source\Scene\SceneGame.cpp" />
+    <ClCompile Include="Source\Scene\SceneGameover.cpp" />
+    <ClCompile Include="Source\Scene\SceneRanking.cpp" />
+    <ClCompile Include="Source\Scene\SceneResult.cpp" />
+    <ClCompile Include="Source\Scene\SceneStartup.cpp" />
+    <ClCompile Include="Source\Scene\SceneTitle.cpp" />
+    <ClCompile Include="Source\Utility\Collision.cpp" />
+    <ClCompile Include="Source\Utility\FormatText.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

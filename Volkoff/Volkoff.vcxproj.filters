@@ -1,0 +1,678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="LuminoFoundation">
+      <UniqueIdentifier>{2657fac7-60d4-41d2-91d1-8afb8d9914ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source\Scene">
+      <UniqueIdentifier>{9e4a03af-e8f8-46c9-9ad2-d68e8b055de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Frontend">
+      <UniqueIdentifier>{4c0ad3e2-9745-483e-b931-3ddab7e8f9ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Utility">
+      <UniqueIdentifier>{d862e9b4-4041-420d-9eaa-ed464e2e97c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Game">
+      <UniqueIdentifier>{eafd1f05-423d-4008-b5b6-539d98351435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Event">
+      <UniqueIdentifier>{c4b02b50-80be-48d7-b6e0-c8ac7bda5c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Effect">
+      <UniqueIdentifier>{38a8df9c-d12c-4da4-abd9-da1cb5803945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Map">
+      <UniqueIdentifier>{8caa9f4e-6a8c-44d3-996e-e6814bf2ec90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Lua">
+      <UniqueIdentifier>{e5590c88-0aa3-43f9-90ea-7fdc9993c273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Object">
+      <UniqueIdentifier>{b04b881e-967e-4663-be23-7975e384d59b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Camera">
+      <UniqueIdentifier>{07d3eba0-4fb0-48ff-9b86-7a75c066efea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Object\Item">
+      <UniqueIdentifier>{0e1f2047-4251-4be7-941b-c44cb0de6491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Object\Gimmick">
+      <UniqueIdentifier>{84d072d0-d069-4ef8-8af5-7398adf75d00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\GameScene.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\GameSceneManager.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\Gateway.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\Accessor.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\LFramework.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\LGameScene.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="LuminoFoundation\Common.h">
+      <Filter>LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneStartup.h">
+      <Filter>Source\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneTitle.h">
+      <Filter>Source\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\PointCursor.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\RapidNumber.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneRanking.h">
+      <Filter>Source\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\FormatText.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameManager.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Event\EventManager.h">
+      <Filter>Source\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Event\EventType.h">
+      <Filter>Source\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Effect\EffectManager.h">
+      <Filter>Source\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Effect\EffectBase.h">
+      <Filter>Source\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Map\MapManager.h">
+      <Filter>Source\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameSession.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameServer.h">
+      <Filter>Source\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\GameFrontendManager.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\GuideNamePlate.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneGame.h">
+      <Filter>Source\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\ltm.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lua.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lua.hpp">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\luaconf.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lualib.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lundump.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lvm.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lzio.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\mbenc.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lapi.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lauxlib.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lcode.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lctype.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\ldebug.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\ldo.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lfunc.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lgc.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\llex.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\llimits.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lmem.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lobject.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lopcodes.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lparser.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lstate.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\lstring.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lua\ltable.h">
+      <Filter>Source\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\GameObject.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\GameObjectManager.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\Util.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\Singleton.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\Stack.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\NodeList.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Weapon.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Player.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Character.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\CharacterScriptInterface.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utility\Collision.h">
+      <Filter>Source\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\AttackedObject.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\CharacterNamePlate.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Bullet.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Effect\Effect_1.h">
+      <Filter>Source\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Grenade.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\DamagePop.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneResult.h">
+      <Filter>Source\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Camera\CameraManager.h">
+      <Filter>Source\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Item\Cure_M.h">
+      <Filter>Source\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Item\Cure_S.h">
+      <Filter>Source\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Item\Key.h">
+      <Filter>Source\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Item\Cure_L.h">
+      <Filter>Source\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\LadderTop.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Locker.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Manhole.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Mine.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\TopWall.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\UBW.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Vase.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Window.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\BottomWall.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Box.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Door.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Duct.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Entry.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Exit.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Exit_Lock.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Fort.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Gimmick\Ladder.h">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Enemy.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\ValfirleToken.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\Valfirle.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\PlayerStateWindow.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\MidBoss1.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Object\MidBoss2.h">
+      <Filter>Source\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Frontend\NamePlate.h">
+      <Filter>Source\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Scene\SceneGameover.h">
+      <Filter>Source\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Effect\Effect_2.h">
+      <Filter>Source\Effect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\EntryPoint.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\GameScene.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\GameSceneManager.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\Gateway.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\Accessor.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\LFramework.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="LuminoFoundation\LGameScene.cpp">
+      <Filter>LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneStartup.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneTitle.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneRanking.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\FormatText.cpp">
+      <Filter>Source\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameManager.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Event\EventListener.cpp">
+      <Filter>Source\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Event\EventManager.cpp">
+      <Filter>Source\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effect\EffectManager.cpp">
+      <Filter>Source\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Map\Map.cpp">
+      <Filter>Source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Map\MapManager.cpp">
+      <Filter>Source\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameServer.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameSession.cpp">
+      <Filter>Source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frontend\GameFrontendManager.cpp">
+      <Filter>Source\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frontend\GuideNamePlate.cpp">
+      <Filter>Source\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneGame.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lua.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\luac.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lundump.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lvm.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lzio.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lapi.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lauxlib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lbaselib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lbitlib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lcode.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lcorolib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lctype.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldblib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldebug.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldo.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ldump.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lfunc.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lgc.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\linit.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\liolib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\llex.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\llex_.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lmathlib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lmem.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\loadlib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lobject.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lopcodes.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\loslib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lparser.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lstate.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lstring.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\lstrlib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ltable.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ltablib.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Lua\ltm.c">
+      <Filter>Source\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\GameObject.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\GameObjectManager.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Weapon.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Player.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Character.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\CharacterScriptInterface.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utility\Collision.cpp">
+      <Filter>Source\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\AttackedObject.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frontend\CharacterNamePlate.cpp">
+      <Filter>Source\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Bullet.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effect\Effect_1.cpp">
+      <Filter>Source\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Grenade.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frontend\DamagePop.cpp">
+      <Filter>Source\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneResult.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera\CameraManager.cpp">
+      <Filter>Source\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Item\Cure_M.cpp">
+      <Filter>Source\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Item\Cure_S.cpp">
+      <Filter>Source\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Item\Key.cpp">
+      <Filter>Source\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Item\Cure_L.cpp">
+      <Filter>Source\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\LadderTop.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Locker.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Manhole.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Mine.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\TopWall.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\UBW.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Vase.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Window.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\BottomWall.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Box.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Door.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Duct.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Entry.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Exit.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Exit_Lock.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Fort.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Gimmick\Ladder.cpp">
+      <Filter>Source\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Enemy.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\Valfirle.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\ValfirleToken.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frontend\PlayerStateWindow.cpp">
+      <Filter>Source\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\MidBoss1.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Object\MidBoss2.cpp">
+      <Filter>Source\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Frontend\NamePlate.cpp">
+      <Filter>Source\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Scene\SceneGameover.cpp">
+      <Filter>Source\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Effect\Effect_2.cpp">
+      <Filter>Source\Effect</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+[submodule "External/Lumino"]
+	path = External/Lumino
+	url = git@github.com:lriki/Lumino.git
