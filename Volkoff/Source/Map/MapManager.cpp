@@ -73,13 +73,9 @@ void MapManager::changeMap( u32 map_id_ )
 		RefPtr<TileMap> tilemap(LN_NEW TileMap(), false);
 		tilemap->SetTileSet(m_tileset);
 
-		RefPtr<TileLayer> tileLayer(LN_NEW TileLayer(), false);
-		tileLayer->Resize(100, 100);
-		for (int i = 0; i < 100 * 100; ++i)
-		{
-			tileLayer->SetTileId(i % 100, i / 100, mMapData[i]);
-		}
-		tilemap->GetLayers()->Add(tileLayer);
+		m_tileLayer = TileLayer::Create();
+		m_tileLayer->Resize(100, 100);
+		tilemap->GetLayers()->Add(m_tileLayer);
 
 		mTilemap.Attach(TileMapNode::Create3D(), false);
 		mTilemap->SetTileMap(tilemap);
@@ -90,6 +86,11 @@ void MapManager::changeMap( u32 map_id_ )
 		//auto cb = RefPtr<CylinderMouseMoveCameraBehavior>::Create();
 		//Camera::GetDefault3DCamera()->SetCameraBehavior(cb);
 		//Camera::GetDefault3DCamera()->SetPosition(0, 0, -200);
+	}
+
+	for (int i = 0; i < 100 * 100; ++i)
+	{
+		m_tileLayer->SetTileId(i % 100, i / 100, mMapData[i]);
 	}
 #else
     

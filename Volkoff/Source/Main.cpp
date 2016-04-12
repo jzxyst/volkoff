@@ -56,7 +56,7 @@ void lnConfig(EngineSettings* settings)
     //config.Framework.setProcessMode( LN_SYSPROCMODE_ALWAYS );
 
 	settings->GraphicsAPI = GraphicsAPI::DirectX9;
-	settings->RenderingType = RenderingType::Immediate;
+	settings->RenderingType = RenderingType::Deferred;
 	settings->fpuPreserveEnabled = true;
 	settings->mainWindowTitle = _T("Last Valfirle Ver1.0.1");
 	settings->mainWindowSize = Size(640, 480);

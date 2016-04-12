@@ -198,6 +198,7 @@ private:
 	int							mMapData[100 * 100];
 
 	TileSetPtr					m_tileset;
+	TileLayerPtr				m_tileLayer;
 	TileMapNodePtr				mTilemap;
 
 
