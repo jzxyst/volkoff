@@ -60,7 +60,7 @@ void lnConfig(EngineSettings* settings)
 	settings->fpuPreserveEnabled = true;
 	settings->mainWindowTitle = _T("Last Valfirle Ver1.0.1");
 	settings->mainWindowSize = Size(640, 480);
-	settings->backBufferSize = Size(640, 480);
+	settings->mainBackBufferSize = Size(640, 480);
 	settings->directMusicMode = DirectMusicMode::ThreadWait;
 	settings->soundCacheCapacity.objectCount = 32;
 
