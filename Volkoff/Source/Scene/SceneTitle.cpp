@@ -392,6 +392,9 @@ void SceneTitle::onUpdate()
 
 				GameAudio::PlaySE("Data/Sound/SE/cursor21.wav", 0.80, 1.20);
 				GameAudio::StopBGM(3.0);
+
+				// iss#1 ダミーのステップへ移行して繰り返し決定ボタン押せないようにする
+				mStep = 4;
 			}
 
 			// キャンセル
