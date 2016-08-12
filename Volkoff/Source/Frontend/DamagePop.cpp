@@ -108,7 +108,7 @@
 
 
         mNumberSprite = Sprite2D::Create( mNumberTexture );
-        mNumberSprite->SetCenter( mNumberTexture->GetSize().width / 2, mNumberTexture->GetSize().height / 2 );
+        mNumberSprite->SetCenter( mNumberTexture->GetWidth() / 2, mNumberTexture->GetHeight() / 2 );
         mNumberSprite->SetPriority(-1000);	// 後に書かれるようにする
         mNumberSprite->SetDepthTestEnabled( false );
     }
@@ -129,7 +129,7 @@
         mVelocity.y -= 0.25f;
 
         // スクリーン座標に変換
-        LVector3 pos_2d = Camera::GetDefault3DCamera()->WorldToViewportPoint(mPosition);
+        LVector3 pos_2d = Camera::GetMain3DCamera()->WorldToViewportPoint(mPosition);
         //Engine::Framework::getInstance()->getSceneManager()->getDefaultSceneGraph()->getDefaultCamera()->convertWorldPosToScreenPos( &pos_2d, mPosition );
 		pos_2d.z = 0;
 		mNumberSprite->SetPosition( pos_2d );

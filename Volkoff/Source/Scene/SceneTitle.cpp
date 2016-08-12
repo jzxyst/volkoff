@@ -486,7 +486,7 @@ void SceneTitle::onUpdate()
 		LNFormatTextDrawData data;
 		while (mFormatText.getNextDrawData(&data))
 		{
-			mDescContents->DrawText(StringRef(data.Text, data.Length), data.Rect, data.Font, Color::Black, Color::White, 0, TextAlignment::Left);
+			mDescContents->DrawText(StringRef(data.Text, data.Length), data.Rect, data.Font, Color32::Black, Color32::White, 0, TextAlignment::Left);
 		}
 	}
 
@@ -556,19 +556,19 @@ void SceneTitle::_setPointCursorIndex( int index_ )
 	//mSelectIndex = index_;
 	mPointCursor->moveTo((int)COMMAND_POS_X - 38, (int)COMMAND_POS_Y + mSelectIndex * 32 + 16);
 
-	mDescContents->Clear(Color(0, 0, 0, 0));
+	mDescContents->Clear(Color32(0, 0, 0, 0));
 
 	// モード選択中
 	if (mStep == 1)
 	{
-		mDescContents->DrawText(gDescContentTitles_1[mSelectIndex], Rect(8, 2, 256, 256), mDescTitleFont, Color::Black, Color::White, 0, TextAlignment::Left);
+		mDescContents->DrawText(gDescContentTitles_1[mSelectIndex], Rect(8, 2, 256, 256), mDescTitleFont, Color32::Black, Color32::White, 0, TextAlignment::Left);
 		mFormatText.setText(gDescContents_1[mSelectIndex]);
 		mFormatText.build();
 	}
 	// 難易度選択中
 	else if (mStep == 2)
 	{
-		mDescContents->DrawText(gDescContentTitles_2[mSelectIndex], Rect(8, 2, 256, 256), mDescTitleFont, Color::Black, Color::White, 0, TextAlignment::Left);
+		mDescContents->DrawText(gDescContentTitles_2[mSelectIndex], Rect(8, 2, 256, 256), mDescTitleFont, Color32::Black, Color32::White, 0, TextAlignment::Left);
 		mFormatText.setText(gDescContents_2[mSelectIndex]);
 		mFormatText.build();
 	}

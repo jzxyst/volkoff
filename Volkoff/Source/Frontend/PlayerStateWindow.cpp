@@ -40,13 +40,16 @@
         mFrameWindow = Sprite2D::Create( mFrontendTexture );
         mFrameWindow->SetSrcRect( LRect( 128, 0, 128, 112 ) );
 
+		mFrameWindow->SetName("mFrameWindow");
+
         // フロア数とスコアの数字
-        mFloorNumSprite[ 0 ] = Sprite2D::Create( mNumberTextureS );
-        mFloorNumSprite[ 1 ] = Sprite2D::Create( mNumberTextureS );
-        mFloorNumSprite[ 0 ]->SetVisible( false );
+        mFloorNumSprite[0] = Sprite2D::Create(mNumberTextureS);
+		mFloorNumSprite[1] = Sprite2D::Create(mNumberTextureS);
+		mFloorNumSprite[0]->SetVisible(false);
         for ( int i = 0; i < 10; ++i )
         {
-            mScoreNumSprite[ i ] = Sprite2D::Create( mNumberTextureS );
+			mScoreNumSprite[i] = Sprite2D::Create(mNumberTextureS);
+			mScoreNumSprite[i]->SetName("mScoreNumSprite");
         }
 
 

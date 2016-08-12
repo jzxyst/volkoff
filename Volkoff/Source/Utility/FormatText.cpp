@@ -251,7 +251,7 @@ namespace Utility
             // マルチバイト文字かどうかでチェックする文字列長さを決める unicode の場合は常に 1
             int len = Core::Base::StringUtil::checkMultiByteChar( &text[ mIndex ] ) ? 2 : 1;
 
-            Size size = mFont->GetTextSize(StringRef(&text[ mIndex ], len));
+            SizeI size = mFont->GetTextSize(StringRef(&text[ mIndex ], len));
 
 
             DrawDataEntry entry;
@@ -335,7 +335,7 @@ namespace Utility
             // 改行か終端まで
             if ( str_[ i ] == _T( '\n' ) || str_[ i ] == _T( '\0' ) )
             {
-				Size size = mFont->GetTextSize(
+				SizeI size = mFont->GetTextSize(
                     StringRef(&str_[ start_normal_char_idx ],
                     ( last_normal_char_idx - start_normal_char_idx )));
                 //printf("1:%d w:%d\n",last_normal_char_idx - start_normal_char_idx, rc.width);
@@ -398,7 +398,7 @@ namespace Utility
             // フォントサイズ変更などで、last_normal_char_idx までの文字列幅を計算する必要がある場合
             if ( font_changed )
             {
-				Size size = mFont->GetTextSize(
+				SizeI size = mFont->GetTextSize(
                     StringRef(&str_[ start_normal_char_idx ],
                     ( last_normal_char_idx - start_normal_char_idx )));
                 //printf("2:%d w:%d\n",last_normal_char_idx - start_normal_char_idx, rc.width);
@@ -506,7 +506,7 @@ namespace Utility
 
                         // ルビとメイン文字列の幅を取得
                         int ruby_w, main_w;
-						Size size = mFont->GetTextSize( tmp.c_str() );
+						SizeI size = mFont->GetTextSize( tmp.c_str() );
                         main_w = size.width;
 						size = mRubyFont->GetTextSize( mRubyText.c_str() );
                         ruby_w = size.width;
@@ -694,7 +694,7 @@ namespace Utility
                     mRubyLength -= len;
 
 
-                    Size size = mRubyFont->GetTextSize(StringRef(&str[ idx ], len));
+                    SizeI size = mRubyFont->GetTextSize(StringRef(&str[ idx ], len));
 
                     DrawDataEntry entry;
                     entry.DrawData.Text = &str[ idx ];

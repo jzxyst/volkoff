@@ -199,7 +199,7 @@ private:
 
 	TileSetPtr					m_tileset;
 	TileLayerPtr				m_tileLayer;
-	TileMapNodePtr				mTilemap;
+	TileMapPtr					mTilemap;
 
 
 

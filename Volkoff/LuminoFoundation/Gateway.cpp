@@ -49,7 +49,7 @@ namespace LNote
 	//---------------------------------------------------------------------
 	void finalize()
     {
-		Engine::Finalize();
+		Engine::Terminate();
         // I—¹ˆ—
         //gFramework->finalize();
         //Base::Error::finalize();
@@ -98,7 +98,7 @@ namespace LNote
 
 		try
 		{
-			Engine::Initialize(settings);
+			Engine::Initialize();
 			//gFramework->initialize( *init_data );
 			//LN_PCALL( lr );
 

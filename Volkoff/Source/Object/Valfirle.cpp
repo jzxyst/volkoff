@@ -154,7 +154,7 @@ bool Valfirle::Initialize( const CreateData& data_ )
     mWeaponLevel    = data_.WeaponLevel;
     
 	bool r = Character::Initialize();
-	this->mCharaPanel->SetColorScale(ColorF(0.8f,0.8f,0.95f));
+	this->mCharaPanel->SetColorScale(Color(0.8f,0.8f,0.95f));
     this->m_pszName = "Valfirle"; //一時的。後で適当な名前を代入する
 	this->mLife = this->mMaxLife = scg_nValfirleLife[GameManager::getInstance()->getRank()];
 

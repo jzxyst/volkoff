@@ -80,14 +80,14 @@ bool CameraManager::Initialize()
 	//LVector3 v(GameManager::getInstance()->getPlayer()->getPosition().x,(GameManager::getInstance()->getPlayer())->getPosition().y + 80,-1200.0f);
 	//LVector3 look(v);
 
-	//Camera::GetDefault3DCamera()->setPosition(v);
+	//Camera::GetMain3DCamera()->setPosition(v);
  //   v.z = 0;
-	//Camera::GetDefault3DCamera()->setLookAt(v);
+	//Camera::GetMain3DCamera()->setLookAt(v);
 
 	this->m_eMode = CAMERA_UNDEF;
 	this->m_pCLookObj = NULL;
 
-	Camera::GetDefault3DCamera()->SetFovY(Math::PI * 0.125);
+	Camera::GetMain3DCamera()->SetFovY(Math::PI * 0.125);
 
 	return true;
 }
@@ -133,29 +133,29 @@ void CameraManager::Update()
 		break;
 
 	case CAMERA_MOVE:
-		v = Camera::GetDefault3DCamera()->GetPosition();
+		v = Camera::GetMain3DCamera()->GetPosition();
 		v += this->m_CVector;
-		Camera::GetDefault3DCamera()->SetPosition(v);
+		Camera::GetMain3DCamera()->SetPosition(v);
 		v.z = 0;
-		Camera::GetDefault3DCamera()->SetLookAt(v);
+		Camera::GetMain3DCamera()->SetLookAt(v);
 		break;
 
 	case CAMERA_LOOK_OBJECT:
 		v = this->m_pCLookObj->getPosition();
 		v.y += 80;
 		v.z = -1200.0f;
-		Camera::GetDefault3DCamera()->SetPosition(v);
+		Camera::GetMain3DCamera()->SetPosition(v);
 		v.z = 0;
-		Camera::GetDefault3DCamera()->SetLookAt(v);
+		Camera::GetMain3DCamera()->SetLookAt(v);
 		break;
 
 	case CAMERA_LOOK_PLAYER:
 		v = GameManager::getInstance()->getPlayer()->getPosition();
 		v.y += 80;
 		v.z = -1200.0f;
-		Camera::GetDefault3DCamera()->SetPosition(v);
+		Camera::GetMain3DCamera()->SetPosition(v);
 		v.z = 0;
-		Camera::GetDefault3DCamera()->SetLookAt(v);
+		Camera::GetMain3DCamera()->SetLookAt(v);
 		break;
 
 	default:
@@ -181,7 +181,7 @@ void CameraManager::Update()
 void CameraManager::Move(LVector3 pos_,LVector3 vector_)
 {
 	this->m_CVector = vector_;
-	Camera::GetDefault3DCamera()->SetPosition(pos_);
+	Camera::GetMain3DCamera()->SetPosition(pos_);
 	this->m_eMode = CAMERA_MOVE;
 
 	return;

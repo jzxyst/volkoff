@@ -56,15 +56,14 @@
         // 名前
         LFont font = GameFrontendManager::getInstance()->getGuidNamePlateFont();
 
-        Size size = font->GetTextSize( mGameObject->getName() );
+        SizeI size = font->GetTextSize( mGameObject->getName() );
 
         mNameTextTexture = Texture2D::Create( size.width , 20 );
-		mNameTextTexture->DrawText(mGameObject->getName(), Rect(0, 0, size), font, Color::White, Color::Black, 0, TextAlignment::Left);
+		mNameTextTexture->DrawText(mGameObject->getName(), Rect(0, 0, size), font, Color32::White, Color32::Black, 0, TextAlignment::Left);
 
         mNameTextSprite = Sprite2D::Create( mNameTextTexture );
         mNameTextSprite->SetVisible( false );
 		mNameTextSprite->SetSrcRect(Rect(0, 0, size));
-
 
         mOffsetPos.Set( ox_, oy_, 0 );
         
@@ -157,7 +156,7 @@
 
 
 			// オブジェクトの座標をスクリーン座標に変換
-			LVector3 pos_2d = Camera::GetDefault3DCamera()->WorldToViewportPoint((object_pos + mOffsetPos));
+			LVector3 pos_2d = Camera::GetMain3DCamera()->WorldToViewportPoint((object_pos + mOffsetPos));
 
 			_setPosition(pos_2d);
 		}

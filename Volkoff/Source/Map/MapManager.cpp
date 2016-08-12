@@ -67,18 +67,18 @@ void MapManager::changeMap( u32 map_id_ )
 
 		m_tileset = TileSet::Create();
 		m_tileset->SetImageSource(t);
-		m_tileset->SetTileSize(Size(20, 20));
+		m_tileset->SetTileSize(SizeI(20, 20));
 
 
-		RefPtr<TileMap> tilemap(LN_NEW TileMap(), false);
-		tilemap->SetTileSet(m_tileset);
+		auto tilemapModel = TileMapModel::Create();
+		tilemapModel->SetTileSet(m_tileset);
 
 		m_tileLayer = TileLayer::Create();
 		m_tileLayer->Resize(100, 100);
-		tilemap->GetLayers()->Add(m_tileLayer);
+		tilemapModel->GetLayers()->Add(m_tileLayer);
 
-		mTilemap.Attach(TileMapNode::Create3D(), false);
-		mTilemap->SetTileMap(tilemap);
+		mTilemap = TileMap::Create3D();
+		mTilemap->SetTileMap(tilemapModel);
 		mTilemap->SetPriority(1000);
 		mTilemap->SetDepthWriteEnabled(false);
 

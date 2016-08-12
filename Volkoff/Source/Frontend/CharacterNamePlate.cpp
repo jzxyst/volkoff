@@ -54,7 +54,7 @@
         else
         {
             // 名前を描画した時の幅によって、ウィンドウサイズを決める
-            Size rc = font->GetTextSize(name); 
+            SizeI rc = font->GetTextSize(name);
             if ( rc.width > 64 )
             {
                 mFrameWidth = 96;
@@ -87,7 +87,7 @@
 
         // 名前を描画するテクスチャ
         mNameTextTexture = Texture2D::Create( mFrameWidth - 8, 16 );
-		mNameTextTexture->DrawText(name, LRect(0, 0, mFrameWidth - 8, 16), font, Color::White, Color::White, 0, TextAlignment::Center);
+		mNameTextTexture->DrawText(name, LRect(0, 0, mFrameWidth - 8, 16), font, Color32::White, Color32::White, 0, TextAlignment::Center);
        
         // 名前スプライト
         mNameTextSprite = Sprite2D::Create( mNameTextTexture );
@@ -181,7 +181,7 @@
 
             //-------------------------------------------------
             // 位置
-            const LMatrix& vp_mat = Camera::GetDefault3DCamera()->GetViewProjectionMatrix();
+            const LMatrix& vp_mat = Camera::GetMain3DCamera()->GetViewProjectionMatrix();
 			LVector3 sc_pos = LVector3::TransformCoord(mCharacter->getPosition(), vp_mat);
 			
             sc_pos.y *= -1.0f;  // y は下が + なので上下反転
@@ -192,7 +192,7 @@
             // _setPosition に渡す用に一時退避
             LVector3 tpos = sc_pos;
 
-            const Size& size = Viewport::GetMainWindowViewport()->GetSize();
+            const SizeI& size = Viewport::GetMainWindowViewport()->GetSize();
             sc_pos.x *= size.width;
             sc_pos.y *= size.height;
 

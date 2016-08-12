@@ -24,7 +24,7 @@ static const int COMMAND_POS_Y = 290;
 void SceneGameover::onStart()
 {
     LTexture tex = Texture2D::Create( 32, 32 );
-    tex->Clear( Color( 0, 0, 0 ) );
+    tex->Clear( Color32( 0, 0, 0 ) );
     mBlindSprite = Sprite2D::Create( tex );
     mBlindSprite->SetScale( 20 );
     mBlindSprite2 = Sprite2D::Create( tex );
@@ -98,7 +98,7 @@ void SceneGameover::onUpdate()
         LNFormatTextDrawData data;
         while ( mFormatText.getNextDrawData( &data ) )
         {
-			mDescContents->DrawText(StringRef(data.Text, data.Length), data.Rect, data.Font, Color::White, Color::Black, 0, TextAlignment::Left);
+			mDescContents->DrawText(StringRef(data.Text, data.Length), data.Rect, data.Font, Color32::White, Color32::Black, 0, TextAlignment::Left);
         }
     }
 
@@ -246,18 +246,18 @@ void SceneGameover::_onSelectIndex()
 {
     mPointCursor->moveTo( COMMAND_POS_X - 38, COMMAND_POS_Y + mSelectIndex * 32 + 16 );
 
-    mDescContents->Clear( Color( 0, 0, 0, 0 ) );
+    mDescContents->Clear( Color32( 0, 0, 0, 0 ) );
 
     if ( mSelectIndex == 0 )
     {
-		mDescContents->DrawText("Continue", LRect(8, 2, 256, 256), mDescTitleFont, Color::White, Color::Black, 0, TextAlignment::Left);
+		mDescContents->DrawText("Continue", LRect(8, 2, 256, 256), mDescTitleFont, Color32::White, Color32::Black, 0, TextAlignment::Left);
 
         mFormatText.setText( "ステージの最初からやり直します。\n\nスコアが 0 にリセットされます。" );
         mFormatText.build();
     }
     else
     {
-		mDescContents->DrawText("End", LRect(8, 2, 256, 256), mDescTitleFont, Color::White, Color::Black, 0, TextAlignment::Left);
+		mDescContents->DrawText("End", LRect(8, 2, 256, 256), mDescTitleFont, Color32::White, Color32::Black, 0, TextAlignment::Left);
 
         mFormatText.setText( "タイトル画面に戻ります。" );
         mFormatText.build();

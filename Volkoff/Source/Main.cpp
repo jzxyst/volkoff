@@ -55,14 +55,14 @@ void lnConfig(EngineSettings* settings)
     //config.setEnableConsole( true );
     //config.Framework.setProcessMode( LN_SYSPROCMODE_ALWAYS );
 
-	settings->graphicsAPI = GraphicsAPI::DirectX9;
-	settings->renderingType = RenderingType::Deferred;
-	settings->fpuPreserveEnabled = true;
-	settings->mainWindowTitle = _T("Last Valfirle Ver1.0.1");
-	settings->mainWindowSize = Size(640, 480);
-	settings->mainBackBufferSize = Size(640, 480);
-	settings->directMusicMode = DirectMusicMode::ThreadWait;
-	settings->soundCacheCapacity.objectCount = 32;
+	EngineSettings::SetGraphicsAPI(GraphicsAPI::DirectX9);
+	EngineSettings::SetGraphicsRenderingType(GraphicsRenderingType::Immediate);
+	EngineSettings::SetFpuPreserveEnabled(true);
+	EngineSettings::SetMainWindowTitle(_T("Last Valfirle Ver1.0.1"));
+	EngineSettings::SetMainWindowSize(640, 480);
+	EngineSettings::SetMainBackBufferSize(640, 480);
+	EngineSettings::SetDirectMusicMode(DirectMusicMode::ThreadWait);
+	//settings->soundCacheCapacity.objectCount = 32;
 
 
 #if MIGRATION
@@ -155,7 +155,7 @@ int lnMain()
 	Input::GetController(0)->AddBinding(InputBinding::Create(LN_BUTTON_C, Key::C));
 	Input::GetController(0)->AddBinding(InputBinding::Create(LN_BUTTON_X, Key::A));
 
-	Camera::GetDefault3DCamera()->SetFarClip(10000);
+	Camera::GetMain3DCamera()->SetFarClip(10000);
 
 #if MIGRATION
 	//---------------------------------------------------------

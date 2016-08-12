@@ -3,10 +3,7 @@
 //=============================================================================
 
 #include "stdafx.h"
-#if MIGRATION
-#else
 #include "../Object/GameObjectManager.h"
-#endif
 #include "GameServer.h"
 #include "GameSession.h"
 
@@ -188,20 +185,13 @@ int GameSession::HandleEvent( u32 event_, void* args_ )
         ///////////////////////////////////////////// オブジェクトを削除する
         case SYSEV_DELETE_GAMEOBJECT:
         {
-#if MIGRATION
-#else
             GameObjectManager* manager = GameObjectManager::getInstance();
             GameObject* obj = manager->findObject( *static_cast< u32* >( args_ ) );
 
-
-
             if ( obj )
             {
-                //printf( "del handle %d\n", *static_cast< u32* >( args_ ) );
-
                 manager->deleteObject( obj );
             }
-#endif
             break;
         }
     }
