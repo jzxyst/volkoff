@@ -156,6 +156,7 @@ int lnMain()
 	Input::GetController(0)->AddBinding(InputBinding::Create(LN_BUTTON_X, Key::A));
 
 	Camera::GetMain3DCamera()->SetFarClip(10000);
+	Camera::GetMain3DCamera()->SetZSortDistanceBase(ZSortDistanceBase::CameraScreenDistance);
 
 #if MIGRATION
 	//---------------------------------------------------------
