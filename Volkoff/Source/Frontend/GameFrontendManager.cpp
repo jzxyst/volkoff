@@ -64,14 +64,14 @@ void GameFrontendManager::initialize( Player* player_ )
 	mPlayerStateWindow = NEW PlayerStateWindow(player_);
 
 	mNamePlateFont = Font::Create();
-	mNamePlateFont->SetName("„M‚r ‚oƒSƒVƒbƒN");
+	mNamePlateFont->SetFamily("„M‚r ‚oƒSƒVƒbƒN");
 	mNamePlateFont->SetSize(10);
 	//mNamePlateFont->SetColor( LColor( 1, 1, 1 ) );
 	mNamePlateFont->SetAntiAlias(false);
 
 
 	mGuidNamePlateFont = Font::Create();
-	mGuidNamePlateFont->SetName("„M‚r ‚oƒSƒVƒbƒN");
+	mGuidNamePlateFont->SetFamily("„M‚r ‚oƒSƒVƒbƒN");
 	mGuidNamePlateFont->SetSize(10);
 	//mGuidNamePlateFont->SetColor( LColor( 1, 1, 1 ) );
 	//mGuidNamePlateFont->setEdgeSize( 1 );

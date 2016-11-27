@@ -1,5 +1,5 @@
-//=============================================================================
-//y LFramework z
+ï»¿//=============================================================================
+//ã€ LFramework ã€‘
 //=============================================================================
 
 //-------------------------------------------------------------------------
@@ -17,25 +17,25 @@ namespace LNote
 {
 
 //=============================================================================
-// ¡ LFramework ƒNƒ‰ƒX
+// â–  LFramework ã‚¯ãƒ©ã‚¹
 //=============================================================================
 
 
-    // ƒtƒŒ[ƒ€XV‰ñ”‚ÌŽæ“¾
+    // ãƒ•ãƒ¬ãƒ¼ãƒ æ›´æ–°å›žæ•°ã®å–å¾—
     //u32 LFramework::getFrameCount() const
     //{
     //    return _impl->getGameTime().getTotalFrameCount();
     //}
 
 
-    // ƒtƒŒ[ƒ€XV
+    // ãƒ•ãƒ¬ãƒ¼ãƒ æ›´æ–°
 	bool LFramework::update()
 	{
         if ( gGameSceneManager->getActiveGameScene() != NULL ) { return true; }
-		return Engine::UpdateFrame();
+		return Engine::Update();
 	}
 
-    //// “o˜^‚³‚ê‚Ä‚¢‚éƒQ[ƒ€ƒV[ƒ“‚ðŽw’è‚µ‚ÄŽÀsŠJŽn
+    //// ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã‚’æŒ‡å®šã—ã¦å®Ÿè¡Œé–‹å§‹
     //void LFramework::run( const lnChar* scene_name_ )
     //{
     //    gGameSceneManager->changeScene( scene_name_ );
@@ -58,7 +58,7 @@ namespace LNote
     //    */
     //}
 
-    // ƒQ[ƒ€ƒV[ƒ“‚ð—^‚¦‚ÄŽÀsŠJŽn
+    // ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã‚’ä¸Žãˆã¦å®Ÿè¡Œé–‹å§‹
     void LFramework::run( LGameScene* scene_ )
     {
         gGameSceneManager->changeScene( scene_ );
@@ -67,22 +67,22 @@ namespace LNote
         {
             gGameSceneManager->update();
 
-        } while (Engine::UpdateFrame());
+        } while (Engine::Update());
     } 
 
-    // ƒQ[ƒ€ƒV[ƒ“‚ðŽÀs’†‚©‚Ç‚¤‚©‚ð”»’è‚·‚é
+    // ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã‚’å®Ÿè¡Œä¸­ã‹ã©ã†ã‹ã‚’åˆ¤å®šã™ã‚‹
     //bool LFramework::isRunning() const
     //{
     //    return ( gGameSceneManager->getActiveGameScene() != NULL );
     //}
 
-    //// ƒ‰ƒCƒuƒ‰ƒŠ‚ÉI—¹‚ð—v‹‚·‚é
+    //// ãƒ©ã‚¤ãƒ–ãƒ©ãƒªã«çµ‚äº†ã‚’è¦æ±‚ã™ã‚‹
     //void LFramework::exit()
     //{
     //    _impl->exit();
     //}
 
-    //// ƒQ[ƒ€ƒV[ƒ“‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ð“o˜^‚·‚é
+    //// ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç™»éŒ²ã™ã‚‹
     //void LFramework::registerSceneInstance( LGameScene* scene_ )
     //{
     //    gGameSceneManager->registerSceneInstance( scene_ );

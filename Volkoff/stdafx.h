@@ -31,7 +31,7 @@ typedef uint32_t	lnU32;
 typedef ln::Vector2			LVector2;
 typedef ln::Vector3			LVector3;
 typedef ln::Matrix			LMatrix;
-typedef ln::Point			LPoint;
+typedef ln::PointI			LPoint;
 typedef ln::Rect			LRect;
 typedef ln::Sprite2DPtr		LSprite;
 typedef ln::Sprite3DPtr		LPanel;
@@ -48,5 +48,6 @@ typedef ln::FontPtr			LFont;
 #define LN_BUTTON_C		_T("Guard")
 #define LN_BUTTON_X		_T("Action")
 
-
+#pragma warning(disable : 4996)
+#pragma warning(disable : 4477)
 

@@ -60,7 +60,7 @@ SceneGame::SceneGame()
 void SceneGame::onStart()
 {
 	// ”wŒiF
-	Viewport::GetMainWindowViewport()->SetBackgroundColor(Color::Gray);
+	Engine::GetMainViewport()->SetBackgroundColor(Color::Gray);
 
 
 

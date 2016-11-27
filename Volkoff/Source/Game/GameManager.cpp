@@ -67,10 +67,10 @@ void GameManager::initializeParent()
 
 	GameObjectManager::getInstance()->Initialize();
     mPlayer = NEW Player();
+    GameFrontendManager::getInstance()->initialize( mPlayer );
     mPlayer->Initialize();
     mPlayer->setPosition( LVector3( 80.0f, 50.0f, -1.0f ) );    // ‰¼‚Ì‰ŠúˆÊ’u
 
-    GameFrontendManager::getInstance()->initialize( mPlayer );
 	return;
     
 }
@@ -91,10 +91,10 @@ bool GameManager::initializeChild( const char* parent_ip_addr_ )
     GameObjectManager::getInstance()->Initialize();
     mEffectManager = NEW EffectManager();
     mPlayer = NEW Player();
+    GameFrontendManager::getInstance()->initialize( mPlayer );
     mPlayer->Initialize();
     //mPlayer->setPosition( LVector3( 80.0f, 50.0f, -1.0f ) );
   
-    GameFrontendManager::getInstance()->initialize( mPlayer );
     return true;
 }
 

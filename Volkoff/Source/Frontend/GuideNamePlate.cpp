@@ -55,15 +55,15 @@
 
         // –¼‘O
         LFont font = GameFrontendManager::getInstance()->getGuidNamePlateFont();
-
-        SizeI size = font->GetTextSize( mGameObject->getName() );
+		
+        Size size = font->MeasureRenderSize( mGameObject->getName() );
 
         mNameTextTexture = Texture2D::Create( size.width , 20 );
-		mNameTextTexture->DrawText(mGameObject->getName(), Rect(0, 0, size), font, Color32::White, Color32::Black, 0, TextAlignment::Left);
+		mNameTextTexture->DrawText(mGameObject->getName(), Rect(0, 0, size.width, size.height), font, Color32::White, Color32::Black, 0, TextAlignment::Left);
 
         mNameTextSprite = Sprite2D::Create( mNameTextTexture );
         mNameTextSprite->SetVisible( false );
-		mNameTextSprite->SetSrcRect(Rect(0, 0, size));
+		mNameTextSprite->SetSrcRect(0, 0, size.width, size.height);
 
         mOffsetPos.Set( ox_, oy_, 0 );
         

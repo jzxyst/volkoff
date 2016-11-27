@@ -91,7 +91,7 @@ void SceneTitle::onStart()
     printf( "X > ƒlƒbƒgÚ‘±\n" );
 
 	// ”wŒiF
-	Viewport::GetMainWindowViewport()->SetBackgroundColor(Color::White);
+	Engine::GetMainViewport()->SetBackgroundColor(Color::White);
 	Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.5);
 
 	mRandomSprite = Sprite2D::Create("Data/Graphics/Frontend/Random_1.png");

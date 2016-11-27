@@ -54,7 +54,7 @@
         else
         {
             // 名前を描画した時の幅によって、ウィンドウサイズを決める
-            SizeI rc = font->GetTextSize(name);
+            Size rc = font->MeasureRenderSize(name);
             if ( rc.width > 64 )
             {
                 mFrameWidth = 96;
@@ -192,7 +192,7 @@
             // _setPosition に渡す用に一時退避
             LVector3 tpos = sc_pos;
 
-            const SizeI& size = Viewport::GetMainWindowViewport()->GetSize();
+            auto size = Engine::GetMainViewport()->GetSize();
             sc_pos.x *= size.width;
             sc_pos.y *= size.height;
 

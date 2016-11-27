@@ -17,7 +17,7 @@
 void SceneStartup::onStart()
 {
 	// ”wŒiF
-	Viewport::GetMainWindowViewport()->SetBackgroundColor(Color::Black);
+	Engine::GetMainViewport()->SetBackgroundColor(Color::Black);
 
 	mLogoSprite = Sprite2D::Create(_T("Data/Graphics/Frontend/Logo_1.png"));
 

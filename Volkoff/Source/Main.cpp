@@ -56,7 +56,7 @@ void lnConfig(EngineSettings* settings)
     //config.Framework.setProcessMode( LN_SYSPROCMODE_ALWAYS );
 
 	EngineSettings::SetGraphicsAPI(GraphicsAPI::DirectX9);
-	EngineSettings::SetGraphicsRenderingType(GraphicsRenderingType::Immediate);
+	//EngineSettings::SetGraphicsRenderingType(GraphicsRenderingType::Immediate);
 	EngineSettings::SetFpuPreserveEnabled(true);
 	EngineSettings::SetMainWindowTitle(_T("Last Valfirle Ver1.0.1"));
 	EngineSettings::SetMainWindowSize(640, 480);
@@ -152,8 +152,8 @@ static RelayWndProc gRelayWndProc;
 int lnMain()
 {
 	// キーコンフィグ
-	Input::GetController(0)->AddBinding(InputBinding::Create(LN_BUTTON_C, Key::C));
-	Input::GetController(0)->AddBinding(InputBinding::Create(LN_BUTTON_X, Key::A));
+	Input::AddButtonBinding(LN_BUTTON_C, KeyboardBinding::Create(Key::C));
+	Input::AddButtonBinding(LN_BUTTON_X, KeyboardBinding::Create(Key::A));
 
 	Camera::GetMain3DCamera()->SetFarClip(10000);
 	Camera::GetMain3DCamera()->SetZSortDistanceBase(ZSortDistanceBase::CameraScreenDistance);

@@ -33,8 +33,8 @@ public:
 	inline static void replaceString(std::string* str_, const char* from_, const char* to_)
 	{
 		std::string::size_type pos = 0;
-		int from_length = strlen(from_);
-		int to_length = strlen(to_);
+		int from_length = (int)strlen(from_);
+		int to_length = (int)strlen(to_);
 
 		while (pos = str_->find(from_, pos), pos != std::string::npos)
 		{
@@ -135,7 +135,7 @@ namespace Utility
         if (mFont != nullptr)
         {
             mDefaultFontSize = mFont->GetSize();
-            mRubyFont = mFont->Copy();
+            mRubyFont = mFont->Clone();
             mRubyFont->SetSize( mFont->GetSize() / 2 );
         }
     }
@@ -251,7 +251,7 @@ namespace Utility
             // マルチバイト文字かどうかでチェックする文字列長さを決める unicode の場合は常に 1
             int len = Core::Base::StringUtil::checkMultiByteChar( &text[ mIndex ] ) ? 2 : 1;
 
-            SizeI size = mFont->GetTextSize(StringRef(&text[ mIndex ], len));
+            Size size = mFont->MeasureRenderSize(StringRef(&text[ mIndex ], len));
 
 
             DrawDataEntry entry;
@@ -335,7 +335,7 @@ namespace Utility
             // 改行か終端まで
             if ( str_[ i ] == _T( '\n' ) || str_[ i ] == _T( '\0' ) )
             {
-				SizeI size = mFont->GetTextSize(
+				Size size = mFont->MeasureRenderSize(
                     StringRef(&str_[ start_normal_char_idx ],
                     ( last_normal_char_idx - start_normal_char_idx )));
                 //printf("1:%d w:%d\n",last_normal_char_idx - start_normal_char_idx, rc.width);
@@ -398,7 +398,7 @@ namespace Utility
             // フォントサイズ変更などで、last_normal_char_idx までの文字列幅を計算する必要がある場合
             if ( font_changed )
             {
-				SizeI size = mFont->GetTextSize(
+				Size size = mFont->MeasureRenderSize(
                     StringRef(&str_[ start_normal_char_idx ],
                     ( last_normal_char_idx - start_normal_char_idx )));
                 //printf("2:%d w:%d\n",last_normal_char_idx - start_normal_char_idx, rc.width);
@@ -506,9 +506,9 @@ namespace Utility
 
                         // ルビとメイン文字列の幅を取得
                         int ruby_w, main_w;
-						SizeI size = mFont->GetTextSize( tmp.c_str() );
+						Size size = mFont->MeasureRenderSize( tmp.c_str() );
                         main_w = size.width;
-						size = mRubyFont->GetTextSize( mRubyText.c_str() );
+						size = mRubyFont->MeasureRenderSize( mRubyText.c_str() );
                         ruby_w = size.width;
 
                         // マルチバイトの場合はそれを1文字とした文字数を計算
@@ -694,7 +694,7 @@ namespace Utility
                     mRubyLength -= len;
 
 
-                    SizeI size = mRubyFont->GetTextSize(StringRef(&str[ idx ], len));
+                    Size size = mRubyFont->MeasureRenderSize(StringRef(&str[ idx ], len));
 
                     DrawDataEntry entry;
                     entry.DrawData.Text = &str[ idx ];
