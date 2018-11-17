@@ -22,7 +22,6 @@
 
 /*! @par include */
 //インクルードファイルは、不必要になり次第逐次消すこと
-#include "stdafx.h"
 #include <crtdbg.h>
 #include <time.h>
 #if MIGRATION
@@ -58,9 +57,9 @@ void lnConfig(EngineSettings* settings)
 	//EngineSettings::SetGraphicsAPI(GraphicsAPI::DirectX9);
 	//EngineSettings::SetGraphicsRenderingType(GraphicsRenderingType::Immediate);
 	//EngineSettings::SetFpuPreserveEnabled(true);
-	EngineSettings::SetMainWindowTitle(_T("Last Valfirle Ver1.0.1"));
-	EngineSettings::SetMainWindowSize(640, 480);
-	EngineSettings::SetMainBackBufferSize(640, 480);
+	EngineSettings::setMainWindowTitle(_T("Last Valfirle Ver1.0.1"));
+	EngineSettings::setMainWindowSize(640, 480);
+	EngineSettings::setMainBackBufferSize(640, 480);
 	//EngineSettings::SetDirectMusicMode(DirectMusicMode::ThreadWait);
 	//settings->soundCacheCapacity.objectCount = 32;
 
@@ -155,8 +154,8 @@ int lnMain()
 	Input::addBinding(LN_BUTTON_C, KeyGesture::create(Keys::C));
 	Input::addBinding(LN_BUTTON_X, KeyGesture::create(Keys::A));
 
-	Camera::GetMain3DCamera()->SetFarClip(10000);
-	Camera::GetMain3DCamera()->SetZSortDistanceBase(ZSortDistanceBase::CameraScreenDistance);
+	Accessor::Main3Camera->setFarClip(10000);
+	Accessor::Main3Camera->SetZSortDistanceBase(ZSortDistanceBase::CameraScreenDistance);
 
 #if MIGRATION
 	//---------------------------------------------------------

@@ -340,6 +340,8 @@
     <ClCompile Include="..\..\Sources\LuminoFoundation\Accessor.cpp">
       <Filter>Sources\LuminoFoundation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\Main.cpp" />
+    <ClCompile Include="..\..\Sources\lnMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\*.h">

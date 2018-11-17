@@ -402,7 +402,7 @@ void SceneGame::onUpdate()
 			break;
 
 		case 720:
-			CameraManager::getInstance()->Move(Camera::GetMain3DCamera()->GetPosition(),LVector3(-9.8888888889,-2.66666667,20.0));
+			CameraManager::getInstance()->Move(Accessor::Main3Camera->position(),LVector3(-9.8888888889,-2.66666667,20.0));
 			GameManager::getInstance()->getPlayer()->setPosition(LVector3(1999.0f,1999.0f,1999.0f));
 			break;
 

@@ -180,7 +180,7 @@
 
             //-------------------------------------------------
             // ˆÊ’u
-            const LMatrix& vp_mat = Camera::GetMain3DCamera()->GetViewProjectionMatrix();
+            const LMatrix& vp_mat = Accessor::Main3Camera->GetViewProjectionMatrix();
 			LVector3 sc_pos = LVector3::TransformCoord(mCharacter->getPosition(), vp_mat);
 			
             sc_pos.y *= -1.0f;  // y ‚Í‰º‚ª + ‚È‚Ì‚Åã‰º”½“]

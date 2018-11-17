@@ -162,7 +162,7 @@ public:
 	void setAccel(const     LVector3 &pos_) {mAccel = pos_;}
 
     ///// 速度の設定 (攻撃によるふっ飛ばし等で使う)
-    void setVelocity(  LVector3& vel_ );//{ mVelocity = vel_; }
+    void setVelocity( const LVector3& vel_ );//{ mVelocity = vel_; }
 
     /// キャラクターの向きを設定する (Character クラスではオーバーライドして、Panel の向きを変えてる)
     virtual void setDirection( CharaDir dir_ ) { m_eDirection = dir_; }

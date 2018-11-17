@@ -154,7 +154,7 @@ u32 GameObject::judgeCollisionToMap( float* dx_, float* dy_ )
     return 0;
 }
     /// ‘¬“x‚Ìİ’è (UŒ‚‚É‚æ‚é‚Ó‚Á”ò‚Î‚µ“™‚Åg‚¤)
-void GameObject::setVelocity(  LVector3& vel_ ) 
+void GameObject::setVelocity(const LVector3& vel_ )
 {
 	if(!mOnGround)
 	{

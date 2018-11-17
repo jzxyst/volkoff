@@ -155,7 +155,7 @@
 
 
 			// オブジェクトの座標をスクリーン座標に変換
-			LVector3 pos_2d = Camera::GetMain3DCamera()->WorldToViewportPoint((object_pos + mOffsetPos));
+			LVector3 pos_2d = Accessor::Main3Camera->WorldToViewportPoint((object_pos + mOffsetPos));
 
 			_setPosition(pos_2d);
 		}
