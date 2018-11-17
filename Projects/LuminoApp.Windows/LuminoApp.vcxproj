@@ -60,7 +60,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Engine\Native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Engine\Lumino\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
       <ForcedIncludeFiles>PCH.h</ForcedIncludeFiles>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -80,7 +80,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Engine\Native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)..\..\Engine\Lumino\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>PCH.h</PrecompiledHeaderFile>
       <ForcedIncludeFiles>PCH.h</ForcedIncludeFiles>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -95,12 +95,230 @@
   </ItemDefinitionGroup>
   <!-- XXX -->
   <ItemGroup>
+    <ClInclude Include="..\..\Sources\Camera\CameraManager.h" />
+    <ClInclude Include="..\..\Sources\Effect\EffectBase.h" />
+    <ClInclude Include="..\..\Sources\Effect\EffectManager.h" />
+    <ClInclude Include="..\..\Sources\Effect\Effect_1.h" />
+    <ClInclude Include="..\..\Sources\Effect\Effect_2.h" />
+    <ClInclude Include="..\..\Sources\Event\EventManager.h" />
+    <ClInclude Include="..\..\Sources\Event\EventType.h" />
+    <ClInclude Include="..\..\Sources\Frontend\CharacterNamePlate.h" />
+    <ClInclude Include="..\..\Sources\Frontend\DamagePop.h" />
+    <ClInclude Include="..\..\Sources\Frontend\GameFrontendManager.h" />
+    <ClInclude Include="..\..\Sources\Frontend\GuideNamePlate.h" />
+    <ClInclude Include="..\..\Sources\Frontend\NamePlate.h" />
+    <ClInclude Include="..\..\Sources\Frontend\PlayerStateWindow.h" />
+    <ClInclude Include="..\..\Sources\Frontend\PointCursor.h" />
+    <ClInclude Include="..\..\Sources\Frontend\RankingNameplate.h" />
+    <ClInclude Include="..\..\Sources\Frontend\RapidNumber.h" />
+    <ClInclude Include="..\..\Sources\Game\GameManager.h" />
+    <ClInclude Include="..\..\Sources\Game\GameServer.h" />
+    <ClInclude Include="..\..\Sources\Game\GameSession.h" />
+    <ClInclude Include="..\..\Sources\Game\RankingManager.h" />
+    <ClInclude Include="..\..\Sources\Lua\lapi.h" />
+    <ClInclude Include="..\..\Sources\Lua\lauxlib.h" />
+    <ClInclude Include="..\..\Sources\Lua\lcode.h" />
+    <ClInclude Include="..\..\Sources\Lua\lctype.h" />
+    <ClInclude Include="..\..\Sources\Lua\ldebug.h" />
+    <ClInclude Include="..\..\Sources\Lua\ldo.h" />
+    <ClInclude Include="..\..\Sources\Lua\lfunc.h" />
+    <ClInclude Include="..\..\Sources\Lua\lgc.h" />
+    <ClInclude Include="..\..\Sources\Lua\llex.h" />
+    <ClInclude Include="..\..\Sources\Lua\llimits.h" />
+    <ClInclude Include="..\..\Sources\Lua\lmem.h" />
+    <ClInclude Include="..\..\Sources\Lua\lobject.h" />
+    <ClInclude Include="..\..\Sources\Lua\lopcodes.h" />
+    <ClInclude Include="..\..\Sources\Lua\lparser.h" />
+    <ClInclude Include="..\..\Sources\Lua\lstate.h" />
+    <ClInclude Include="..\..\Sources\Lua\lstring.h" />
+    <ClInclude Include="..\..\Sources\Lua\ltable.h" />
+    <ClInclude Include="..\..\Sources\Lua\ltm.h" />
+    <ClInclude Include="..\..\Sources\Lua\lua.h" />
+    <ClInclude Include="..\..\Sources\Lua\lua.hpp" />
+    <ClInclude Include="..\..\Sources\Lua\luaconf.h" />
+    <ClInclude Include="..\..\Sources\Lua\lualib.h" />
+    <ClInclude Include="..\..\Sources\Lua\lundump.h" />
+    <ClInclude Include="..\..\Sources\Lua\lvm.h" />
+    <ClInclude Include="..\..\Sources\Lua\lzio.h" />
+    <ClInclude Include="..\..\Sources\Lua\mbenc.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\Accessor.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\Common.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\GameScene.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\GameSceneManager.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\Gateway.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\LFramework.h" />
+    <ClInclude Include="..\..\Sources\LuminoFoundation\LGameScene.h" />
+    <ClInclude Include="..\..\Sources\Map\MapManager.h" />
+    <ClInclude Include="..\..\Sources\Object\AttackedObject.h" />
+    <ClInclude Include="..\..\Sources\Object\Bullet.h" />
+    <ClInclude Include="..\..\Sources\Object\Character.h" />
+    <ClInclude Include="..\..\Sources\Object\CharacterScriptInterface.h" />
+    <ClInclude Include="..\..\Sources\Object\Enemy.h" />
+    <ClInclude Include="..\..\Sources\Object\GameObject.h" />
+    <ClInclude Include="..\..\Sources\Object\GameObjectManager.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\BottomWall.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Box.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Door.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Duct.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Entry.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Exit.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Exit_Lock.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Fort.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Ladder.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\LadderTop.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Locker.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Manhole.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Mine.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\TopWall.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\UBW.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Vase.h" />
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Window.h" />
+    <ClInclude Include="..\..\Sources\Object\Grenade.h" />
+    <ClInclude Include="..\..\Sources\Object\Item\Cure_L.h" />
+    <ClInclude Include="..\..\Sources\Object\Item\Cure_M.h" />
+    <ClInclude Include="..\..\Sources\Object\Item\Cure_S.h" />
+    <ClInclude Include="..\..\Sources\Object\Item\Key.h" />
+    <ClInclude Include="..\..\Sources\Object\MidBoss1.h" />
+    <ClInclude Include="..\..\Sources\Object\MidBoss2.h" />
+    <ClInclude Include="..\..\Sources\Object\Player.h" />
+    <ClInclude Include="..\..\Sources\Object\Valfirle.h" />
+    <ClInclude Include="..\..\Sources\Object\ValfirleToken.h" />
+    <ClInclude Include="..\..\Sources\Object\Weapon.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneConnection.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneCredit.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneGame.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneGameover.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneNetRoom.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneRanking.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneResult.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneStartup.h" />
+    <ClInclude Include="..\..\Sources\Scene\SceneTitle.h" />
+    <ClInclude Include="..\..\Sources\Utility\Arrange_Ring.h" />
+    <ClInclude Include="..\..\Sources\Utility\Collision.h" />
+    <ClInclude Include="..\..\Sources\Utility\Convert.h" />
+    <ClInclude Include="..\..\Sources\Utility\File.h" />
+    <ClInclude Include="..\..\Sources\Utility\FormatText.h" />
+    <ClInclude Include="..\..\Sources\Utility\messagequeue.h" />
+    <ClInclude Include="..\..\Sources\Utility\NodeList.h" />
+    <ClInclude Include="..\..\Sources\Utility\Singleton.h" />
+    <ClInclude Include="..\..\Sources\Utility\Stack.h" />
+    <ClInclude Include="..\..\Sources\Utility\Util.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="PCH.h" />
     <ClInclude Include="..\..\Sources\*.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Sources\Camera\CameraManager.cpp" />
+    <ClCompile Include="..\..\Sources\Effect\EffectManager.cpp" />
+    <ClCompile Include="..\..\Sources\Effect\Effect_1.cpp" />
+    <ClCompile Include="..\..\Sources\Effect\Effect_2.cpp" />
+    <ClCompile Include="..\..\Sources\Event\EventListener.cpp" />
+    <ClCompile Include="..\..\Sources\Event\EventManager.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\CharacterNamePlate.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\DamagePop.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\GameFrontendManager.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\GuideNamePlate.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\NamePlate.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\PlayerStateWindow.cpp" />
+    <ClCompile Include="..\..\Sources\Frontend\RankingNameplate.cpp" />
+    <ClCompile Include="..\..\Sources\Game\GameManager.cpp" />
+    <ClCompile Include="..\..\Sources\Game\GameServer.cpp" />
+    <ClCompile Include="..\..\Sources\Game\GameSession.cpp" />
+    <ClCompile Include="..\..\Sources\Game\RankingManager.cpp" />
+    <ClCompile Include="..\..\Sources\Lua\lapi.c" />
+    <ClCompile Include="..\..\Sources\Lua\lauxlib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lbaselib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lbitlib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lcode.c" />
+    <ClCompile Include="..\..\Sources\Lua\lcorolib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lctype.c" />
+    <ClCompile Include="..\..\Sources\Lua\ldblib.c" />
+    <ClCompile Include="..\..\Sources\Lua\ldebug.c" />
+    <ClCompile Include="..\..\Sources\Lua\ldo.c" />
+    <ClCompile Include="..\..\Sources\Lua\ldump.c" />
+    <ClCompile Include="..\..\Sources\Lua\lfunc.c" />
+    <ClCompile Include="..\..\Sources\Lua\lgc.c" />
+    <ClCompile Include="..\..\Sources\Lua\linit.c" />
+    <ClCompile Include="..\..\Sources\Lua\liolib.c" />
+    <ClCompile Include="..\..\Sources\Lua\llex.c" />
+    <ClCompile Include="..\..\Sources\Lua\llex_.c" />
+    <ClCompile Include="..\..\Sources\Lua\lmathlib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lmem.c" />
+    <ClCompile Include="..\..\Sources\Lua\loadlib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lobject.c" />
+    <ClCompile Include="..\..\Sources\Lua\lopcodes.c" />
+    <ClCompile Include="..\..\Sources\Lua\loslib.c" />
+    <ClCompile Include="..\..\Sources\Lua\lparser.c" />
+    <ClCompile Include="..\..\Sources\Lua\lstate.c" />
+    <ClCompile Include="..\..\Sources\Lua\lstring.c" />
+    <ClCompile Include="..\..\Sources\Lua\lstrlib.c" />
+    <ClCompile Include="..\..\Sources\Lua\ltable.c" />
+    <ClCompile Include="..\..\Sources\Lua\ltablib.c" />
+    <ClCompile Include="..\..\Sources\Lua\ltm.c" />
+    <ClCompile Include="..\..\Sources\Lua\lua.c" />
+    <ClCompile Include="..\..\Sources\Lua\luac.c" />
+    <ClCompile Include="..\..\Sources\Lua\lundump.c" />
+    <ClCompile Include="..\..\Sources\Lua\lvm.c" />
+    <ClCompile Include="..\..\Sources\Lua\lzio.c" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\Accessor.cpp" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\EntryPoint.cpp" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\GameScene.cpp" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\GameSceneManager.cpp" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\Gateway.cpp" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\LFramework.cpp" />
+    <ClCompile Include="..\..\Sources\LuminoFoundation\LGameScene.cpp" />
+    <ClCompile Include="..\..\Sources\Map\Map.cpp" />
+    <ClCompile Include="..\..\Sources\Map\MapManager.cpp" />
+    <ClCompile Include="..\..\Sources\Object\AttackedObject.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Bullet.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Character.cpp" />
+    <ClCompile Include="..\..\Sources\Object\CharacterScriptInterface.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Enemy.cpp" />
+    <ClCompile Include="..\..\Sources\Object\GameObject.cpp" />
+    <ClCompile Include="..\..\Sources\Object\GameObjectManager.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\BottomWall.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Box.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Door.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Duct.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Entry.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Exit.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Exit_Lock.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Fort.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Ladder.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\LadderTop.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Locker.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Manhole.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Mine.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\TopWall.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\UBW.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Vase.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Window.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Grenade.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Item\Cure_L.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Item\Cure_M.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Item\Cure_S.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Item\Key.cpp" />
+    <ClCompile Include="..\..\Sources\Object\MidBoss1.cpp" />
+    <ClCompile Include="..\..\Sources\Object\MidBoss2.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Player.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Valfirle.cpp" />
+    <ClCompile Include="..\..\Sources\Object\ValfirleToken.cpp" />
+    <ClCompile Include="..\..\Sources\Object\Weapon.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneConnection.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneCredit.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneGame.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneGameover.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneNetRoom.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneRanking.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneResult.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneStartup.cpp" />
+    <ClCompile Include="..\..\Sources\Scene\SceneTitle.cpp" />
+    <ClCompile Include="..\..\Sources\Utility\Arrange_Ring.cpp" />
+    <ClCompile Include="..\..\Sources\Utility\Collision.cpp" />
+    <ClCompile Include="..\..\Sources\Utility\Convert.cpp" />
+    <ClCompile Include="..\..\Sources\Utility\File.cpp" />
+    <ClCompile Include="..\..\Sources\Utility\FormatText.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="PCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -114,6 +332,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Sources\Lua\Makefile" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

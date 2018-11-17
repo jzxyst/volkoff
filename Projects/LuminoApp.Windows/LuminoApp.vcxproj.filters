@@ -10,6 +10,336 @@
     <ClCompile Include="Main.cpp">
       <Filter>App</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\Camera\CameraManager.cpp">
+      <Filter>Sources\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Effect\Effect_2.cpp">
+      <Filter>Sources\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Effect\EffectManager.cpp">
+      <Filter>Sources\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Effect\Effect_1.cpp">
+      <Filter>Sources\Effect</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Event\EventListener.cpp">
+      <Filter>Sources\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Event\EventManager.cpp">
+      <Filter>Sources\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\DamagePop.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\GameFrontendManager.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\GuideNamePlate.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\NamePlate.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\PlayerStateWindow.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\RankingNameplate.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Frontend\CharacterNamePlate.cpp">
+      <Filter>Sources\Frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Game\GameManager.cpp">
+      <Filter>Sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Game\GameServer.cpp">
+      <Filter>Sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Game\GameSession.cpp">
+      <Filter>Sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Game\RankingManager.cpp">
+      <Filter>Sources\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lauxlib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lbaselib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lbitlib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lcode.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lcorolib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lctype.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ldblib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ldebug.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ldo.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ldump.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lfunc.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lgc.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\linit.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\liolib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\llex.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\llex_.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lmathlib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lmem.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\loadlib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lobject.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lopcodes.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\loslib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lparser.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lstate.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lstring.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lstrlib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ltable.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ltablib.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\ltm.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lua.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\luac.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lundump.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lvm.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lzio.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Lua\lapi.c">
+      <Filter>Sources\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Map\Map.cpp">
+      <Filter>Sources\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Map\MapManager.cpp">
+      <Filter>Sources\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Box.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Door.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Duct.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Entry.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Exit.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Exit_Lock.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Fort.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Ladder.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\LadderTop.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Locker.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Manhole.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Mine.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\TopWall.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\UBW.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Vase.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\Window.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Gimmick\BottomWall.cpp">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Item\Cure_M.cpp">
+      <Filter>Sources\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Item\Cure_S.cpp">
+      <Filter>Sources\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Item\Key.cpp">
+      <Filter>Sources\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Item\Cure_L.cpp">
+      <Filter>Sources\Object\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\GameObjectManager.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Grenade.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\MidBoss1.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\MidBoss2.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Player.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Valfirle.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\ValfirleToken.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Weapon.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\AttackedObject.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Bullet.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Character.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\CharacterScriptInterface.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\Enemy.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Object\GameObject.cpp">
+      <Filter>Sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneCredit.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneGame.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneGameover.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneNetRoom.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneRanking.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneResult.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneStartup.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneTitle.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Scene\SceneConnection.cpp">
+      <Filter>Sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Utility\Collision.cpp">
+      <Filter>Sources\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Utility\Convert.cpp">
+      <Filter>Sources\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Utility\File.cpp">
+      <Filter>Sources\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Utility\FormatText.cpp">
+      <Filter>Sources\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\Utility\Arrange_Ring.cpp">
+      <Filter>Sources\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\EntryPoint.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\GameScene.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\GameSceneManager.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\Gateway.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\LFramework.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\LGameScene.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\LuminoFoundation\Accessor.cpp">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\*.h">
@@ -23,6 +353,330 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Camera\CameraManager.h">
+      <Filter>Sources\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Effect\Effect_2.h">
+      <Filter>Sources\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Effect\EffectBase.h">
+      <Filter>Sources\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Effect\EffectManager.h">
+      <Filter>Sources\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Effect\Effect_1.h">
+      <Filter>Sources\Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Event\EventManager.h">
+      <Filter>Sources\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Event\EventType.h">
+      <Filter>Sources\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\DamagePop.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\GameFrontendManager.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\GuideNamePlate.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\NamePlate.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\PlayerStateWindow.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\PointCursor.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\RankingNameplate.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\RapidNumber.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Frontend\CharacterNamePlate.h">
+      <Filter>Sources\Frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Game\GameManager.h">
+      <Filter>Sources\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Game\GameServer.h">
+      <Filter>Sources\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Game\GameSession.h">
+      <Filter>Sources\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Game\RankingManager.h">
+      <Filter>Sources\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lauxlib.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lcode.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lctype.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\ldebug.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\ldo.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lfunc.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lgc.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\llex.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\llimits.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lmem.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lobject.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lopcodes.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lparser.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lstate.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lstring.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\ltable.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\ltm.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lua.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lua.hpp">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\luaconf.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lualib.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lundump.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lvm.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lzio.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\mbenc.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Lua\lapi.h">
+      <Filter>Sources\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Map\MapManager.h">
+      <Filter>Sources\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Box.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Door.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Duct.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Entry.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Exit.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Exit_Lock.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Fort.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Ladder.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\LadderTop.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Locker.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Manhole.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Mine.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\TopWall.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\UBW.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Vase.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\Window.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Gimmick\BottomWall.h">
+      <Filter>Sources\Object\Gimmick</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Item\Cure_M.h">
+      <Filter>Sources\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Item\Cure_S.h">
+      <Filter>Sources\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Item\Key.h">
+      <Filter>Sources\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Item\Cure_L.h">
+      <Filter>Sources\Object\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\GameObject.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\GameObjectManager.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Grenade.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\MidBoss1.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\MidBoss2.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Player.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Valfirle.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\ValfirleToken.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Weapon.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\AttackedObject.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Bullet.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Character.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\CharacterScriptInterface.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Object\Enemy.h">
+      <Filter>Sources\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneCredit.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneGame.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneGameover.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneNetRoom.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneRanking.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneResult.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneStartup.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneTitle.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Scene\SceneConnection.h">
+      <Filter>Sources\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\Arrange_Ring.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\Collision.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\Convert.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\File.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\FormatText.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\messagequeue.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\NodeList.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\Singleton.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\Stack.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\Utility\Util.h">
+      <Filter>Sources\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\Accessor.h">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\Common.h">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\GameScene.h">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\GameSceneManager.h">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\Gateway.h">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\LFramework.h">
+      <Filter>Sources\LuminoFoundation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\LuminoFoundation\LGameScene.h">
+      <Filter>Sources\LuminoFoundation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -40,10 +694,54 @@
     <Filter Include="App">
       <UniqueIdentifier>{1ee9024f-4f5b-43b9-b1c1-01f3194bc2c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Camera">
+      <UniqueIdentifier>{9c406603-142f-42e1-9774-73653799dbbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Effect">
+      <UniqueIdentifier>{2b4403e7-5301-41bd-8032-5ab8b8bc228d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Event">
+      <UniqueIdentifier>{03600272-8732-4df5-ac47-4758190f21f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Frontend">
+      <UniqueIdentifier>{2266a854-8daa-4458-9e1b-a23c45514f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Game">
+      <UniqueIdentifier>{ba2d1b52-017b-40a3-a2b8-e090fec05f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Lua">
+      <UniqueIdentifier>{04a15971-82f6-4036-9371-0cdd3200746a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Map">
+      <UniqueIdentifier>{0430da31-7e7a-4e77-8ced-dd93d9a839fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Object">
+      <UniqueIdentifier>{fa1064fa-5d7b-4d4a-8589-02155fd33056}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Object\Gimmick">
+      <UniqueIdentifier>{da02063a-f20a-4a8a-8d81-40ecbb0aed46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Object\Item">
+      <UniqueIdentifier>{476314d5-5610-4f18-95f1-b15d9a5db633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Scene">
+      <UniqueIdentifier>{f4cf4118-f13e-4922-a461-e10d15ff6616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\Utility">
+      <UniqueIdentifier>{ccf5eca4-5b9e-4e80-a270-6af76f9011ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\LuminoFoundation">
+      <UniqueIdentifier>{52b330bc-5348-4689-b424-e78249c6cab5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
       <Filter>App</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Sources\Lua\Makefile">
+      <Filter>Sources\Lua</Filter>
+    </None>
   </ItemGroup>
 </Project>
