@@ -86,11 +86,11 @@ bool BottomWall::Initialize()
 	LTexture t = Assets::loadTexture(g_szBottomWallFilePath);
 	//this->mPanel = LBatchPanel::create(160.0f,160.0f,LN_PANELDIR_UPPER_REFT);
     this->mPanel = LBatchPanel::create(160.0f,160.0f);
-    this->mPanel->SetCenter(-80, 80, 0);
-	this->mPanel->SetTexture(t);
+    this->mPanel->setCenterPoint(-80, 80, 0);
+	this->mPanel->setTexture(t);
 	this->mPanel->setSourceRect(LRect(0,0,160,160));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	return true;
 }
@@ -129,7 +129,7 @@ bool BottomWall::Release()
 bool BottomWall::Update()
 {
 	++this->m_nFrame;
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	//発動条件（適当）//上下差が200以下 かつ 左右差が10以下
 	const int y = 150;
