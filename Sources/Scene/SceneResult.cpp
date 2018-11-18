@@ -84,10 +84,10 @@ void SceneResult::onStart()
     Graphics.setBGColor( 1.0f, 1.0f, 1.0f );
 
     mCharacterSprite = Sprite2D::Create(Assets::LoadTexture( "Data/Graphics/Character/Char_Knife.png" ) );
-    mCharacterSprite->SetSrcRect( 0, 1760, 160, 160 );
+    mCharacterSprite->setSourceRect( 0, 1760, 160, 160 );
     mCharacterSprite->SetPosition( 160, 320, 0 );
     mWeaponSprite = Sprite2D::Create(Assets::LoadTexture( "Data/Graphics/Object/Weapons.png" ) );
-    mWeaponSprite->SetSrcRect( mWeaponNo * 80, 0, 80, 80 );
+    mWeaponSprite->setSourceRect( mWeaponNo * 80, 0, 80, 80 );
     mWeaponSprite->SetPosition( 100, 400, 0 );
 
 	//------------------------------------------------------------
@@ -97,13 +97,13 @@ void SceneResult::onStart()
 	for ( int i = 0; i < 3; ++i )
 	{
 		mScoreLineSprites[ i ] = Sprite2D::Create( mResultTexture );
-		mScoreLineSprites[ i ]->SetSrcRect( 0, 96 + 32 * i, 352, 32 );
+		mScoreLineSprites[ i ]->setSourceRect( 0, 96 + 32 * i, 352, 32 );
 		mScoreLineSprites[ i ]->SetPosition( 0, LINE_MARGIN_Y - 4 + 48 * i );
 		mScoreLineSprites[ i ]->SetOpacity( 0 );
 	}
 
 	mTotalLineSprite = Sprite2D::Create( mResultTexture );
-	mTotalLineSprite->SetSrcRect( 0, 192, 608, 32 );
+	mTotalLineSprite->setSourceRect( 0, 192, 608, 32 );
 	mTotalLineSprite->SetPosition( LINE_MARGIN_X, 256 );
 	mTotalLineSprite->SetOpacity( 0 );
 
@@ -111,7 +111,7 @@ void SceneResult::onStart()
 	for ( int i = 0; i < 6; ++i )
 	{
 		mTimeSprite[ i ] = Sprite2D::Create( mResultTexture );
-		mTimeSprite[ i ]->SetSrcRect( 0, 0, 11, 16 );
+		mTimeSprite[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mTimeSprite[ i ]->SetPosition(
 			LINE_MARGIN_X + 108 + 11 * i + (i / 2 * 8), LINE_MARGIN_Y + 2 + 48 );
 		mTimeSprite[ i ]->SetOpacity( 0 );
@@ -124,22 +124,22 @@ void SceneResult::onStart()
 	// h
 	u32 buf[2];
 	Util::numberToArray(h, 2, buf);
-	mTimeSprite[ 0 ]->SetSrcRect( 11 * buf[0], 0, 11, 16 );
-	mTimeSprite[ 1 ]->SetSrcRect( 11 * buf[1], 0, 11, 16 );
+	mTimeSprite[ 0 ]->setSourceRect( 11 * buf[0], 0, 11, 16 );
+	mTimeSprite[ 1 ]->setSourceRect( 11 * buf[1], 0, 11, 16 );
 
 	// m
 	Util::numberToArray(m, 2, buf);
-	mTimeSprite[ 2 ]->SetSrcRect( 11 * buf[0], 0, 11, 16 );
-	mTimeSprite[ 3 ]->SetSrcRect( 11 * buf[1], 0, 11, 16 );
+	mTimeSprite[ 2 ]->setSourceRect( 11 * buf[0], 0, 11, 16 );
+	mTimeSprite[ 3 ]->setSourceRect( 11 * buf[1], 0, 11, 16 );
 
 	// s
 	Util::numberToArray(s, 2, buf);
-	mTimeSprite[ 4 ]->SetSrcRect( 11 * buf[0], 0, 11, 16 );
-	mTimeSprite[ 5 ]->SetSrcRect( 11 * buf[1], 0, 11, 16 );
+	mTimeSprite[ 4 ]->setSourceRect( 11 * buf[0], 0, 11, 16 );
+	mTimeSprite[ 5 ]->setSourceRect( 11 * buf[1], 0, 11, 16 );
 
 	// ƒ‰ƒ“ƒN
 	mRankSprite = Sprite2D::Create( mResultTexture );
-	mRankSprite->SetSrcRect( 272, 20 * GameManager::getInstance()->getRank(), 92, 20 );
+	mRankSprite->setSourceRect( 272, 20 * GameManager::getInstance()->getRank(), 92, 20 );
 	mRankSprite->SetPosition( LINE_MARGIN_X + 110, LINE_MARGIN_Y - 2 + 96 );
 	mRankSprite->SetOpacity( 0 );
 
@@ -147,7 +147,7 @@ void SceneResult::onStart()
 	for ( int i = 0; i < 10; ++i )
 	{
 		mScoreNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
-		mScoreNumberSprites[ i ]->SetSrcRect( 0, 0, 11, 16 );
+		mScoreNumberSprites[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mScoreNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 234 + 11 * i - 32, LINE_MARGIN_Y + 2 );
 		mScoreNumberSprites[ i ]->SetOpacity( 0 );
 	}
@@ -156,7 +156,7 @@ void SceneResult::onStart()
 	for ( int i = 0; i < 10; ++i )
 	{
 		mTimeNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
-		mTimeNumberSprites[ i ]->SetSrcRect( 0, 0, 11, 16 );
+		mTimeNumberSprites[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mTimeNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 234 + 11 * i - 32, LINE_MARGIN_Y + 2 + 48 );
 		mTimeNumberSprites[ i ]->SetOpacity( 0 );
 	}
@@ -165,7 +165,7 @@ void SceneResult::onStart()
 	for ( int i = 0; i < 10; ++i )
 	{
 		mRankNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
-		mRankNumberSprites[ i ]->SetSrcRect( 0, 0, 11, 16 );
+		mRankNumberSprites[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mRankNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 234 + 11 * i - 32, LINE_MARGIN_Y + 2 + 96 );
 		mRankNumberSprites[ i ]->SetOpacity( 0 );
 	}
@@ -174,19 +174,19 @@ void SceneResult::onStart()
 	for ( int i = 0; i < 10; ++i )
 	{
 		mTotalNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
-		mTotalNumberSprites[ i ]->SetSrcRect( 0, 16, 18, 24 );
+		mTotalNumberSprites[ i ]->setSourceRect( 0, 16, 18, 24 );
 		mTotalNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 368 + 18 * i, LINE_MARGIN_Y + 206 );
 		mTotalNumberSprites[ i ]->SetOpacity( 0 );
 	}
 
 	// New Record
 	mNewRecordSprite = Sprite2D::Create( mResultTexture );
-	mNewRecordSprite->SetSrcRect( 384, 0, 160, 32 );
+	mNewRecordSprite->setSourceRect( 384, 0, 160, 32 );
 	mNewRecordSprite->SetPosition( 452, 340 );
 	mNewRecordSprite->SetOpacity( 0 );
 
 	mNewRecordBGSprite = Sprite2D::Create( mResultTexture );
-	mNewRecordBGSprite->SetSrcRect( 0, 224, 32, 32 );
+	mNewRecordBGSprite->setSourceRect( 0, 224, 32, 32 );
 	mNewRecordBGSprite->SetScale(20);
 	mNewRecordBGSprite->SetPosition(0, 0);
 	mNewRecordBGSprite->SetOpacity( 0 );
@@ -195,7 +195,7 @@ void SceneResult::onStart()
 		Assets::LoadTexture( "Data/Graphics/Frontend/Ranking_1.png" ));
 	mRankingFrameSprite->SetPosition(320, 200 + 48 / 2);
 	mRankingFrameSprite->SetCenter(256 / 2, 48 / 2);
-	mRankingFrameSprite->SetSrcRect(0, 0, 256, 48);
+	mRankingFrameSprite->setSourceRect(0, 0, 256, 48);
 	mRankingFrameSprite->SetOpacity(0);
 	//mRankingFrameSprite->SetScale(2);
 
@@ -350,7 +350,7 @@ void SceneResult::onUpdate()
 				else
 				{
 					mScoreNumberSprites[ i ]->SetVisible(true);
-					mScoreNumberSprites[ i ]->SetSrcRect( value[i] * 11, 0, 11, 16 );
+					mScoreNumberSprites[ i ]->setSourceRect( value[i] * 11, 0, 11, 16 );
 				}
 			}
 
@@ -363,7 +363,7 @@ void SceneResult::onUpdate()
 				else
 				{
 					mTimeNumberSprites[ i ]->SetVisible(true);
-					mTimeNumberSprites[ i ]->SetSrcRect( value[i] * 11, 0, 11, 16 );
+					mTimeNumberSprites[ i ]->setSourceRect( value[i] * 11, 0, 11, 16 );
 				}
 			}
 
@@ -376,7 +376,7 @@ void SceneResult::onUpdate()
 				else
 				{
 					mRankNumberSprites[ i ]->SetVisible(true);
-					mRankNumberSprites[ i ]->SetSrcRect( value[i] * 11, 0, 11, 16 );
+					mRankNumberSprites[ i ]->setSourceRect( value[i] * 11, 0, 11, 16 );
 				}
 			}
 
@@ -400,7 +400,7 @@ void SceneResult::onUpdate()
 				float t = mFrameCount - 0;
 				mCommandFadeInX.setTime( t / 2 );
 				mCommandFadeInOpacity.setTime( t / 2  );
-				mTotalLineSprite->SetSrcRect( 0, 192, 608.0 * mCommandFadeInX.getValue() / 32, 32 );
+				mTotalLineSprite->setSourceRect( 0, 192, 608.0 * mCommandFadeInX.getValue() / 32, 32 );
 				mTotalLineSprite->SetOpacity( mCommandFadeInOpacity.getValue() );
 			}
 
@@ -426,7 +426,7 @@ void SceneResult::onUpdate()
 				else
 				{
 					mTotalNumberSprites[ i ]->SetVisible(true);
-					mTotalNumberSprites[ i ]->SetSrcRect( value[i] * 18, 16, 18, 24 );
+					mTotalNumberSprites[ i ]->setSourceRect( value[i] * 18, 16, 18, 24 );
 				}
 			}
 

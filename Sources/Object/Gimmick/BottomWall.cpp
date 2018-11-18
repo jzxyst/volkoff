@@ -83,12 +83,12 @@ bool BottomWall::Initialize()
 {
 	this->Release();
 
-	LTexture t = Assets::LoadTexture(g_szBottomWallFilePath);
-	//this->mPanel = Sprite3D::Create(160.0f,160.0f,LN_PANELDIR_UPPER_REFT);
-    this->mPanel = Sprite3D::Create(160.0f,160.0f);
+	LTexture t = Assets::loadTexture(g_szBottomWallFilePath);
+	//this->mPanel = LBatchPanel::create(160.0f,160.0f,LN_PANELDIR_UPPER_REFT);
+    this->mPanel = LBatchPanel::create(160.0f,160.0f);
     this->mPanel->SetCenter(-80, 80, 0);
 	this->mPanel->SetTexture(t);
-	this->mPanel->SetSrcRect(LRect(0,0,160,160));
+	this->mPanel->setSourceRect(LRect(0,0,160,160));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -155,7 +155,7 @@ bool BottomWall::Update()
 				if(this->m_nAnime < 8)
 				{
 					this->m_nAnime++;
-					this->mPanel->SetSrcRect(LRect(this->m_nAnime * 160.0f,0,160.0f,160.0f));
+					this->mPanel->setSourceRect(LRect(this->m_nAnime * 160.0f,0,160.0f,160.0f));
 				}
 			}
 

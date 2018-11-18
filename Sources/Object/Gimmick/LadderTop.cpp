@@ -76,9 +76,9 @@ bool LadderTop::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(60.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(60.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-30, 10, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture("./Data/Graphics/Object/Ladder.png"));
+	this->mPanel->SetTexture(Assets::loadTexture("./Data/Graphics/Object/Ladder.png"));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 

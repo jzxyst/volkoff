@@ -39,7 +39,7 @@ static const char g_szLockerFilePath[] = "./Data/Graphics/Object/Locker.png";
 class Locker : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	bool m_bActive;
 	bool m_bStart;
 	int m_nAnime;

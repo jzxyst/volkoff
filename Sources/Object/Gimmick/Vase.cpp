@@ -79,10 +79,10 @@ bool Vase::Initialize()
 {
 	this->Release();
 	this->mScore = 250;
-	this->mPanel = Sprite3D::Create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-20, 20, 0);
 	this->mPanel->SetTexture(Assets::LoadTexture(g_szVaseFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,40,40));
+	this->mPanel->setSourceRect(LRect(0,0,40,40));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -150,7 +150,7 @@ bool Vase::Update()
 		if(m_nFrame%1==0)
 		{
 			this->m_nAnime++;
-			this->mPanel->SetSrcRect(LRect(this->m_nAnime * 40,0,40,40));
+			this->mPanel->setSourceRect(LRect(this->m_nAnime * 40,0,40,40));
 		}
 
 		if(m_nAnime >=5)

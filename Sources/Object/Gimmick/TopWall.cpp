@@ -83,11 +83,11 @@ bool TopWall::Initialize()
 {
 	this->Release();
 
-	LTexture t = Assets::LoadTexture(g_szTopWallFilePath);
-	this->mPanel = Sprite3D::Create(160.0f,160.0f);//,LN_PANELDIR_UPPER_REFT);
+	LTexture t = Assets::loadTexture(g_szTopWallFilePath);
+	this->mPanel = LBatchPanel::create(160.0f,160.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-80, 80, 0);
 	this->mPanel->SetTexture(t);
-	this->mPanel->SetSrcRect(LRect(0,0,160,160));
+	this->mPanel->setSourceRect(LRect(0,0,160,160));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -154,7 +154,7 @@ bool TopWall::Update()
 				if(this->m_nAnime < 7)
 				{
 					this->m_nAnime++;
-					this->mPanel->SetSrcRect(LRect(this->m_nAnime * 160.0f,0,160.0f,160.0f));
+					this->mPanel->setSourceRect(LRect(this->m_nAnime * 160.0f,0,160.0f,160.0f));
 				}
 			}
 

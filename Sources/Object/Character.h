@@ -271,7 +271,7 @@ protected:
 	CharaState  m_eCharaState;      ///< 現在のキャラクターの状態 (setCharState で変更すること)
 	
 
-	LBatchPanel mCharaPanel;
+    Ref<LBatchPanel> mCharaPanel;
 
 	//int m_nTime;
 

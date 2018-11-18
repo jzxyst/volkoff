@@ -89,15 +89,15 @@ void GameFrontendManager::initialize( Player* player_ )
 
 	LTexture tex = Assets::LoadTexture("Data/Graphics/Frontend/Frontend_1.png");
 	mLevelupSprites[0] = Sprite2D::Create(tex);//return;
-	mLevelupSprites[0]->SetSrcRect(0, 480, 256, 16);
+	mLevelupSprites[0]->setSourceRect(0, 480, 256, 16);
 	mLevelupSprites[0]->SetCenter(128, 8);
 	mLevelupSprites[0]->SetVisible(false);
 	mLevelupSprites[1] = Sprite2D::Create(tex);
-	mLevelupSprites[1]->SetSrcRect(0, 496, 256, 16);
+	mLevelupSprites[1]->setSourceRect(0, 496, 256, 16);
 	mLevelupSprites[1]->SetCenter(128, 8);
 	mLevelupSprites[1]->SetVisible(false);
 	mLevelEffectSprite = Sprite2D::Create(tex);
-	mLevelEffectSprite->SetSrcRect(0, 416, 64, 64);
+	mLevelEffectSprite->setSourceRect(0, 416, 64, 64);
 	mLevelEffectSprite->SetPosition(320, 200);
 	mLevelEffectSprite->SetCenter(32, 32);
 	mLevelEffectSprite->SetVisible(false);
@@ -127,7 +127,7 @@ void GameFrontendManager::initialize( Player* player_ )
 		mFloorInfoSprite[i] = Sprite2D::Create(mFloorInfoTexture);
 		mFloorInfoSprite[i]->SetVisible(false);
 	}
-	mFloorInfoSprite[0]->SetSrcRect(0, 0, 512, 32); // 下線
+	mFloorInfoSprite[0]->setSourceRect(0, 0, 512, 32); // 下線
 }
 
 //---------------------------------------------------------------------
@@ -325,17 +325,17 @@ void GameFrontendManager::showFloorNum( int num_ )
 
     if ( num_ < 8 )
     {
-        mFloorInfoSprite[ 1 ]->SetSrcRect( 0, 32, 160, 64 );
+        mFloorInfoSprite[ 1 ]->setSourceRect( 0, 32, 160, 64 );
 
         int x = num_ % 5;
         int y = num_ / 5;
-        mFloorInfoSprite[ 2 ]->SetSrcRect( x * 96, 128 + y * 96, 96, 96 );
+        mFloorInfoSprite[ 2 ]->setSourceRect( x * 96, 128 + y * 96, 96, 96 );
     }
     // ラストフロア
     else
     {
-        mFloorInfoSprite[ 1 ]->SetSrcRect( 160, 32, 352, 64 );
-        mFloorInfoSprite[ 2 ]->SetSrcRect( 0, 96, 8, 8 );    // 透明
+        mFloorInfoSprite[ 1 ]->setSourceRect( 160, 32, 352, 64 );
+        mFloorInfoSprite[ 2 ]->setSourceRect( 0, 96, 8, 8 );    // 透明
         mFloorInfoOffset = -50.0;
     }
 

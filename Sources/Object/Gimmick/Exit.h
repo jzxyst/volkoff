@@ -39,7 +39,7 @@ static const char g_szExitFilePath[] = "./Data/Graphics/Object/Exit.png";
 class Exit : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 public:
 	//---------------------------------------------------------------------------

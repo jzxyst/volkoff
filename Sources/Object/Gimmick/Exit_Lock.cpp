@@ -79,10 +79,10 @@ bool Exit_Lock::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-70, 40, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szExit_LockFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,140,80));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szExit_LockFilePath));
+	this->mPanel->setSourceRect(LRect(0,0,140,80));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 	this->mFlameCnt = 0;
@@ -149,7 +149,7 @@ bool Exit_Lock::Update()
 		}
 		if((mFlameCnt>=15)&&(mFlameCnt <=21))
 		{
-			this->mPanel->SetSrcRect(LRect((this->mFlameCnt-15) * 140,0,140,80));
+			this->mPanel->setSourceRect(LRect((this->mFlameCnt-15) * 140,0,140,80));
 		}
 		if(mFlameCnt == 25)
 		{

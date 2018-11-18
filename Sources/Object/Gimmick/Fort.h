@@ -62,8 +62,8 @@ typedef enum _ENUM_FORT_ACTION
 class Fort : public AttackedObject
 {
 private:
-	LBatchPanel mPanel;
-	LBatchPanel mPanel2;
+    Ref<LBatchPanel> mPanel;
+    Ref<LBatchPanel> mPanel2;
 	int m_nFrame;
 	int m_nAttackFrame;
 	int m_nShootFrame;

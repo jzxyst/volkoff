@@ -102,7 +102,7 @@ void SceneTitle::onStart()
 
 	// テキスト下のフレーム
 	mTitleFrameSprite = Sprite2D::Create(tex);
-	mTitleFrameSprite->SetSrcRect(0, 128, 512, 64);
+	mTitleFrameSprite->setSourceRect(0, 128, 512, 64);
 	mTitleFrameSprite->SetCenter(256, 32);
 	mTitleFrameSprite->SetPosition(320, 160);
 
@@ -111,24 +111,24 @@ void SceneTitle::onStart()
 	// タイトルテキスト
 	mTitleTextSprite = Sprite2D::Create(tex);
 	mTitleTextSprite->SetCenter(196, 32);
-	mTitleTextSprite->SetSrcRect(0, 0, 392, 64);
+	mTitleTextSprite->setSourceRect(0, 0, 392, 64);
 	mTitleTextSprite->SetPosition(320, 160);
 
 	// フレームしたの文字
 	mTitleSubTextSprite = Sprite2D::Create(tex);
 	mTitleSubTextSprite->SetCenter(216, 0);
-	mTitleSubTextSprite->SetSrcRect(0, 192, 432, 16);
+	mTitleSubTextSprite->setSourceRect(0, 192, 432, 16);
 	mTitleSubTextSprite->SetPosition(320, 192);
 
 	// 「PressAnyKey」
 	mPressAnyKeySprite = Sprite2D::Create(tex);
-	mPressAnyKeySprite->SetSrcRect(0, 224, 176, 32);
+	mPressAnyKeySprite->setSourceRect(0, 224, 176, 32);
 	mPressAnyKeySprite->SetCenter(176 / 2, 16);
 	mPressAnyKeySprite->SetPosition(320, 350);
 
 	// エフェクト用
 	mTitleEffectSprite = Sprite2D::Create(tex);
-	mTitleEffectSprite->SetSrcRect(0, 64, 512, 64);
+	mTitleEffectSprite->setSourceRect(0, 64, 512, 64);
 	mTitleEffectSprite->SetCenter(256, 42);
 	mTitleEffectSprite->SetPosition(320, 170);
 	mTitleEffectSprite->SetOpacity(0);
@@ -137,7 +137,7 @@ void SceneTitle::onStart()
 	for (int i = 0; i < 2; ++i)
 	{
 		mSuperSprite[i] = Sprite2D::Create(tex);
-		mSuperSprite[i]->SetSrcRect(128, 496, 256, 16);
+		mSuperSprite[i]->setSourceRect(128, 496, 256, 16);
 		mSuperSprite[i]->SetScale(4, 2);
 		mSuperSprite[i]->SetVisible(false);
 	}
@@ -151,7 +151,7 @@ void SceneTitle::onStart()
 	// 説明ウィンドウ
 	mDescWindowSprite = Sprite2D::Create(tex);
 	mDescWindowSprite->SetPosition(-500, 0);       // 面倒なので画面外で隠す
-	mDescWindowSprite->SetSrcRect(272, 224, 240, 144);
+	mDescWindowSprite->setSourceRect(272, 224, 240, 144);
 
 	mDescContents = Texture2D::Create(240, 144);
 	mDescContentsSprite = Sprite2D::Create(mDescContents);
@@ -212,7 +212,7 @@ void SceneTitle::onStart()
 //---------------------------------------------------------------------
 void SceneTitle::onUpdate()
 {
-	mRandomSprite->SetSrcRect(mFrameCount, mFrameCount, 512, 64);
+	mRandomSprite->setSourceRect(mFrameCount, mFrameCount, 512, 64);
 
 	mPointCursor->update();
 
@@ -530,7 +530,7 @@ void SceneTitle::_startShowCommand( int type_ )
     {
         for ( int i = 0; i < 3; ++i )
         {
-            mCommandSprite[ i ]->SetSrcRect( 0, 256 + i * 32, 128, 32 );
+            mCommandSprite[ i ]->setSourceRect( 0, 256 + i * 32, 128, 32 );
             mCommandSprite[ i ]->SetVisible( true );
             mCommandSprite[ i ]->SetOpacity( 0.0f );
         }
@@ -540,7 +540,7 @@ void SceneTitle::_startShowCommand( int type_ )
     {
         for ( int i = 0; i < 4; ++i )
         {
-            mCommandSprite[ i ]->SetSrcRect( 128, 256 + i * 32, 128, 32 );
+            mCommandSprite[ i ]->setSourceRect( 128, 256 + i * 32, 128, 32 );
             mCommandSprite[ i ]->SetVisible( true );
             mCommandSprite[ i ]->SetOpacity( 0.0f );
         }

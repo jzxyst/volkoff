@@ -31,7 +31,7 @@ public:
         mYPos.setInitValue( 0 );
         mYPos.setSpeed( 5 );
         mCursorSprite = Sprite2D::Create(Assets::LoadTexture( "Data/Graphics/Frontend/Cursor_1.png" ) );
-        mCursorSprite->SetSrcRect( 0, 0, 32, 32 );
+        mCursorSprite->setSourceRect( 0, 0, 32, 32 );
         mCursorSprite->SetOpacity( 0 );
         mFrameCount = 0;
     }
@@ -65,7 +65,7 @@ public:
         mCursorSprite->SetPosition( (float)mXPos.getValue(), (float)mYPos.getValue() );
         mCursorSprite->SetOpacity( mFadeValue.GetValue() );
 
-        mCursorSprite->SetSrcRect( ( mFrameCount / 10 ) * 32, 0, 32, 32 );
+        mCursorSprite->setSourceRect( ( mFrameCount / 10 ) * 32, 0, 32, 32 );
         if ( mFrameCount >= 59 )
         {
             mFrameCount = 0;

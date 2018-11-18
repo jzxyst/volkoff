@@ -79,9 +79,9 @@ bool Grenade::Initialize()
 	//setAttackedGroup( ATKGROUP_ENEMY );
 	this->Release();
 	this->mScore = 0; 
-	this->mPanel = Sprite3D::Create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-10, 10, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szGrenadeFilePath/*,0xffffffff*/));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szGrenadeFilePath/*,0xffffffff*/));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 	this->mFrameCnt = 0;

@@ -36,7 +36,7 @@ void SceneGameover::onStart()
     LTexture fe_tex = Assets::LoadTexture( "Data/Graphics/Frontend/Frontend_1.png" );
     mDescWindowSprite = Sprite2D::Create( fe_tex );
     mDescWindowSprite->SetPosition( 60, 280 );
-    mDescWindowSprite->SetSrcRect( 272, 368, 240, 144 );
+    mDescWindowSprite->setSourceRect( 272, 368, 240, 144 );
     mDescWindowSprite->SetOpacity( 0 );
     mDescContents = Texture2D::Create( 240, 144 );
     mDescContentsSprite = Sprite2D::Create( mDescContents );
@@ -48,11 +48,11 @@ void SceneGameover::onStart()
 
     // ƒRƒ}ƒ“ƒh
     mCommandSprite[ 0 ] = Sprite2D::Create( fe_tex );
-    mCommandSprite[ 0 ]->SetSrcRect( 272, 304, 128, 32 );
+    mCommandSprite[ 0 ]->setSourceRect( 272, 304, 128, 32 );
     mCommandSprite[ 0 ]->SetPosition( COMMAND_POS_X, COMMAND_POS_Y );
     mCommandSprite[ 0 ]->SetOpacity( 0 );
     mCommandSprite[ 1 ] = Sprite2D::Create( fe_tex );
-    mCommandSprite[ 1 ]->SetSrcRect( 272, 336, 128, 32 );
+    mCommandSprite[ 1 ]->setSourceRect( 272, 336, 128, 32 );
     mCommandSprite[ 1 ]->SetPosition( COMMAND_POS_X, COMMAND_POS_Y + 32 );
     mCommandSprite[ 1 ]->SetOpacity( 0 );
 
@@ -64,7 +64,7 @@ void SceneGameover::onStart()
 
     // GameOver
     mLogoSprite = Sprite2D::Create( fe_tex );
-    mLogoSprite->SetSrcRect( 160, 224, 352, 64 );
+    mLogoSprite->setSourceRect( 160, 224, 352, 64 );
     mLogoSprite->SetPosition( 320, 128 );
     mLogoSprite->SetCenter( 352 / 2, 64 / 2 );
     mLogoSprite->SetOpacity( 0 );

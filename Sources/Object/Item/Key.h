@@ -39,7 +39,7 @@ static const char g_szKeyFilePath[] = "./Data/Graphics/Object/Key.png";
 class GateKey : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 public:
 	//---------------------------------------------------------------------------

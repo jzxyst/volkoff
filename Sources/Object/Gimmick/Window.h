@@ -38,7 +38,7 @@ static const char g_szWindowFilePath[] = "./Data/Graphics/Object/glass.png";
 class Window : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	bool m_bActive;
 	bool m_bStart;
 	int m_nAnime;

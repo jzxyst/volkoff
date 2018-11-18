@@ -77,10 +77,10 @@ bool Exit::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-70, 40, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szExitFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,140,80));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szExitFilePath));
+	this->mPanel->setSourceRect(LRect(0,0,140,80));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 

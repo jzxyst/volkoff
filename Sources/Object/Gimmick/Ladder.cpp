@@ -76,9 +76,9 @@ bool Ladder::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(60.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(60.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-30, 10, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szLaderFilePath));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szLaderFilePath));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 

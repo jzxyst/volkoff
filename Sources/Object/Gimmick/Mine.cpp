@@ -84,9 +84,9 @@ bool Mine::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-10, 10, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szMineFilePath));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szMineFilePath));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 

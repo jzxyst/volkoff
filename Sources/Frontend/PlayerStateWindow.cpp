@@ -37,7 +37,7 @@
         mNumberTextureL  = Assets::LoadTexture( "Data/Graphics/Frontend/Number_3.png" );
 
         mFrameWindow = Sprite2D::Create( mFrontendTexture );
-        mFrameWindow->SetSrcRect( LRect( 128, 0, 128, 112 ) );
+        mFrameWindow->setSourceRect( LRect( 128, 0, 128, 112 ) );
 
 		mFrameWindow->SetName("mFrameWindow");
 
@@ -55,8 +55,8 @@
         // HP 関係
         mHPBarSprite    = Sprite2D::Create( mFrontendTexture );
         mHPDieBarSprite = Sprite2D::Create( mFrontendTexture );
-        mHPBarSprite->SetSrcRect( LRect( 256, 0, 120, 18 ) );
-        mHPDieBarSprite->SetSrcRect( LRect( 376, 0, 0, 18 ) );
+        mHPBarSprite->setSourceRect( LRect( 256, 0, 120, 18 ) );
+        mHPDieBarSprite->setSourceRect( LRect( 376, 0, 0, 18 ) );
         mHPDieBarSprite->SetVisible( false );
 
         // 武器アイコン
@@ -65,7 +65,7 @@
         // 武器レベル
         mWeaponLevelSprite = Sprite2D::Create( mNumberTextureS );
         mWeaponEXPBar = Sprite2D::Create( mFrontendTexture );
-        mWeaponEXPBar->SetSrcRect( 256, 57, 40, 7 );
+        mWeaponEXPBar->setSourceRect( 256, 57, 40, 7 );
 
         // 使用回数
         for ( int i = 0; i < 3; ++i )
@@ -78,17 +78,17 @@
 
         // 鍵
         mKeySprite = Sprite2D::Create( mFrontendTexture );
-        mKeySprite->SetSrcRect( 104, 0, 24, 32 );
+        mKeySprite->setSourceRect( 104, 0, 24, 32 );
         mKeySprite->SetCenter( 12, 16 );
         mKeySprite->SetPosition( 118, 74 );
         mKeySprite->SetVisible( false );
         mKeyEffectSprite[ 0 ] = Sprite2D::Create( mFrontendTexture );
-        mKeyEffectSprite[ 0 ]->SetSrcRect( 104, 32, 24, 24 );
+        mKeyEffectSprite[ 0 ]->setSourceRect( 104, 32, 24, 24 );
         mKeyEffectSprite[ 0 ]->SetCenter( 12, 12 );
         mKeyEffectSprite[ 0 ]->SetPosition( 118, 68 );
         mKeyEffectSprite[ 0 ]->SetVisible( false );
         mKeyEffectSprite[ 1 ] = Sprite2D::Create( mFrontendTexture );
-        mKeyEffectSprite[ 1 ]->SetSrcRect( 104, 0, 24, 32 );
+        mKeyEffectSprite[ 1 ]->setSourceRect( 104, 0, 24, 32 );
         mKeyEffectSprite[ 1 ]->SetCenter( 12, 16 );
         mKeyEffectSprite[ 1 ]->SetPosition( 118 + 10, 68 + 10 );
         mKeyEffectSprite[ 1 ]->SetVisible( false );
@@ -189,19 +189,19 @@
 
         // フロア数
         Util::numberToArray( GameManager::getInstance()->getFloorNum() + 1, 2, nums );
-        //mFloorNumSprite[ 0 ]->setSrcRect( LRect( 7 * nums[ 0 ], 0, 7, 11 ) );
-        mFloorNumSprite[ 1 ]->SetSrcRect( LRect( 7 * nums[ 1 ], 0, 7, 11 ) );
+        //mFloorNumSprite[ 0 ]->setSourceRect( LRect( 7 * nums[ 0 ], 0, 7, 11 ) );
+        mFloorNumSprite[ 1 ]->setSourceRect( LRect( 7 * nums[ 1 ], 0, 7, 11 ) );
 
         // スコア
         Util::numberToArray(  GameManager::getInstance()->getScore(), 10, nums );
         for ( int i = 0; i < 10; ++i )
         {
-            mScoreNumSprite[ i ]->SetSrcRect( LRect( 7 * nums[ i ], 0, 7, 11 ) );
+            mScoreNumSprite[ i ]->setSourceRect( LRect( 7 * nums[ i ], 0, 7, 11 ) );
         }
 
 
         // 武器アイコン
-        mWeaponIconSprite->SetSrcRect( LRect( 128 + 32 * mPlayer->getWeaponData().WeaponType, 128, 32, 32 ) );
+        mWeaponIconSprite->setSourceRect( LRect( 128 + 32 * mPlayer->getWeaponData().WeaponType, 128, 32, 32 ) );
 
         //-----------------------------------------------------
         // レベル
@@ -210,11 +210,11 @@
         {
             
             mWeaponLevelSprite->SetTexture( mFrontendTexture );
-            mWeaponLevelSprite->SetSrcRect( 256, 64, 32, 16 );
+            mWeaponLevelSprite->setSourceRect( 256, 64, 32, 16 );
             mWeaponLevelSprite->SetPosition( mPosition.x + 24, mPosition.y + 40 );
             
 
-            mWeaponEXPBar->SetSrcRect( 256 + mEXPBarFrameCount, 57, 48, 7 );
+            mWeaponEXPBar->setSourceRect( 256 + mEXPBarFrameCount, 57, 48, 7 );
 
             
 
@@ -230,7 +230,7 @@
         else
         {
             mWeaponLevelSprite->SetTexture( mNumberTextureS );
-            mWeaponLevelSprite->SetSrcRect( 7 * level, 0, 7, 11 );
+            mWeaponLevelSprite->setSourceRect( 7 * level, 0, 7, 11 );
             mWeaponLevelSprite->SetPosition( mPosition.x + 24, mPosition.y + 39 );
 
 
@@ -248,7 +248,7 @@
 
             rate = std::min( rate, 1.0f );
 
-            mWeaponEXPBar->SetSrcRect( 256 + mEXPBarFrameCount, 57, (int)(rate * 48), 7 );
+            mWeaponEXPBar->setSourceRect( 256 + mEXPBarFrameCount, 57, (int)(rate * 48), 7 );
 
         }
 
@@ -270,9 +270,9 @@
                 wy = 1;
             }
 
-            mWeaponCountSprite[ 0 ]->SetSrcRect( LRect( 8 * c1, wy * 16, 8, 14 ) );
-            mWeaponCountSprite[ 1 ]->SetSrcRect( LRect( 8 * c2, wy * 16, 8, 14 ) );
-            mWeaponCountSprite[ 2 ]->SetSrcRect( LRect( 8 * c3, wy * 16, 8, 14 ) );
+            mWeaponCountSprite[ 0 ]->setSourceRect( LRect( 8 * c1, wy * 16, 8, 14 ) );
+            mWeaponCountSprite[ 1 ]->setSourceRect( LRect( 8 * c2, wy * 16, 8, 14 ) );
+            mWeaponCountSprite[ 2 ]->setSourceRect( LRect( 8 * c3, wy * 16, 8, 14 ) );
             mWeaponCountSprite[ 0 ]->SetVisible( true );
             mWeaponCountSprite[ 1 ]->SetVisible( true );
             mWeaponCountSprite[ 2 ]->SetVisible( true );
@@ -300,7 +300,7 @@
                     mWarningFrameCount = 60;
                     for ( int i = 0; i < 3; ++i )
                     {
-                        mWeaponCountWarningSprite[ i ]->SetSrcRect( mWeaponCountSprite[ i ]->GetSrcRect() );
+                        mWeaponCountWarningSprite[ i ]->setSourceRect( mWeaponCountSprite[ i ]->GetSrcRect() );
                         mWeaponCountWarningSprite[ i ]->SetVisible( true );
                     }
                 }
@@ -362,7 +362,7 @@
                 }
                 // HP バー
                 float rate = static_cast< float >( mHPNumber.getValue() ) / mPlayer->getMaxLife();
-                mHPBarSprite->SetSrcRect( LRect( 256, 0, rate * 120, 18 ) );
+                mHPBarSprite->setSourceRect( LRect( 256, 0, rate * 120, 18 ) );
                 mHPNumber.update();
             }
 
@@ -394,7 +394,7 @@
                         y = 18;
                     }
 
-                    mHPBarSprite->SetSrcRect( LRect( 256, y, width, 18 ) );
+                    mHPBarSprite->setSourceRect( LRect( 256, y, width, 18 ) );
 
 
                     // 回復した場合
@@ -412,7 +412,7 @@
 
                         mHPDieBarSprite->SetVisible( true );
                         mHPDieBarSprite->SetPosition( mHPBarSprite->GetPosition().x + width - 1, mHPBarSprite->GetPosition().y );
-                        mHPDieBarSprite->SetSrcRect( 376 + width - 1, 0, mHPDieWidth + 1, 18 );
+                        mHPDieBarSprite->setSourceRect( 376 + width - 1, 0, mHPDieWidth + 1, 18 );
                         mDieWaitFrameCount = 30;
                     }
                 }
@@ -425,7 +425,7 @@
                 else if ( mHPDieWidth > 0 )
                 {
                     --mHPDieWidth;
-                    mHPDieBarSprite->SetSrcRect( mHPDieBarSprite->GetSrcRect().x, 0, mHPDieWidth + 1, 18 );
+                    mHPDieBarSprite->setSourceRect( mHPDieBarSprite->GetSrcRect().x, 0, mHPDieWidth + 1, 18 );
                     if ( mHPDieWidth == 0 )
                     {
                         mHPDieBarSprite->SetVisible( false );

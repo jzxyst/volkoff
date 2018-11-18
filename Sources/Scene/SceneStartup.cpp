@@ -25,12 +25,12 @@ void SceneStartup::onStart()
 	//mFlashSprite = Sprite2D::Create(tex);
 	//mFlashSprite->SetCenter(64, 8, 0);
 	//mFlashSprite->SetPosition(Viewport::GetMainWindowViewport()->GetSize().Width, Viewport::GetMainWindowViewport()->GetSize().Height / 2, 0);
-	//mFlashSprite->SetSrcRect(0, 496, 128, 16);
+	//mFlashSprite->setSourceRect(0, 496, 128, 16);
 
 	// 文字用
 	mTitleSubTextSprite = Sprite2D::Create(Assets::LoadTexture(_T("Data/Graphics/Frontend/Title_1.png")));
 	mTitleSubTextSprite->SetPosition(108, 192, 0);
-	mTitleSubTextSprite->SetSrcRect(0, 192 + 16, 424, 16);
+	mTitleSubTextSprite->setSourceRect(0, 192 + 16, 424, 16);
 	mTitleSubTextSprite->SetVisible(false);
 
 	mFlashScale.Start(0, 60, 5);
@@ -96,7 +96,7 @@ void SceneStartup::onUpdate()
 			{
 				int count = mFrameCount - 50;
 				mTitleSubTextSprite->SetVisible(true);
-				mTitleSubTextSprite->SetSrcRect(0, 192 + 16, count / 2 * 8, 16);
+				mTitleSubTextSprite->setSourceRect(0, 192 + 16, count / 2 * 8, 16);
 			}
 
 			// ボタン五された場合、220 フレーム目まで飛ばす

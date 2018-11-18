@@ -38,7 +38,7 @@
 class LadderTop : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 public:
 	//---------------------------------------------------------------------------

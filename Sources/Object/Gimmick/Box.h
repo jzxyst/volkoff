@@ -38,7 +38,7 @@ static const char g_szBoxFilePath[] = "./Data/Graphics/Object/Box.png";
 class Box : public AttackedObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	int m_nAnime;
 	int m_nFrame;
 	bool m_bCreate;

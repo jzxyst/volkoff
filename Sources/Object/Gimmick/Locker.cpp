@@ -83,10 +83,10 @@ bool Locker::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(80.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(80.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-40, 40, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szLockerFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,80,80));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szLockerFilePath));
+	this->mPanel->setSourceRect(LRect(0,0,80,80));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -157,7 +157,7 @@ bool Locker::Update()
 			if(this->m_nAnime < 4)
 			{
 				this->m_nAnime++;
-				this->mPanel->SetSrcRect(LRect(this->m_nAnime * 80,0,80,80));
+				this->mPanel->setSourceRect(LRect(this->m_nAnime * 80,0,80,80));
 			}
 
 			//ìGèoåª

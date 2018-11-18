@@ -39,7 +39,7 @@ public:
 
 private:
 
-    LBatchPanel  mPanel;
+    Ref<LBatchPanel>  mPanel;
     u32     mFrameCount;
 
 };
@@ -69,7 +69,7 @@ public:
 
 private:
 
-    LBatchPanel  mPanel;
+    Ref<LBatchPanel>  mPanel;
     u32     mFrameCount;
 
 };
@@ -101,7 +101,7 @@ public:
 private:
 	static const int scm_nComNum = 5;
 
-    LBatchPanel  mPanel;
+    Ref<LBatchPanel>  mPanel;
     u32     mFrameCount;
 
 };
@@ -130,7 +130,7 @@ public:
 private:
 	static const int scm_nComNum = 5;
 
-    LBatchPanel  mPanel;
+    Ref<LBatchPanel>  mPanel;
     u32     mFrameCount;
 
 };

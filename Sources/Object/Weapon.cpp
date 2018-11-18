@@ -163,10 +163,10 @@ bool Weapon::Initialize( const CreateData& data_ )
 {
     mWeaponData = data_.Data;
 
-    mPanel = Sprite3D::Create( 80, 80);//,LN_PANELDIR_UPPER_REFT);
+    mPanel = LBatchPanel::create( 80, 80);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-40, 40, 0);
-    mPanel->SetTexture(Assets::LoadTexture( "Data/Graphics/Object/Weapons.png"/*, 0xffffffff*/ ) );
-    mPanel->SetSrcRect( 80 * mWeaponData.WeaponType, 0, 80, 80 );
+    mPanel->SetTexture(Assets::loadTexture( "Data/Graphics/Object/Weapons.png"/*, 0xffffffff*/ ) );
+    mPanel->setSourceRect( 80 * mWeaponData.WeaponType, 0, 80, 80 );
 
     this->mPosition = data_.Position;
     this->mPosition.z = -5.f;

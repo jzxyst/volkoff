@@ -38,7 +38,7 @@ static const char g_szBottomWallFilePath[] = "./Data/Graphics/Object/CrackWall.p
 class BottomWall : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	bool m_bActive;
 	bool m_bStart;
 	int m_nAnime;

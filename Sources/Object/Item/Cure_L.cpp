@@ -81,9 +81,9 @@ bool Cure_L::Initialize()
 {
 	this->Release();
 	this->mScore = 1000;
-	this->mPanel = Sprite3D::Create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-20, 20, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szCure_LFilePath));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szCure_LFilePath));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 

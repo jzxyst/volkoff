@@ -38,7 +38,7 @@ static const char g_szManholeFilePath[] = "./Data/Graphics/Object/Manhole.png";
 class Manhole : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	bool m_bActive;
 	bool m_bStart;
 	int m_nAnime;

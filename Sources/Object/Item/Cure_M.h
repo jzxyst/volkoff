@@ -39,7 +39,7 @@ static const char g_szCure_MFilePath[] = "./Data/Graphics/Object/Cure_M.png";
 class Cure_M : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 public:
 	//---------------------------------------------------------------------------

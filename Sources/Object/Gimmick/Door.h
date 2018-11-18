@@ -38,7 +38,7 @@ static const char g_szDoorFilePath[] = "./Data/Graphics/Object/DoorEX.png";
 class Door : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	bool m_bActive;
 	bool m_bStart;
 	int m_nAnime;

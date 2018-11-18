@@ -38,7 +38,7 @@ static const char g_szBulletFilePath[] = "./Data/Graphics/Object/Bullet.png";
 class Bullet : public AttackedObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
  //int damage_, u32 range_rate_, u32 critical_rate_,  LVector3& brow_vec_, u32 stun_frame_ 
 	int mDamage;
     u32 mLifeFrame;

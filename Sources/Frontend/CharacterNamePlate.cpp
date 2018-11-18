@@ -72,17 +72,17 @@
 
         // 枠
         mFrameSprite = Sprite2D::Create( tex );
-        mFrameSprite->SetSrcRect( 0, mSrcRectOY, mFrameWidth, 18 );
+        mFrameSprite->setSourceRect( 0, mSrcRectOY, mFrameWidth, 18 );
 
         // バー
         mHPBarSprite  = Sprite2D::Create( tex );
-        mHPBarSprite->SetSrcRect( 8, mSrcRectOY + 24, 8, 8 );
+        mHPBarSprite->setSourceRect( 8, mSrcRectOY + 24, 8, 8 );
         mDieBarSprite = Sprite2D::Create( tex );
-        mDieBarSprite->SetSrcRect( 8, mSrcRectOY + 24, 8, 8 );
+        mDieBarSprite->setSourceRect( 8, mSrcRectOY + 24, 8, 8 );
 
         // 吹き出し
         mBalloonPointSprite = Sprite2D::Create( tex );
-        mBalloonPointSprite->SetSrcRect( 0, mSrcRectOY + 25, 5, 4 );
+        mBalloonPointSprite->setSourceRect( 0, mSrcRectOY + 25, 5, 4 );
 
         // 名前を描画するテクスチャ
         mNameTextTexture = Texture2D::Create( mFrameWidth - 8, 16 );
@@ -171,8 +171,8 @@
                     lv = 1;
                 }
 
-                mHPBarSprite->SetSrcRect(  0, mSrcRectOY + 32 + lv * 4, w, 4 );
-                mDieBarSprite->SetSrcRect( w, mSrcRectOY + 44, mHPBarMaxWidth - w, 4 );
+                mHPBarSprite->setSourceRect(  0, mSrcRectOY + 32 + lv * 4, w, 4 );
+                mDieBarSprite->setSourceRect( w, mSrcRectOY + 44, mHPBarMaxWidth - w, 4 );
             }
 
 

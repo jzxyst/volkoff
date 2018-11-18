@@ -83,10 +83,10 @@ bool Window::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(128.0f,192.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(128.0f,192.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-64, 96, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szWindowFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,128,192));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szWindowFilePath));
+	this->mPanel->setSourceRect(LRect(0,0,128,192));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -161,7 +161,7 @@ bool Window::Update()
 			if(this->m_nAnime < 8)
 			{
 				this->m_nAnime++;
-				this->mPanel->SetSrcRect(LRect(this->m_nAnime * 128,0,128,192));
+				this->mPanel->setSourceRect(LRect(this->m_nAnime * 128,0,128,192));
 			}
 
 			//ìGèoåª

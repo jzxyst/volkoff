@@ -38,7 +38,7 @@ static const char g_szLaderFilePath[] = "./Data/Graphics/Object/Ladder.png";
 class Ladder : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 public:
 	//---------------------------------------------------------------------------

@@ -90,14 +90,14 @@ bool Fort::Initialize()
 	this->setAttackedGroup( ATKGROUP_ENEMY );
 	this->mColRect.Set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
 
-	this->mPanel = Sprite3D::Create(60.0f,60.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(60.0f,60.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-30, 30, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szFortFilePath/*,0xffffffff*/));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szFortFilePath/*,0xffffffff*/));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 	this->mPanel->SetCenter(17.0f,20.0f,0.0f);
 
-	this->mPanel2 = Sprite3D::Create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel2 = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel2->SetCenter(-10, 10, 0);
 	this->mPanel2->SetTexture(Assets::LoadTexture(g_szFortFilePath2));
 	this->mPanel2->SetPosition(LVector3(this->mPosition.x,this->mPosition.y,0));

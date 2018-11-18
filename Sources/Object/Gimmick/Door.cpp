@@ -83,10 +83,10 @@ bool Door::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-70, 40, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szDoorFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,140,80));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szDoorFilePath));
+	this->mPanel->setSourceRect(LRect(0,0,140,80));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -149,7 +149,7 @@ bool Door::Update()
 			if(this->m_nAnime < 5)
 			{
 				this->m_nAnime++;
-				this->mPanel->SetSrcRect(LRect(this->m_nAnime * 140,0,140,80));
+				this->mPanel->setSourceRect(LRect(this->m_nAnime * 140,0,140,80));
 			}
 
 			//ìGèoåª

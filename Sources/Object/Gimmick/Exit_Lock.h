@@ -39,7 +39,7 @@ static const char g_szExit_LockFilePath[] = "./Data/Graphics/Object/Exit_Lock.pn
 class Exit_Lock : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 
 	u32 mFlameCnt;

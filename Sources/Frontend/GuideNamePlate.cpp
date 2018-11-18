@@ -43,12 +43,12 @@
 
         // ƒtƒŒ[ƒ€
         mFrameSprite = Sprite2D::Create(  tex);
-        mFrameSprite->SetSrcRect( 0, 168 + 16 * arrow_color_, 64, 13 );
+        mFrameSprite->setSourceRect( 0, 168 + 16 * arrow_color_, 64, 13 );
         mFrameSprite->SetVisible( false );
 
         // –îˆó
         mArrowSprite = Sprite2D::Create( tex );
-        mArrowSprite->SetSrcRect( 16 * arrow_color_, 128, 16, 8 );
+        mArrowSprite->setSourceRect( 16 * arrow_color_, 128, 16, 8 );
         mArrowSprite->SetCenter( 6, 7 );
         mArrowSprite->SetVisible( false );
 
@@ -62,7 +62,7 @@
 
         mNameTextSprite = Sprite2D::Create( mNameTextTexture );
         mNameTextSprite->SetVisible( false );
-		mNameTextSprite->SetSrcRect(0, 0, size.width, size.height);
+		mNameTextSprite->setSourceRect(0, 0, size.width, size.height);
 
         mOffsetPos.Set( ox_, oy_, 0 );
         
@@ -70,7 +70,7 @@
 
 #ifdef GUIDE_UNDER
 
-        mArrowSprite->SetSrcRect( 32 * arrow_color_, 128 + 16, 16, 8 );
+        mArrowSprite->setSourceRect( 32 * arrow_color_, 128 + 16, 16, 8 );
         mOffsetPos->Set( ox_, -96, 0 );
 #endif
     }

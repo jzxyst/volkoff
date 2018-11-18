@@ -38,7 +38,7 @@ static const char g_szMineFilePath[] = "./Data/Graphics/Object/Mine.png";
 class Mine : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	bool m_bActive;
 	bool m_bStart;
 	int m_nAnime;

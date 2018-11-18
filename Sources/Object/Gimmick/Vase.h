@@ -38,7 +38,7 @@ static const char g_szVaseFilePath[] = "./Data/Graphics/Object/Vase.png";
 class Vase : public AttackedObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 	int m_nAnime;
 	int m_nFrame;
 	bool m_bCreate;

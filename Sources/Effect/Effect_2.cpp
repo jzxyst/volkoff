@@ -16,8 +16,8 @@ Effect_ValfirleDead::Effect_ValfirleDead( const LVector3& pos_ )
     LTexture tex = Assets::LoadTexture( "Data/Graphics/Effect/Effect_2.png" );
     for ( int i = 0; i < 4; ++i )
     {
-        mLinePanels[ i ] = Sprite3D::Create( 32 + i * 12, 256, tex );
-        mLinePanels[ i ]->SetSrcRect( 0, 0, 128, 512 );
+        mLinePanels[ i ] = LBatchPanel::create( 32 + i * 12, 256, tex );
+        mLinePanels[ i ]->setSourceRect( 0, 0, 128, 512 );
         mLinePanels[ i ]->SetPosition( pos_ + LVector3( 0, 0, -10 ) );
         mLinePanels[ i ]->SetPriority( -10000 );
         mLinePanels[ i ]->SetDepthTestEnabled( false );

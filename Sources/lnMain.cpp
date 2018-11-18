@@ -155,7 +155,6 @@ int lnMain()
 	Input::addBinding(LN_BUTTON_X, KeyGesture::create(Keys::A));
 
 	Accessor::Main3Camera->setFarClip(10000);
-	Accessor::Main3Camera->SetZSortDistanceBase(ZSortDistanceBase::CameraScreenDistance);
 
 #if MIGRATION
 	//---------------------------------------------------------

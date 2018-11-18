@@ -38,7 +38,7 @@ static const char g_szEntryFilePath[] = "./Data/Graphics/Object/Entry.png";
 class Entry : public GameObject
 {
 private:
-	LBatchPanel mPanel;
+    Ref<LBatchPanel> mPanel;
 
 	u32 mFlameCnt;
 public:

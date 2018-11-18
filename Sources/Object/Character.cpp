@@ -226,7 +226,7 @@ void Character::setAnimePuttern( int puttern_ )
     }
     */
 
-    mCharaPanel->SetSrcRect( LRect( x, y, 160, 160 ) );
+    mCharaPanel->setSourceRect( LRect( x, y, 160, 160 ) );
 
     // Œ´“_‚àÝ’è‚·‚é
 	mOrigin.Set(
@@ -272,12 +272,12 @@ bool Character::Initialize()
     mWeaponData.UseCount   = -1;
 	
 
-	this->mCharaPanel = Sprite3D::Create(160.0f,160.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mCharaPanel = LBatchPanel::create(160.0f,160.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mCharaPanel->SetCenter(-80, 80, 0);
-	this->mCharaPanel->SetTexture(Assets::LoadTexture(CharaResourceNames[mWeaponData.WeaponType].Character));//0xffffffff));
+	this->mCharaPanel->SetTexture(Assets::loadTexture(CharaResourceNames[mWeaponData.WeaponType].Character));//0xffffffff));
 	this->mCharaPanel->SetCullingMode(CullingMode::None);
 	//this->mCharaPanel->SetCenter(0.0f,0.0f,0.0f);
-	this->mCharaPanel->SetSrcRect(LRect(0,0,160,160));
+	this->mCharaPanel->setSourceRect(LRect(0,0,160,160));
 	this->mCharaPanel->SetPosition(0.0f,0.0f,0.0f);
 	this->mCharaPanel->SetVisible(true);
 

@@ -83,10 +83,10 @@ bool Duct::Initialize()
 {
 	this->Release();
 
-	this->mPanel = Sprite3D::Create(100.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
+	this->mPanel = LBatchPanel::create(100.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mPanel->SetCenter(-50, 40, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szDuctFilePath));
-	this->mPanel->SetSrcRect(LRect(0,0,100,80));
+	this->mPanel->SetTexture(Assets::loadTexture(g_szDuctFilePath));
+	this->mPanel->setSourceRect(LRect(0,0,100,80));
 	this->mPanel->SetPosition(this->mPosition);
 	this->mPanel->SetVisible(true);
 
@@ -151,7 +151,7 @@ bool Duct::Update()
 			if(this->m_nAnime < 5)
 			{
 				this->m_nAnime++;
-				this->mPanel->SetSrcRect(LRect(this->m_nAnime * 100,0,100,80));
+				this->mPanel->setSourceRect(LRect(this->m_nAnime * 100,0,100,80));
 			}
 
 			//ìGèoåª

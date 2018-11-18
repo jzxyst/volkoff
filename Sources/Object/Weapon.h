@@ -216,7 +216,7 @@ public:
 protected:
 
 	WeaponData  mWeaponData;
-    LBatchPanel      mPanel;
+    Ref<LBatchPanel>      mPanel;
 
     GuideNamePlate*     mGuideNamePlate;    
 };
