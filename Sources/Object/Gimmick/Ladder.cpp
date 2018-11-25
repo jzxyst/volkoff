@@ -38,7 +38,7 @@
 //---------------------------------------------------------------------------
 Ladder::Ladder()
 {
-	mColRect.Set( mPosition.x, mPosition.y, 60*mScale.x, 40*mScale.y );
+	mColRect.set( mPosition.x, mPosition.y, 60*mScale.x, 40*mScale.y );
 }
 
 
@@ -77,10 +77,10 @@ bool Ladder::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(60.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-30, 10, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szLaderFilePath));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+    this->mPanel->setCenterPoint(-30, 10, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szLaderFilePath));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 
 
@@ -121,7 +121,7 @@ bool Ladder::Release()
 //---------------------------------------------------------------------------
 bool Ladder::Update()
 {
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	return true;
 }
@@ -151,7 +151,7 @@ int Ladder::HandleEvent(u32 event_,void *args_)
 //
 const LRect* Ladder::getBoundingRect()
 {
-	mColRect.Set( mPosition.x, mPosition.y, 60*mScale.x, 40*mScale.y );
+	mColRect.set( mPosition.x, mPosition.y, 60*mScale.x, 40*mScale.y );
 
 	return &mColRect;
 }

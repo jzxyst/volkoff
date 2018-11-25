@@ -50,8 +50,8 @@ private:
 
 	LTexture	mRankingTexture;
 
-    LSprite     mBGWhiteSprite;
-    LSprite     mWeaponSprite;
+    ln::Ref<ln::UISprite>     mBGWhiteSprite;
+    ln::Ref<ln::UISprite>     mWeaponSprite;
 
 #if MIGRATION
 #else

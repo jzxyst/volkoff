@@ -44,8 +44,8 @@ void SceneCredit::onStart()
 
     
     mBGBlackSprite = LSprite::create( LTexture::create( "Data/Graphics/Frontend/Logo_1.png" ) );
-    mBGBlackSprite.setSrcRect( 0, 0, 32, 32 );
-    mBGBlackSprite.setScale( 20 );
+    mBGBlackSprite->setSourceRect( 0, 0, 32, 32 );
+    mBGBlackSprite->setScale( 20 );
 
     LLayer::getBGLayer().setTone( LTone( 0, 0, 0 ), 1.0f );
 

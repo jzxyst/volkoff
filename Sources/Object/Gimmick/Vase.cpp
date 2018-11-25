@@ -41,7 +41,7 @@
 Vase::Vase()
 {
 	setAttackedGroup( ATKGROUP_ENEMY );
-	mColRect.Set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
+	mColRect.set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
 }
 
 
@@ -80,11 +80,11 @@ bool Vase::Initialize()
 	this->Release();
 	this->mScore = 250;
 	this->mPanel = LBatchPanel::create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-20, 20, 0);
-	this->mPanel->SetTexture(Assets::LoadTexture(g_szVaseFilePath));
+    this->mPanel->setCenterPoint(-20, 20, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szVaseFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,40,40));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	this->mLife = 1;
 	this->m_nAnime = 0;
@@ -131,7 +131,7 @@ bool Vase::Update()
 
 	if ( this->mLife > 0 )
 	{
-		this->mPanel->SetPosition(this->mPosition);
+		this->mPanel->setPosition(this->mPosition);
 	}
 
 
@@ -144,8 +144,8 @@ bool Vase::Update()
 		{
 			GameManager::getInstance()->setScore(GameManager::getInstance()->getScore()+(this->getScore()*(GameManager::getInstance()->getFloorNum()+1)*GameManager::getInstance()->getPlayer()->getLife()*((GameManager::getInstance()->getRank()+1)*2))); 
             
-			GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.80,1.00);
-			GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.80,1.30);
+			GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.80,1.00);
+			GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.80,1.30);
 		}
 		if(m_nFrame%1==0)
 		{
@@ -197,7 +197,7 @@ int Vase::HandleEvent(u32 event_,void *args_)
 //
 const LRect* Vase::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
+	mColRect.set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
 
 	return &mColRect;
 }

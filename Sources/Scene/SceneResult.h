@@ -70,34 +70,34 @@ private:
 	RapidNumber<int>	mRankRapid;
 	RapidNumber<int>	mTotalRapid;
 
-    LSprite     mCharacterSprite;
-    LSprite     mWeaponSprite;
+    ln::Ref<ln::UISprite>     mCharacterSprite;
+    ln::Ref<ln::UISprite>     mWeaponSprite;
 
 	LTexture	mResultTexture;
-	LSprite		mScoreLineSprites[3];
-	LSprite		mTotalLineSprite;
-	LSprite		mTimeSprite[6];
-	LSprite		mRankSprite;
-	LSprite		mScoreNumberSprites[10];
-	LSprite		mTimeNumberSprites[10];
-	LSprite		mRankNumberSprites[10];
-	LSprite		mTotalNumberSprites[10];
-	LSprite		mRankingFrameSprite;
+    ln::Ref<ln::UISprite>		mScoreLineSprites[3];
+    ln::Ref<ln::UISprite>		mTotalLineSprite;
+    ln::Ref<ln::UISprite>		mTimeSprite[6];
+    ln::Ref<ln::UISprite>		mRankSprite;
+    ln::Ref<ln::UISprite>		mScoreNumberSprites[10];
+    ln::Ref<ln::UISprite>		mTimeNumberSprites[10];
+    ln::Ref<ln::UISprite>		mRankNumberSprites[10];
+    ln::Ref<ln::UISprite>		mTotalNumberSprites[10];
+    ln::Ref<ln::UISprite>		mRankingFrameSprite;
 
 	FloatAnimationCurve	mCommandFadeInX;
 	FloatAnimationCurve	mCommandFadeInOpacity;
 
 	bool								mIsNewRecord;
 	int									mRankingNo;
-	LSprite								mNewRecordSprite;
+    ln::Ref<ln::UISprite>								mNewRecordSprite;
 #if MIGRATION
 #else
 	Core::Animation::RoundTripValue<float>	mNewRecordOpacity;
 	Core::Animation::FadeValue<float>			mNameplateOpacity;
 #endif
-	LSprite								mNewRecordBGSprite;
+    ln::Ref<ln::UISprite>								mNewRecordBGSprite;
 
-	LSprite		mMessageSprite;
+    ln::Ref<ln::UISprite>		mMessageSprite;
 #if MIGRATION
 #else
 	RankingNameplate	mRankingNameplate;

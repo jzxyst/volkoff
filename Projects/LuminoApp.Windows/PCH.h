@@ -36,7 +36,7 @@ typedef ln::UISprite		    LSprite;
 typedef ln::Sprite		        LPanel;
 typedef ln::Sprite		        LBatchPanel;
 typedef ln::Ref<ln::Texture2D>	LTexture;
-typedef ln::Ref<ln::Font>       LFont;
+typedef ln::Font                LFont;
 
 #define LN_BUTTON_UP	InputButtons::Up
 #define LN_BUTTON_DOWN	InputButtons::Down

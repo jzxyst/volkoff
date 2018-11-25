@@ -57,9 +57,9 @@ Character::Character()
 	this->mStandOnObject = false;
 	this->mAttackLocked = false;
 	this->mBreakWeapon = false;
-	this->mDistance.Set( 0, 0 );
+	this->mDistance.set( 0, 0 );
 	this->mCollision = NULL;
-    this->mPosition.Set( 0, 0, -10.0f );
+    this->mPosition.set( 0, 0, -10.0f );
 	this->mOldTouchObj = OBJ_UNDEF;
 	this->mNewTouchObj = OBJ_UNDEF;
 	this->mInvincibleFrame = 0;
@@ -94,11 +94,11 @@ void Character::setDirection( CharaDir dir_ )
 
     if(this->m_eDirection == CHARADIR_RIGHT)
 	{
-		this->mCharaPanel->SetAngles(0,0,0);
+		this->mCharaPanel->setEulerAngles(0,0,0);
 	}
 	else
 	{
-		this->mCharaPanel->SetAngles(0,Math::PI,0);
+		this->mCharaPanel->setEulerAngles(0,Math::PI,0);
 	}
 }
 
@@ -113,7 +113,7 @@ const LRect* Character::getBoundingRect()
         // 右向き
         if ( m_eDirection == CHARADIR_RIGHT )
         {
-            mWorldBoundingRect.Set(
+            mWorldBoundingRect.set(
                 static_cast< int >( mPosition.x - ( mOrigin.x - rc->x ) ),
                 static_cast< int >( mPosition.y + ( mOrigin.y - rc->y ) ),
                 rc->width, rc->height );
@@ -122,7 +122,7 @@ const LRect* Character::getBoundingRect()
         // 左向き
         else
         {
-            mWorldBoundingRect.Set(
+            mWorldBoundingRect.set(
                 static_cast< int >( mPosition.x - ( rc->width - ( mOrigin.x - rc->x ) ) ),
                 static_cast< int >( mPosition.y + ( mOrigin.y - rc->y ) ),
                 rc->width, rc->height );
@@ -145,7 +145,7 @@ const LRect* Character::getLocalBoundingRect()
         // 右向き
         //if ( m_eDirection == CHARADIR_RIGHT )
         {
-            tmp.Set( rc->x, rc->y, rc->width, rc->height );
+            tmp.set( rc->x, rc->y, rc->width, rc->height );
             return &tmp;
         }
         // 左向き
@@ -176,7 +176,7 @@ const LRect* Character::getAttackBoundingRect()
         // 右向き
         if ( m_eDirection == CHARADIR_RIGHT )
         {
-            tmp.Set(
+            tmp.set(
                 static_cast< int >( mPosition.x - ( mOrigin.x - rc->x ) ),
                 static_cast< int >( mPosition.y + ( mOrigin.y - rc->y ) ),
                 rc->width, rc->height );
@@ -185,7 +185,7 @@ const LRect* Character::getAttackBoundingRect()
         // 左向き
         else
         {
-            tmp.Set(
+            tmp.set(
                 static_cast< int >( mPosition.x - ( rc->width - ( mOrigin.x - rc->x ) ) ),
                 static_cast< int >( mPosition.y + ( mOrigin.y - rc->y ) ),
                 rc->width, rc->height );
@@ -229,11 +229,11 @@ void Character::setAnimePuttern( int puttern_ )
     mCharaPanel->setSourceRect( LRect( x, y, 160, 160 ) );
 
     // 原点も設定する
-	mOrigin.Set(
+	mOrigin.set(
 		this->mCollision->getOriginByIndex( m_AnimePuttern ).x,
 		this->mCollision->getOriginByIndex( m_AnimePuttern ).y,
 		0.0f );
-	this->mCharaPanel->SetCenter( mOrigin.x - 80, -mOrigin.y + 80, 0 );
+	this->mCharaPanel->setCenterPoint( mOrigin.x - 80, -mOrigin.y + 80, 0 );
 }
 
 //---------------------------------------------------------------------------
@@ -273,13 +273,13 @@ bool Character::Initialize()
 	
 
 	this->mCharaPanel = LBatchPanel::create(160.0f,160.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mCharaPanel->SetCenter(-80, 80, 0);
-	this->mCharaPanel->SetTexture(Assets::loadTexture(CharaResourceNames[mWeaponData.WeaponType].Character));//0xffffffff));
-	this->mCharaPanel->SetCullingMode(CullingMode::None);
+    this->mCharaPanel->setCenterPoint(-80, 80, 0);
+	this->mCharaPanel->setTexture(Assets::loadTexture(CharaResourceNames[mWeaponData.WeaponType].Character));//0xffffffff));
+	this->mCharaPanel->SetCullingMode(CullMode::None);
 	//this->mCharaPanel->SetCenter(0.0f,0.0f,0.0f);
 	this->mCharaPanel->setSourceRect(LRect(0,0,160,160));
-	this->mCharaPanel->SetPosition(0.0f,0.0f,0.0f);
-	this->mCharaPanel->SetVisible(true);
+	this->mCharaPanel->setPosition(0.0f,0.0f,0.0f);
+	this->mCharaPanel->setVisible(true);
 
 
 
@@ -347,7 +347,7 @@ bool Character::Update()
     {
 		mClimbLadder = false;
         setAnimePuttern( 102 + mFrameCount / 10 );
-        mCharaPanel->SetOpacity( 1.0f - ( static_cast< float >( mFrameCount ) * 0.025641f ) ); // 0.025641f は 39 の逆数
+        mCharaPanel->setOpacity( 1.0f - ( static_cast< float >( mFrameCount ) * 0.025641f ) ); // 0.025641f は 39 の逆数
         if ( mFrameCount == 39 )
         {
             setExit( true );
@@ -395,7 +395,7 @@ bool Character::Update()
 
         mVelocity *= FRICTION_COEFF;
 
-        if ( mVelocity.GetLengthSquared() < 1.0f )
+        if ( mVelocity.lengthSquared() < 1.0f )
         {
             mVelocity = Vector3::Zero;
 		}
@@ -536,7 +536,7 @@ bool Character::Update()
 
     // 最終的にパネルをポジションに合わせる
     this->mPosition.z = -5.0f;
-    this->mCharaPanel->SetPosition(this->mPosition);
+    this->mCharaPanel->setPosition(this->mPosition);
 
 	++mFrameCount;
 
@@ -598,15 +598,15 @@ bool Character::UpdateSelf()
     // 移動できる場合 (のけぞり中等ではない)
     if ( mStunFrame == 0 )
     {
-        bool right = Input::IsPressed( LN_BUTTON_RIGHT );
-        bool left  = Input::IsPressed( LN_BUTTON_LEFT );
-		bool button_B  = Input::IsTriggered( LN_BUTTON_B );
-		bool Up = Input::IsPressed( LN_BUTTON_UP );
-		bool UpTrigger = Input::IsTriggered( LN_BUTTON_UP );
-		bool Down = Input::IsPressed( LN_BUTTON_DOWN );
-		bool DownTrigger = Input::IsTriggered( LN_BUTTON_DOWN );
-		bool Guard = Input::IsPressed( LN_BUTTON_C );
-		bool GuardTrigger = Input::IsTriggered( LN_BUTTON_C );
+        bool right = Input::isPressed( LN_BUTTON_RIGHT );
+        bool left  = Input::isPressed( LN_BUTTON_LEFT );
+		bool button_B  = Input::isTriggered( LN_BUTTON_B );
+		bool Up = Input::isPressed( LN_BUTTON_UP );
+		bool UpTrigger = Input::isTriggered( LN_BUTTON_UP );
+		bool Down = Input::isPressed( LN_BUTTON_DOWN );
+		bool DownTrigger = Input::isTriggered( LN_BUTTON_DOWN );
+		bool Guard = Input::isPressed( LN_BUTTON_C );
+		bool GuardTrigger = Input::isTriggered( LN_BUTTON_C );
 
         //------------------------------------------------------
         // 攻撃動作中の場合
@@ -626,7 +626,7 @@ bool Character::UpdateSelf()
 				}
 
 				// 連続攻撃
-				if ( Input::IsTriggered( LN_BUTTON_A ) )
+				if ( Input::isTriggered( LN_BUTTON_A ) )
 				{
 					// 行動制限
 					this->AttackLock();
@@ -655,7 +655,7 @@ bool Character::UpdateSelf()
         {
 			
 			// 攻撃開始
-            if ( !Guard && !this->mClimbLadder && Input::IsTriggered( LN_BUTTON_A ) && m_eCharaState != EV_ACTION_ATTACK_1 )  // 後ろのは仮
+            if ( !Guard && !this->mClimbLadder && Input::isTriggered( LN_BUTTON_A ) && m_eCharaState != EV_ACTION_ATTACK_1 )  // 後ろのは仮
             {
                 // ジャンプ中の場合
                 if ( !mOnGround )
@@ -791,7 +791,7 @@ bool Character::UpdateSelf()
 						this->mDistance.y = 0;
 					}
 
-					this->mPosition.Set(
+					this->mPosition.set(
 						this->mPosition.x + this->mDistance.x,
 						this->mPosition.y ,//+ this->mDistance.Y,
 						this->mPosition.z
@@ -828,7 +828,7 @@ bool Character::UpdateSelf()
 			}
 
 			//アクションボタン
-			if ( Input::IsTriggered( LN_BUTTON_X ) )
+			if ( Input::isTriggered( LN_BUTTON_X ) )
 			{
 				const LRect* rc = getBoundingRect();
 				if ( rc )
@@ -849,12 +849,12 @@ bool Character::UpdateSelf()
 						{
 // コンティニューに備えてバックアップを取る
 							GameManager::getInstance()->commit();
-							GameAudio::PlaySE("./Data/Sound/SE/open.wav",1.50,1.00);
+							GameAudio::playSE("./Data/Sound/SE/open.wav",1.50,1.00);
 							GameManager::getInstance()->setOpenflag(1);		
 						}
 						else
 						{
-							GameAudio::PlaySE("./Data/Sound/SE/lock.wav",1.50,1.00);
+							GameAudio::playSE("./Data/Sound/SE/lock.wav",1.50,1.00);
 						}
 						return true;
 					}
@@ -1032,56 +1032,56 @@ int Character::HandleEvent(u32 event_,void *args_)
 						switch ( ((Character*)obj)->getWeaponData().WeaponType )
 						{
 						case WEAPON_NON:
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav");
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav");
 							break;
 						case WEAPON_STICK:
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",1.00,0.70);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",1.00,0.70);
 							break;
 						case WEAPON_KATANA:
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.80,0.90);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.80,0.90);
 							break;
 						case WEAPON_UMBRELLA:
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.80,0.75);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.50);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.80,0.75);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.50);
 							break;
 						case WEAPON_TAEKWONDO:
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.85,0.70);
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.90,0.50);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.10);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.20);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.85,0.70);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.90,0.50);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.10);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.20);
 							break;
 						case WEAPON_KNIFE:
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.85,0.90);
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.85,1.20);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.85,0.90);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.85,1.20);
 							break;
 						case WEAPON_HAMMER:
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.85,0.70);
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.90,0.50);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,0.90);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.00);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.85,0.70);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.90,0.50);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,0.90);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.00);
 							break;
 						case WEAPON_SCYTHE:
-							GameAudio::PlaySE("./Data/Sound/SE/chop_knife2.wav",0.80,1.40);
+							GameAudio::playSE("./Data/Sound/SE/chop_knife2.wav",0.80,1.40);
 						case WEAPON_BOSS_KATANA:
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.80,0.90);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.80,0.90);
 							break;
 						case WEAPON_BOSS_TAEKWONDO:
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.85,0.70);
-							GameAudio::PlaySE("./Data/Sound/SE/b_dead.wav",0.90,0.50);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.10);
-							GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.20);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.85,0.70);
+							GameAudio::playSE("./Data/Sound/SE/b_dead.wav",0.90,0.50);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.10);
+							GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.80,1.20);
 							break;
 						case WEAPON_BOSS_KNIFE:
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.75,0.90);
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.75,1.20);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.75,0.90);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.75,1.20);
 							break;
 						case WEAPON_BOSS_SCYTHE:
-							GameAudio::PlaySE("./Data/Sound/SE/chop_knife2.wav",0.80,0.90);
+							GameAudio::playSE("./Data/Sound/SE/chop_knife2.wav",0.80,0.90);
 						case WEAPON_VALFIRLE:
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.85,1.00);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.85,1.00);
 							break;
 						case WEAPON_VALFIRLE_TOKEN:
-							GameAudio::PlaySE("./Data/Sound/SE/KATANA_hit.wav",0.85,1.00);
+							GameAudio::playSE("./Data/Sound/SE/KATANA_hit.wav",0.85,1.00);
 							break;
 
 						}
@@ -1089,7 +1089,7 @@ int Character::HandleEvent(u32 event_,void *args_)
 
 					if(arg->Guardflag)
 					{
-						GameAudio::PlaySE("./Data/Sound/SE/sen_ge_bun04.wav",0.70,0.80);
+						GameAudio::playSE("./Data/Sound/SE/sen_ge_bun04.wav",0.70,0.80);
 					}
 				}
 			}
@@ -1234,7 +1234,7 @@ void Character::changeWeapon( const WeaponData& weapon_data_ )
         printf( "武器テクスチャ名が NULL。代わりに素手のモノを使用\n" );
         filename = CharaResourceNames[ WEAPON_NON ].Character;
     }
-    mCharaPanel->SetTexture(Assets::LoadTexture(filename));//,0xffffffff));
+    mCharaPanel->setTexture(Assets::loadTexture(filename));//,0xffffffff));
 
     // 装備を変更したことをサーバに伝える (サーバから他のホストに通知してもらう)
 
@@ -1297,7 +1297,7 @@ void Character::CollisionToObj()
 	// 木箱に乗るときに必要
 	//
 	LVector2 overValue;
-	overValue.Set( 0, 0 );
+	overValue.set( 0, 0 );
 
 	// [11/11/15 山本] getBoundingRect() で同じ矩形がとれるので修正
     const LRect* nowRect = getBoundingRect();
@@ -1416,7 +1416,7 @@ void Character::CollisionToObj()
 			if ( GameObjectManager::getInstance()->judgeCollitionTypeSpecifiedAndDelete( *nowRect, OBJ_CURE_S ) )
 			{
 				printf("回復アイテム取得　小\n");
-				GameAudio::PlaySE("./Data/Sound/SE/Powerup23.wav",1.00,1.50);
+				GameAudio::playSE("./Data/Sound/SE/Powerup23.wav",1.00,1.50);
 
 				static const int CURE_S_VALUE_ = static_cast< int >( this->mMaxLife * 0.30f );
 
@@ -1434,7 +1434,7 @@ void Character::CollisionToObj()
 			if ( GameObjectManager::getInstance()->judgeCollitionTypeSpecifiedAndDelete( *nowRect, OBJ_CURE_M ) )
 			{
 				printf("回復アイテム取得　中\n");
-				GameAudio::PlaySE("./Data/Sound/SE/Powerup23.wav",1.00,1.50);
+				GameAudio::playSE("./Data/Sound/SE/Powerup23.wav",1.00,1.50);
 
 				static const int CURE_M_VALUE_ = static_cast< int >( this->mMaxLife * 0.60f );
 
@@ -1452,7 +1452,7 @@ void Character::CollisionToObj()
 			if ( GameObjectManager::getInstance()->judgeCollitionTypeSpecifiedAndDelete( *nowRect, OBJ_CURE_L ) )
 			{
 				printf("回復アイテム取得　大\n");
-				GameAudio::PlaySE("./Data/Sound/SE/Powerup23.wav",1.00,1.50);
+				GameAudio::playSE("./Data/Sound/SE/Powerup23.wav",1.00,1.50);
 
 				static const int CURE_L_VALUE_ = static_cast< int >( this->mMaxLife * 0.80f );
 

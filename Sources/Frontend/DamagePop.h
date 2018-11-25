@@ -64,7 +64,7 @@ private:
 
         LVector3    mPosition;
         LVector3    mVelocity;
-        LSprite     mNumberSprite;
+        ln::Ref<ln::UISprite>     mNumberSprite;
         LTexture    mNumberTexture;
         u32         mFrameCount;
 

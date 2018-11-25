@@ -93,15 +93,15 @@ void SceneTitle::onStart()
 	Engine::GetMainViewport()->SetBackgroundColor(Color::White);
 	Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.5);
 
-	mRandomSprite = Sprite2D::Create("Data/Graphics/Frontend/Random_1.png");
+	mRandomSprite = ln::UISprite::create("Data/Graphics/Frontend/Random_1.png");
 	mRandomSprite->SetCenter(256, 32);
 	mRandomSprite->SetPosition(320, 160);
 
-	LTexture tex = Assets::LoadTexture("Data/Graphics/Frontend/Title_1.png");
+	LTexture tex = Assets::loadTexture("Data/Graphics/Frontend/Title_1.png");
 
 
 	// テキスト下のフレーム
-	mTitleFrameSprite = Sprite2D::Create(tex);
+	mTitleFrameSprite = ln::UISprite::create(tex);
 	mTitleFrameSprite->setSourceRect(0, 128, 512, 64);
 	mTitleFrameSprite->SetCenter(256, 32);
 	mTitleFrameSprite->SetPosition(320, 160);
@@ -109,25 +109,25 @@ void SceneTitle::onStart()
 
 
 	// タイトルテキスト
-	mTitleTextSprite = Sprite2D::Create(tex);
+	mTitleTextSprite = ln::UISprite::create(tex);
 	mTitleTextSprite->SetCenter(196, 32);
 	mTitleTextSprite->setSourceRect(0, 0, 392, 64);
 	mTitleTextSprite->SetPosition(320, 160);
 
 	// フレームしたの文字
-	mTitleSubTextSprite = Sprite2D::Create(tex);
+	mTitleSubTextSprite = ln::UISprite::create(tex);
 	mTitleSubTextSprite->SetCenter(216, 0);
 	mTitleSubTextSprite->setSourceRect(0, 192, 432, 16);
 	mTitleSubTextSprite->SetPosition(320, 192);
 
 	// 「PressAnyKey」
-	mPressAnyKeySprite = Sprite2D::Create(tex);
+	mPressAnyKeySprite = ln::UISprite::create(tex);
 	mPressAnyKeySprite->setSourceRect(0, 224, 176, 32);
 	mPressAnyKeySprite->SetCenter(176 / 2, 16);
 	mPressAnyKeySprite->SetPosition(320, 350);
 
 	// エフェクト用
-	mTitleEffectSprite = Sprite2D::Create(tex);
+	mTitleEffectSprite = ln::UISprite::create(tex);
 	mTitleEffectSprite->setSourceRect(0, 64, 512, 64);
 	mTitleEffectSprite->SetCenter(256, 42);
 	mTitleEffectSprite->SetPosition(320, 170);
@@ -136,7 +136,7 @@ void SceneTitle::onStart()
 	// 上下の字幕スーパー
 	for (int i = 0; i < 2; ++i)
 	{
-		mSuperSprite[i] = Sprite2D::Create(tex);
+		mSuperSprite[i] = ln::UISprite::create(tex);
 		mSuperSprite[i]->setSourceRect(128, 496, 256, 16);
 		mSuperSprite[i]->SetScale(4, 2);
 		mSuperSprite[i]->SetVisible(false);
@@ -144,17 +144,17 @@ void SceneTitle::onStart()
 	// コマンド
 	for (int i = 0; i < 4; ++i)
 	{
-		mCommandSprite[i] = Sprite2D::Create(tex);
+		mCommandSprite[i] = ln::UISprite::create(tex);
 		mCommandSprite[i]->SetVisible(false);
 	}
 
 	// 説明ウィンドウ
-	mDescWindowSprite = Sprite2D::Create(tex);
+	mDescWindowSprite = ln::UISprite::create(tex);
 	mDescWindowSprite->SetPosition(-500, 0);       // 面倒なので画面外で隠す
 	mDescWindowSprite->setSourceRect(272, 224, 240, 144);
 
 	mDescContents = Texture2D::Create(240, 144);
-	mDescContentsSprite = Sprite2D::Create(mDescContents);
+	mDescContentsSprite = ln::UISprite::create(mDescContents);
 	mDescContentsSprite->SetPosition(-500, 0);     // 面倒なので画面外で隠す
 
 
@@ -168,7 +168,7 @@ void SceneTitle::onStart()
 	//mDescTitleFont->SetColor(0, 0, 0, 1);
 	mDescTitleFont->SetAntiAlias(true);
 
-	FontPtr desc_text = Font::Create();
+    Ref<LFont> desc_text = Font::Create();
 	desc_text->SetSize(15);
 	//desc_text->SetColor(0, 0, 0, 1);
 	desc_text->SetAntiAlias(true);
@@ -283,7 +283,7 @@ void SceneTitle::onUpdate()
 
 				mWindowFadeCount = 40;
 
-				GameAudio::PlaySE("Data/Sound/SE/cursor21.wav", 0.40, 1.00);
+				GameAudio::playSE("Data/Sound/SE/cursor21.wav", 0.40, 1.00);
 			}
 
 			break;
@@ -319,7 +319,7 @@ void SceneTitle::onUpdate()
 				case 1:
 					// ランキング
 					this->callScene(LN_NEW SceneRanking());
-					GameAudio::PlaySE(CURSOR_SE, 0.80);
+					GameAudio::playSE(CURSOR_SE, 0.80);
 					return;
 				case 2:
 					// 終了
@@ -332,7 +332,7 @@ void SceneTitle::onUpdate()
 				_startShowCommand(1);
 
 				_setPointCursorIndex(mSelectIndex);
-				GameAudio::PlaySE(CURSOR_SE, 0.80);
+				GameAudio::playSE(CURSOR_SE, 0.80);
 				return;
 			}
 
@@ -345,7 +345,7 @@ void SceneTitle::onUpdate()
 					mSelectIndex = 2;
 				}
 				_setPointCursorIndex(mSelectIndex);
-				GameAudio::PlaySE(CURSOR_SE, 0.80);
+				GameAudio::playSE(CURSOR_SE, 0.80);
 				return;
 			}
 			// ↓
@@ -357,7 +357,7 @@ void SceneTitle::onUpdate()
 					mSelectIndex = 0;
 				}
 				_setPointCursorIndex(mSelectIndex);
-				GameAudio::PlaySE(CURSOR_SE, 0.80);
+				GameAudio::playSE(CURSOR_SE, 0.80);
 				return;
 			}
 
@@ -389,7 +389,7 @@ void SceneTitle::onUpdate()
 
 				mPointCursor->moveToInit();
 
-				GameAudio::PlaySE("Data/Sound/SE/cursor21.wav", 0.80, 1.20);
+				GameAudio::playSE("Data/Sound/SE/cursor21.wav", 0.80, 1.20);
 				GameAudio::StopBGM(3.0);
 
 				// iss#1 ダミーのステップへ移行して繰り返し決定ボタン押せないようにする
@@ -415,7 +415,7 @@ void SceneTitle::onUpdate()
 					mSelectIndex = 3;
 				}
 				_setPointCursorIndex(mSelectIndex);
-				GameAudio::PlaySE(CURSOR_SE, 0.80);
+				GameAudio::playSE(CURSOR_SE, 0.80);
 			}
 			// ↓
 			if (Input::IsRepeated(LN_BUTTON_DOWN))
@@ -426,7 +426,7 @@ void SceneTitle::onUpdate()
 					mSelectIndex = 0;
 				}
 				_setPointCursorIndex(mSelectIndex);
-				GameAudio::PlaySE(CURSOR_SE, 0.80);
+				GameAudio::playSE(CURSOR_SE, 0.80);
 			}
 			break;
 		}

@@ -142,8 +142,8 @@ bool Box::Update()
 		this->m_nFrame++;
 		if(m_nFrame==1)
 		{
-			GameAudio::PlaySE("./Data/Sound/SE/don01.wav",0.50,1.70);
-			GameAudio::PlaySE("./Data/Sound/SE/don01.wav",0.50,1.20);
+			GameAudio::playSE("./Data/Sound/SE/don01.wav",0.50,1.70);
+			GameAudio::playSE("./Data/Sound/SE/don01.wav",0.50,1.20);
 			GameManager::getInstance()->setScore(GameManager::getInstance()->getScore()+(this->getScore()*(GameManager::getInstance()->getFloorNum()+1)*GameManager::getInstance()->getPlayer()->getLife()*((GameManager::getInstance()->getRank()+1)*2))); 
     
 		}

@@ -16,7 +16,7 @@ Effect_Test_1::Effect_Test_1( const LVector3& pos_ )
     //static Math::Random random;
 
     mPanel = LBatchPanel::create( 80, 80 );
-    mPanel->setTexture(Assets::LoadTexture( "Data/Graphics/Effect/Effect_1.png" ) );
+    mPanel->setTexture(Assets::loadTexture( "Data/Graphics/Effect/Effect_1.png" ) );
     mPanel->setSourceRect( 0, 128, 128, 128 );
     mPanel->setEulerAngles( 0, 0, 0 );//random.getFloat( 3.0f ) );
     mPanel->setPosition( pos_ );
@@ -38,7 +38,7 @@ Effect_Test_1::~Effect_Test_1()
 bool Effect_Test_1::update()
 {
     mPanel->setScale( mFrameCount, 0.3f, 1 );
-    mPanel->SetOpacity( 1.0f - ( mFrameCount / 6.0f ) );
+    mPanel->setOpacity( 1.0f - ( mFrameCount / 6.0f ) );
 
     ++mFrameCount;
     if ( mFrameCount > 6 )
@@ -66,7 +66,7 @@ Effect_Test_2::Effect_Test_2( const LVector3& pos_ )
     mPanel->setTexture(Assets::loadTexture( "Data/Graphics/Effect/Effect_1.png" ) );
     mPanel->setSourceRect( 0, 128, 128, 128 );
     mPanel->setEulerAngles( 0, 0, Math::PI / 2 );//random.getFloat( 3.0f ) );
-    mPanel->SetPosition( pos_ );
+    mPanel->setPosition( pos_ );
 
     mFrameCount = 0;
 }
@@ -83,8 +83,8 @@ Effect_Test_2::~Effect_Test_2()
 //---------------------------------------------------------------------
 bool Effect_Test_2::update()
 {
-    mPanel->SetScale( mFrameCount / 2, 1.0f, mFrameCount / 2);
-    //mPanel->SetOpacity( 1.0f - ( mFrameCount / 6.0f ) );
+    mPanel->setScale( mFrameCount / 2, 1.0f, mFrameCount / 2);
+    //mPanel->setOpacity( 1.0f - ( mFrameCount / 6.0f ) );
 
     ++mFrameCount;
     if ( mFrameCount > 6 )
@@ -108,13 +108,13 @@ Effect_Explosion::Effect_Explosion( const LVector3& pos_ )
     //static Math::Random random;
 
     mPanel = LBatchPanel::create( 160, 160 );
-    mPanel->SetTexture(Assets::loadTexture( "./Data/Graphics/Effect/Explosion01.png" ) );
+    mPanel->setTexture(Assets::loadTexture( "./Data/Graphics/Effect/Explosion01.png" ) );
     mPanel->setSourceRect( 0, 128, 128, 128 );
-    mPanel->SetAngles( 0, 0, 0 );//random.getFloat( 3.0f ) );
-    mPanel->SetPosition( pos_ );
+    mPanel->setEulerAngles( 0, 0, 0 );//random.getFloat( 3.0f ) );
+    mPanel->setPosition( pos_ );
 
-	Vector3 scr = Vector3::TransformCoord(pos_, Accessor::Main3Camera->GetProjectionMatrix());
-	Accessor::BlurLayer->SetBlurStatus(0.5, Vector2(scr.x, scr.y), 1.05, 0.6);
+	Vector3 scr = Vector3::transformCoord(pos_, Accessor::Main3Camera->GetProjectionMatrix());
+	Accessor::BlurLayer->play(0.5, Vector2(scr.x, scr.y), 1.05, 0.6);
 	//LLayer::getBGLayer()->blur(0.6, 0.5, 1.05, pos_, true );
 
     mFrameCount = 0;
@@ -158,7 +158,7 @@ Effect_Explosion2::Effect_Explosion2( const LVector3& pos_ )
     mPanel = LBatchPanel::create( 20, 20 );
     mPanel->setTexture(Assets::loadTexture( "./Data/Graphics/Effect/Explosion01.png" ) );
     mPanel->setSourceRect( 0, 128, 128, 128 );
-    mPanel->SetAngles( 0, 0, 0 );//random.getFloat( 3.0f ) );
+    mPanel->setEulerAngles( 0, 0, 0 );//random.getFloat( 3.0f ) );
     mPanel->setPosition( pos_ );
 
 
@@ -222,8 +222,8 @@ Effect_Test_3::~Effect_Test_3()
 //---------------------------------------------------------------------
 bool Effect_Test_3::update()
 {
-    mPanel->SetScale( mFrameCount / 3, 1.0f, mFrameCount / 3);
-    //mPanel->SetOpacity( 1.0f - ( mFrameCount / 6.0f ) );
+    mPanel->setScale( mFrameCount / 3, 1.0f, mFrameCount / 3);
+    //mPanel->setOpacity( 1.0f - ( mFrameCount / 6.0f ) );
 
     ++mFrameCount;
     if ( mFrameCount > 9 )
@@ -245,13 +245,13 @@ Effect_Thunder::Effect_Thunder( const LVector3& pos_ )
     //static Math::Random random;
 
     mPanel = LBatchPanel::create( 64,2000 );
-    mPanel->SetTexture(Assets::LoadTexture( "Data/Graphics/Effect/Thunder_1.png" ) );
+    mPanel->setTexture(Assets::loadTexture( "Data/Graphics/Effect/Thunder_1.png" ) );
     mPanel->setSourceRect(0, 512, 64, 512 );
   //  mPanel->SetAngle( 0, 0, LMath::PI / 2 );//random.getFloat( 3.0f ) );
-    mPanel->SetPosition( pos_ );
+    mPanel->setPosition( pos_ );
 
-	Vector3 scr = Vector3::TransformCoord(pos_, Accessor::Main3Camera->GetProjectionMatrix());
-	Accessor::BlurLayer->SetBlurStatus(0.5, Vector2(scr.x, scr.y), 1.05, 0.6);
+	Vector3 scr = Vector3::transformCoord(pos_, Accessor::Main3Camera->GetProjectionMatrix());
+	Accessor::BlurLayer->play(0.5, Vector2(scr.x, scr.y), 1.05, 0.6);
 	//LLayer::getBGLayer()->blur(0.6, 0.5, 1.05, pos_, true );
 
     mFrameCount = 0;
@@ -269,8 +269,8 @@ Effect_Thunder::~Effect_Thunder()
 //---------------------------------------------------------------------
 bool Effect_Thunder::update()
 {
-  //  mPanel->SetScale(1, 1.0f, 1);
-    //mPanel->SetOpacity( 1.0f - ( mFrameCount / 6.0f ) );
+  //  mPanel->setScale(1, 1.0f, 1);
+    //mPanel->setOpacity( 1.0f - ( mFrameCount / 6.0f ) );
     mPanel->setSourceRect(64*(mFrameCount/5), 512, 64, 512 );
     ++mFrameCount;
     if ( mFrameCount >20 )

@@ -57,25 +57,25 @@ void GameFrontendManager::initialize( Player* player_ )
 	mFloorInfoOffset = 0;
 	mFloorNumAnimTime = 0;
 
-	mNumberTexture1 = Assets::LoadTexture("Data/Graphics/Frontend/Number_1.png");
+	mNumberTexture1 = Assets::loadTexture("Data/Graphics/Frontend/Number_1.png");
 
 
 	mPlayerStateWindow = NEW PlayerStateWindow(player_);
 
 	mNamePlateFont = Font::Create();
-	mNamePlateFont->SetFamily("ÑMÇr ÇoÉSÉVÉbÉN");
-	mNamePlateFont->SetSize(10);
+	mNamePlateFont->setFamily("ÑMÇr ÇoÉSÉVÉbÉN");
+	mNamePlateFont->setSize(10);
 	//mNamePlateFont->SetColor( LColor( 1, 1, 1 ) );
-	mNamePlateFont->SetAntiAlias(false);
+	mNamePlateFont->setAntiAlias(false);
 
 
 	mGuidNamePlateFont = Font::Create();
-	mGuidNamePlateFont->SetFamily("ÑMÇr ÇoÉSÉVÉbÉN");
-	mGuidNamePlateFont->SetSize(10);
+	mGuidNamePlateFont->setFamily("ÑMÇr ÇoÉSÉVÉbÉN");
+	mGuidNamePlateFont->setSize(10);
 	//mGuidNamePlateFont->SetColor( LColor( 1, 1, 1 ) );
 	//mGuidNamePlateFont->setEdgeSize( 1 );
 	//mGuidNamePlateFont->setEdgeColor( LColor( 0.25f, 0.25f, 0.25f ) );
-	mGuidNamePlateFont->SetAntiAlias(false);
+	mGuidNamePlateFont->setAntiAlias(false);
 
 	mDamagePop = NEW DamagePop();
 
@@ -87,23 +87,23 @@ void GameFrontendManager::initialize( Player* player_ )
 
 	mLevelupFrameCount = 0;
 
-	LTexture tex = Assets::LoadTexture("Data/Graphics/Frontend/Frontend_1.png");
-	mLevelupSprites[0] = Sprite2D::Create(tex);//return;
+	LTexture tex = Assets::loadTexture("Data/Graphics/Frontend/Frontend_1.png");
+	mLevelupSprites[0] = ln::UISprite::create(tex);//return;
 	mLevelupSprites[0]->setSourceRect(0, 480, 256, 16);
-	mLevelupSprites[0]->SetCenter(128, 8);
-	mLevelupSprites[0]->SetVisible(false);
-	mLevelupSprites[1] = Sprite2D::Create(tex);
+	mLevelupSprites[0]->setCenterPoint(128, 8);
+	mLevelupSprites[0]->setVisible(false);
+	mLevelupSprites[1] = ln::UISprite::create(tex);
 	mLevelupSprites[1]->setSourceRect(0, 496, 256, 16);
-	mLevelupSprites[1]->SetCenter(128, 8);
-	mLevelupSprites[1]->SetVisible(false);
-	mLevelEffectSprite = Sprite2D::Create(tex);
+	mLevelupSprites[1]->setCenterPoint(128, 8);
+	mLevelupSprites[1]->setVisible(false);
+	mLevelEffectSprite = ln::UISprite::create(tex);
 	mLevelEffectSprite->setSourceRect(0, 416, 64, 64);
-	mLevelEffectSprite->SetPosition(320, 200);
-	mLevelEffectSprite->SetCenter(32, 32);
-	mLevelEffectSprite->SetVisible(false);
+	mLevelEffectSprite->setPosition(320, 200);
+	mLevelEffectSprite->setCenterPoint(32, 32);
+	mLevelEffectSprite->setVisible(false);
 
-	mLevelupSprites[0]->SetPosition(320, 200 - 8);
-	mLevelupSprites[1]->SetPosition(320, 200 + 8);
+	mLevelupSprites[0]->setPosition(320, 200 - 8);
+	mLevelupSprites[1]->setPosition(320, 200 + 8);
 
 	mPointCursor = NEW PointCursor();
 
@@ -121,11 +121,11 @@ void GameFrontendManager::initialize( Player* player_ )
 	mFloorNumAnimAlpha.AddKeyFrame(120, 0.0f, InterpolationMode_CatmullRom);
 	mFloorNumAnimAlpha.SetTime(1000);
 
-	mFloorInfoTexture = Assets::LoadTexture("Data/Graphics/Frontend/FloorInfo_1.png");
+	mFloorInfoTexture = Assets::loadTexture("Data/Graphics/Frontend/FloorInfo_1.png");
 	for (int i = 0; i < 3; ++i)
 	{
-		mFloorInfoSprite[i] = Sprite2D::Create(mFloorInfoTexture);
-		mFloorInfoSprite[i]->SetVisible(false);
+		mFloorInfoSprite[i] = ln::UISprite::create(mFloorInfoTexture);
+		mFloorInfoSprite[i]->setVisible(false);
 	}
 	mFloorInfoSprite[0]->setSourceRect(0, 0, 512, 32); // â∫ê¸
 }
@@ -136,8 +136,8 @@ void GameFrontendManager::initialize( Player* player_ )
 void GameFrontendManager::finalize()
 {
     SAFE_DELETE( mPlayerStateWindow );
-	mNamePlateFont.SafeRelease();
-	mGuidNamePlateFont.SafeRelease();
+    mNamePlateFont = nullptr;
+	mGuidNamePlateFont = nullptr;
     SAFE_DELETE( mDamagePop );
     SAFE_DELETE( mPointCursor );
 
@@ -217,15 +217,15 @@ void GameFrontendManager::update()
 		{
 			float c = static_cast< float >(mLevelupFrameCount - 50);
 
-			mLevelEffectSprite->SetScale(
+			mLevelEffectSprite->setScale(
 				7.0f * (10.0f - c) + 1.0f,
 				0.8f * c);
 
-			mLevelEffectSprite->SetOpacity(0.05f + c / 10.0f);
+			mLevelEffectSprite->setOpacity(0.05f + c / 10.0f);
 
 			if (mLevelupFrameCount == 50)
 			{
-				mLevelEffectSprite->SetVisible(false);
+				mLevelEffectSprite->setVisible(false);
 			}
 		}
 
@@ -233,8 +233,8 @@ void GameFrontendManager::update()
 		if (mLevelupFrameCount >= 50)
 		{
 			float c = static_cast< float >(10 - (mLevelupFrameCount - 50));
-			mLevelupSprites[0]->SetOpacity(c / 10.0f);
-			mLevelupSprites[1]->SetOpacity(c / 10.0f);
+			mLevelupSprites[0]->setOpacity(c / 10.0f);
+			mLevelupSprites[1]->setOpacity(c / 10.0f);
 		}
 
 		// ï∂éöÉtÉFÅ[ÉhÉAÉEÉg
@@ -243,11 +243,11 @@ void GameFrontendManager::update()
 			float c = static_cast< float >(mLevelupFrameCount - 1);
 			float rate = c / 10.0f;
 
-			mLevelupSprites[0]->SetOpacity(rate);
-			mLevelupSprites[1]->SetOpacity(rate);
+			mLevelupSprites[0]->setOpacity(rate);
+			mLevelupSprites[1]->setOpacity(rate);
 
-			mLevelupSprites[0]->SetScale(1.0f + (10.0f - c), rate);
-			mLevelupSprites[1]->SetScale(1.0f + (10.0f - c), rate);
+			mLevelupSprites[0]->setScale(1.0f + (10.0f - c), rate);
+			mLevelupSprites[1]->setScale(1.0f + (10.0f - c), rate);
 		}
 
 
@@ -255,9 +255,9 @@ void GameFrontendManager::update()
 
 		if (mLevelupFrameCount == 0)
 		{
-			mLevelupSprites[0]->SetVisible(false);
-			mLevelupSprites[1]->SetVisible(false);
-			mLevelEffectSprite->SetVisible(false);
+			mLevelupSprites[0]->setVisible(false);
+			mLevelupSprites[1]->setVisible(false);
+			mLevelEffectSprite->setVisible(false);
 		}
 	}
 
@@ -267,14 +267,14 @@ void GameFrontendManager::update()
 	{
 		float v = mFloorNumAnim.GetValue();
 
-		mFloorInfoSprite[0]->SetPosition(300 - v * 32, 448);
-		mFloorInfoSprite[1]->SetPosition(mFloorInfoOffset + 320 + v * 32, 400);
-		mFloorInfoSprite[2]->SetPosition(520, 320 + v * 48);
+		mFloorInfoSprite[0]->setPosition(300 - v * 32, 448);
+		mFloorInfoSprite[1]->setPosition(mFloorInfoOffset + 320 + v * 32, 400);
+		mFloorInfoSprite[2]->setPosition(520, 320 + v * 48);
 
 		float a = mFloorNumAnimAlpha.GetValue();
 		for (int i = 0; i < 3; ++i)
 		{
-			mFloorInfoSprite[i]->SetOpacity(a);
+			mFloorInfoSprite[i]->setOpacity(a);
 		}
 
 		mFloorNumAnimTime += 1.0f;
@@ -286,7 +286,7 @@ void GameFrontendManager::update()
 		{
 			for (int i = 0; i < 3; ++i)
 			{
-				mFloorInfoSprite[i]->SetVisible(false);
+				mFloorInfoSprite[i]->setVisible(false);
 			}
 		}
 	}
@@ -301,15 +301,15 @@ void GameFrontendManager::showLevelUp()
 
     
 
-    mLevelupSprites[ 0 ]->SetOpacity( 0 );
-    mLevelupSprites[ 1 ]->SetOpacity( 0 );
+    mLevelupSprites[ 0 ]->setOpacity( 0 );
+    mLevelupSprites[ 1 ]->setOpacity( 0 );
 
-    mLevelupSprites[ 0 ]->SetScale( 1 );
-    mLevelupSprites[ 1 ]->SetScale( 1 );
+    mLevelupSprites[ 0 ]->setScale( 1 );
+    mLevelupSprites[ 1 ]->setScale( 1 );
 
-    mLevelupSprites[ 0 ]->SetVisible( true );
-    mLevelupSprites[ 1 ]->SetVisible( true );
-    mLevelEffectSprite->SetVisible( true );
+    mLevelupSprites[ 0 ]->setVisible( true );
+    mLevelupSprites[ 1 ]->setVisible( true );
+    mLevelEffectSprite->setVisible( true );
 }
 
 //---------------------------------------------------------------------
@@ -319,8 +319,8 @@ void GameFrontendManager::showFloorNum( int num_ )
 {
     for ( int i = 0; i < 3; ++i )
     {
-        mFloorInfoSprite[ i ]->SetVisible( true );
-        mFloorInfoSprite[ i ]->SetOpacity( 0 );
+        mFloorInfoSprite[ i ]->setVisible( true );
+        mFloorInfoSprite[ i ]->setOpacity( 0 );
     }
 
     if ( num_ < 8 )

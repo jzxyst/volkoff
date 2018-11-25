@@ -38,8 +38,8 @@ private:
     int         mPhase;
     int         mFrameCount;
 
-    LSprite     mBGBlackSprite;
-    LSprite     mWeaponSprite;
+    ln::Ref<ln::UISprite>     mBGBlackSprite;
+    ln::Ref<ln::UISprite>     mWeaponSprite;
 
 };
 

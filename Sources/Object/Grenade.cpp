@@ -80,10 +80,10 @@ bool Grenade::Initialize()
 	this->Release();
 	this->mScore = 0; 
 	this->mPanel = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-10, 10, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szGrenadeFilePath/*,0xffffffff*/));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+    this->mPanel->setCenterPoint(-10, 10, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szGrenadeFilePath/*,0xffffffff*/));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 	this->mFrameCnt = 0;
 	this->mGeneObjType = OBJ_CHARACTER;
 	this->mRangeRate = 1;
@@ -143,7 +143,7 @@ bool Grenade::Update()
 		//mBrowVec*=-1;
 	}
 	mPosition+=mVelocity;
-	this->mPanel->SetPosition(this->mPosition );
+	this->mPanel->setPosition(this->mPosition );
 	//printf("x%f,  y%f\n",mVelocity.x,mVelocity.y);
 //	printf("x%f,  y%f\n",getPosition().x+8,getPosition().y+8);
     //float dx, dy;
@@ -177,7 +177,7 @@ bool Grenade::Update()
 		LVector3 v(this->mPosition);
 		v.z = 0.f;
 		new Effect_Explosion(v);
-		GameAudio::PlaySE("./Data/Sound/SE/Explosion01.ogg",0.30,1.30);
+		GameAudio::playSE("./Data/Sound/SE/Explosion01.ogg",0.30,1.30);
 
 		HitObjectList*  obj_list;
 		if(this->mGeneObjType == OBJ_CHARACTER)
@@ -244,7 +244,7 @@ int Grenade::HandleEvent(u32 event_,void *args_)
 //
 const LRect* Grenade::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+8, mPosition.y-8, 4, 4 );
+	mColRect.set( mPosition.x+8, mPosition.y-8, 4, 4 );
 
 	return &mColRect;
 }

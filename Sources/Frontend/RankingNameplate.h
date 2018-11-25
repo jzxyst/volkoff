@@ -37,23 +37,23 @@ public:
 
 	void updateCaret();
 
-	void setVisibleCaret(bool f_) { if (mInited) mCaretSprite->SetVisible(f_); }
+	void setVisibleCaret(bool f_) { if (mInited) mCaretSprite->setVisible(f_); }
 
 private:
 
 	LVector3 mPosition;
 
     LTexture mRankingTexture;
-	LSprite mFrameSprite;
-	LSprite mNumberSprite;
-	LSprite mRankSprite;
+    ln::Ref<ln::UISprite> mFrameSprite;
+    ln::Ref<ln::UISprite> mNumberSprite;
+    ln::Ref<ln::UISprite> mRankSprite;
 	LTexture mNameTexture;
-	LSprite mNameSprite;
+    ln::Ref<ln::UISprite> mNameSprite;
 
 	LTexture mTextTexture;
-	LSprite mTextSprite;
+    ln::Ref<ln::UISprite> mTextSprite;
 
-	LSprite	mCaretSprite;
+    ln::Ref<ln::UISprite>	mCaretSprite;
 	int mCaretCount;
 	int mCaretX;
 

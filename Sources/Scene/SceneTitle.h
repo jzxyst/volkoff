@@ -65,21 +65,21 @@ private:
 
     
 
-    LSprite     mRandomSprite;
-    LSprite     mTitleFrameSprite;
-    LSprite     mTitleTextSprite;
-    LSprite     mTitleSubTextSprite;
-    LSprite     mPressAnyKeySprite;
+    ln::Ref<ln::UISprite>     mRandomSprite;
+    ln::Ref<ln::UISprite>     mTitleFrameSprite;
+    ln::Ref<ln::UISprite>     mTitleTextSprite;
+    ln::Ref<ln::UISprite>     mTitleSubTextSprite;
+    ln::Ref<ln::UISprite>     mPressAnyKeySprite;
 
-    LSprite     mTitleEffectSprite;
+    ln::Ref<ln::UISprite>     mTitleEffectSprite;
 
-    LSprite     mSuperSprite[ 2 ];  // 上下の字幕スーパー
-    LSprite     mCommandSprite[ 4 ];
+    ln::Ref<ln::UISprite>     mSuperSprite[ 2 ];  // 上下の字幕スーパー
+    ln::Ref<ln::UISprite>     mCommandSprite[ 4 ];
 
-    LSprite     mDescWindowSprite;      // 説明ウィンドウの枠
-    LSprite     mDescContentsSprite;
+    ln::Ref<ln::UISprite>     mDescWindowSprite;      // 説明ウィンドウの枠
+    ln::Ref<ln::UISprite>     mDescContentsSprite;
     LTexture    mDescContents;          // 説明ウィンドウの内容
-    LFont       mDescTitleFont;
+    Ref<LFont>       mDescTitleFont;
     int         mWindowFadeCount;
 
 	FloatAnimationCurve  mRoundTripValue;        ///< 0.2 ～1.0 を往復する値。アルファ値用

@@ -39,7 +39,7 @@
 Exit::Exit()
     : mGuideNamePlate   ( NULL )
 {
-	mColRect.Set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
+	mColRect.set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
 }
 
 
@@ -78,11 +78,11 @@ bool Exit::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-70, 40, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szExitFilePath));
+    this->mPanel->setCenterPoint(-70, 40, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szExitFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,140,80));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
     mGuideNamePlate = NEW GuideNamePlate();
     mGuideNamePlate->initialize( this, 2, 70, 20 );
@@ -124,7 +124,7 @@ bool Exit::Release()
 //---------------------------------------------------------------------------
 bool Exit::Update()
 {
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	return true;
 }
@@ -148,7 +148,7 @@ int Exit::HandleEvent(u32 event_,void *args_)
 }
 const LRect* Exit::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
+	mColRect.set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
 
 	return &mColRect;
 }

@@ -39,32 +39,32 @@
     {
         mGameObject = object_;
 
-        LTexture tex = Assets::LoadTexture( "Data/Graphics/Frontend/Frontend_1.png" );
+        LTexture tex = Assets::loadTexture( "Data/Graphics/Frontend/Frontend_1.png" );
 
         // フレーム
-        mFrameSprite = Sprite2D::Create(  tex);
+        mFrameSprite = ln::UISprite::create(  tex);
         mFrameSprite->setSourceRect( 0, 168 + 16 * arrow_color_, 64, 13 );
-        mFrameSprite->SetVisible( false );
+        mFrameSprite->setVisible( false );
 
         // 矢印
-        mArrowSprite = Sprite2D::Create( tex );
+        mArrowSprite = ln::UISprite::create( tex );
         mArrowSprite->setSourceRect( 16 * arrow_color_, 128, 16, 8 );
-        mArrowSprite->SetCenter( 6, 7 );
-        mArrowSprite->SetVisible( false );
+        mArrowSprite->setCenterPoint( 6, 7 );
+        mArrowSprite->setVisible( false );
 
         // 名前
-        LFont font = GameFrontendManager::getInstance()->getGuidNamePlateFont();
+        Ref<LFont> font = GameFrontendManager::getInstance()->getGuidNamePlateFont();
 		
         Size size = font->MeasureRenderSize( mGameObject->getName() );
 
-        mNameTextTexture = Texture2D::Create( size.width , 20 );
+        mNameTextTexture = Texture2D::create( size.width , 20 );
 		mNameTextTexture->DrawText(mGameObject->getName(), Rect(0, 0, size.width, size.height), font, Color32::White, Color32::Black, 0, TextAlignment::Left);
 
-        mNameTextSprite = Sprite2D::Create( mNameTextTexture );
-        mNameTextSprite->SetVisible( false );
+        mNameTextSprite = ln::UISprite::create( mNameTextTexture );
+        mNameTextSprite->setVisible( false );
 		mNameTextSprite->setSourceRect(0, 0, size.width, size.height);
 
-        mOffsetPos.Set( ox_, oy_, 0 );
+        mOffsetPos.set( ox_, oy_, 0 );
         
 
 
@@ -103,7 +103,7 @@
 
 		//if ( ( player_pos - object_pos ).getLength() < 200 )
 
-		float length = (player_pos - object_pos).GetLengthSquared();
+		float length = (player_pos - object_pos).lengthSquared();
 
 		// プレイヤーと近ければ表示
 		if (!mIsNearPlayer && length < 60000)
@@ -112,9 +112,9 @@
 
 			mFadeOpacity.Start(mFadeOpacity.GetValue(), 1.0f, 20);
 
-			mArrowSprite->SetVisible(true);
-			mFrameSprite->SetVisible(true);
-			mNameTextSprite->SetVisible(true);
+			mArrowSprite->setVisible(true);
+			mFrameSprite->setVisible(true);
+			mNameTextSprite->setVisible(true);
 
 #ifdef GUIDE_UNDER
 
@@ -133,9 +133,9 @@
 
 		float op = GameFrontendManager::getInstance()->getGlobalFadeOpacity() * mFadeOpacity.GetValue();
 
-		mArrowSprite->SetOpacity(mFadeOpacity.GetValue());  // 矢印だけは Global が透明でも表示する
-		mFrameSprite->SetOpacity(op);
-		mNameTextSprite->SetOpacity(op);
+		mArrowSprite->setOpacity(mFadeOpacity.GetValue());  // 矢印だけは Global が透明でも表示する
+		mFrameSprite->setOpacity(op);
+		mNameTextSprite->setOpacity(op);
 
 
 
@@ -146,9 +146,9 @@
 		// 完全にフェードアウトした場合は非表示にする
 		if (mFadeOpacity.IsFinished() && mFadeOpacity.GetValue() == 0.0f)
 		{
-			mArrowSprite->SetVisible(false);
-			mFrameSprite->SetVisible(false);
-			mNameTextSprite->SetVisible(false);
+			mArrowSprite->setVisible(false);
+			mFrameSprite->setVisible(false);
+			mNameTextSprite->setVisible(false);
 		}
 		else
 		{
@@ -166,19 +166,19 @@
     //---------------------------------------------------------------------
     void GuideNamePlate::_setPosition( const LVector3& pos_ )
     {
-        mArrowSprite->SetPosition( pos_.x, pos_.y, 100 );
+        mArrowSprite->setPosition( pos_.x, pos_.y, 100 );
         
 
 
 
         // フレームの左上
-        float x = pos_.x  - mFrameSprite->GetSrcRect().width / 2;
+        float x = pos_.x  - mFrameSprite->sourceRect().width / 2;
         
-        mFrameSprite->SetPosition( x, pos_.y - 24, 100 );
+        mFrameSprite->setPosition( x, pos_.y - 24, 100 );
         
 
-        x = pos_.x  - mNameTextSprite->GetSrcRect().width / 2;
-        mNameTextSprite->SetPosition( x, pos_.y - 23, 100 );
+        x = pos_.x  - mNameTextSprite->sourceRect().width / 2;
+        mNameTextSprite->setPosition( x, pos_.y - 23, 100 );
         
 
         

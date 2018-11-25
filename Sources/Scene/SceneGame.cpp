@@ -263,7 +263,7 @@ void SceneGame::onUpdate()
     if ( Input.isOnTrigger( LN_BUTTON_R ) )
     {
 		mUBW = 10;
-		GameAudio::PlaySE("./Data/Sound/SE/UBW.wav");
+		GameAudio::playSE("./Data/Sound/SE/UBW.wav");
 		//Audio.playBGM("d:\\Users\\GamePG\\Desktop\\bgm\\ÅyFateÅ^unlimited codesÅzEMIYAÅyBGMÅz.mp3",60);
     }
 
@@ -271,7 +271,7 @@ void SceneGame::onUpdate()
     if ( Input.isOnTrigger( LN_BUTTON_L ) )
     {
 		mUBW = 10;
-		GameAudio::PlaySE("./Data/Sound/SE/I_am_the_bone.wav");
+		GameAudio::playSE("./Data/Sound/SE/I_am_the_bone.wav");
 		//Audio.playBGM("d:\\Users\\GamePG\\Desktop\\The Pink Panther Theme Song.mp3",100,100);
     }
 

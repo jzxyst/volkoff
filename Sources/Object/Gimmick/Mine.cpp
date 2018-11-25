@@ -85,10 +85,10 @@ bool Mine::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-10, 10, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szMineFilePath));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+    this->mPanel->setCenterPoint(-10, 10, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szMineFilePath));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	return true;
 }
@@ -127,7 +127,7 @@ bool Mine::Release()
 bool Mine::Update()
 {
 	++this->m_nFrame;
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	//発動条件（適当）//上下差が200以下 かつ 左右差が10以下
 	const int y = 20;
@@ -144,7 +144,7 @@ bool Mine::Update()
 
 		//ダメージを与えたい場合はここに書く
 		GameManager::getInstance()->getPlayer()->attackEffect(GameManager::getInstance()->getPlayer(),100,1,1,LVector3(0,6,0),65);
-		GameAudio::PlaySE("./Data/Sound/SE/Explosion01.ogg",0.50,1.30);
+		GameAudio::playSE("./Data/Sound/SE/Explosion01.ogg",0.50,1.30);
 		//ここまで
 
 		GameObjectManager::getInstance()->deleteObject(this);

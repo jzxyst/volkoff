@@ -25,15 +25,15 @@
 		mRankingTexture = LTexture::create("Data/Graphics/Frontend/Ranking_1.png");
 
 		mFrameSprite = LSprite::create(mRankingTexture);
-		mFrameSprite.setSrcRect(0, 0, 320, 47);
+		mFrameSprite->setSourceRect(0, 0, 320, 47);
 
 		mNumberSprite = LSprite::create(LTexture::create("Data/Graphics/Frontend/Number_2.png"));
-		mNumberSprite.setSrcRect(7 * no_, 0, 7, 11);
+		mNumberSprite->setSourceRect(7 * no_, 0, 7, 11);
 
 		mRankSprite = LSprite::create(mRankingTexture);
-		mRankSprite.setSrcRect(0, rank_ * 16 + 96, 48, 12);
+		mRankSprite->setSourceRect(0, rank_ * 16 + 96, 48, 12);
 
-		LFont name_font = LFont::createDefaultFont();
+        Ref<LFont> name_font = LFont::createDefaultFont();
 		name_font.setColor(LColor(0, 0, 0));
 
 		mNameTexture = LTexture::create(128, 32);
@@ -43,7 +43,7 @@
 		mNameSprite = LSprite::create(mNameTexture);
 
 
-		LFont time_font = LFont::createDefaultFont();
+        Ref<LFont> time_font = LFont::createDefaultFont();
 		time_font.setColor(LColor(0, 0, 0));
 		time_font.setSize(15);
 
@@ -70,8 +70,8 @@
 
 
 		mCaretSprite = LSprite::create(mRankingTexture);
-		mCaretSprite.setSrcRect(64, 96, 1, 18);
-		mCaretSprite.setVisible(false);
+		mCaretSprite->setSourceRect(64, 96, 1, 18);
+		mCaretSprite->setVisible(false);
 		mCaretCount = 0;
 		mCaretX = 0;
 
@@ -86,12 +86,12 @@
 		if (mInited)
 		{
 			mPosition.set(x_, y_, 0);
-			mFrameSprite.setPosition(x_, y_);
-			mNumberSprite.setPosition(x_ + 6, y_ + 3);
-			mRankSprite.setPosition(x_ + 32, y_ + 3);
-			mNameSprite.setPosition(x_ + 16, y_ + 20);
-			mTextSprite.setPosition(x_ + 128, y_ + 4);
-			mCaretSprite.setPosition(mPosition.x + 16 + mCaretX, mPosition.y + 23);
+			mFrameSprite->setPosition(x_, y_);
+			mNumberSprite->setPosition(x_ + 6, y_ + 3);
+			mRankSprite->setPosition(x_ + 32, y_ + 3);
+			mNameSprite->setPosition(x_ + 16, y_ + 20);
+			mTextSprite->setPosition(x_ + 128, y_ + 4);
+			mCaretSprite->setPosition(mPosition.x + 16 + mCaretX, mPosition.y + 23);
 		}
 	}
 
@@ -102,11 +102,11 @@
 	{
 		if (mInited)
 		{
-			mFrameSprite.setOpacity(op_);
-			mNumberSprite.setOpacity(op_);
-			mRankSprite.setOpacity(op_);
-			mNameSprite.setOpacity(op_);
-			mTextSprite.setOpacity(op_);
+			mFrameSprite->setOpacity(op_);
+			mNumberSprite->setOpacity(op_);
+			mRankSprite->setOpacity(op_);
+			mNameSprite->setOpacity(op_);
+			mTextSprite->setOpacity(op_);
 		}
 	}
 
@@ -117,13 +117,13 @@
 	{
 		if (mInited)
 		{
-			mNameTexture.clear(LColor::TRANSPARENCY_WHITE);
-			mNameTexture.drawText(name_, LRect(0, 0, 0, 0));
+			mNameTexture->clear(LColor::TRANSPARENCY_WHITE);
+			mNameTexture->drawText(name_, LRect(0, 0, 0, 0));
 
 			LRect r;
-			mNameTexture.getFont().getTextSize(name_, strlen(name_), &r);
+			mNameTexture->getFont().getTextSize(name_, strlen(name_), &r);
 			mCaretX = r.w;
-			mCaretSprite.setPosition(mPosition.x + 16 + mCaretX, mPosition.y + 23);
+			mCaretSprite->setPosition(mPosition.x + 16 + mCaretX, mPosition.y + 23);
 		}
 	}
 
@@ -136,11 +136,11 @@
 		{
 			if (mCaretCount < 30)
 			{
-				mCaretSprite.setVisible(false);
+				mCaretSprite->setVisible(false);
 			}
 			else
 			{
-				mCaretSprite.setVisible(true);
+				mCaretSprite->setVisible(true);
 			}
 
 			++mCaretCount;

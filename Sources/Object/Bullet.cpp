@@ -80,10 +80,10 @@ bool Bullet::Initialize()
 	this->Release();
 	this->mScore = 0; 
 	this->mPanel = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-10, 10, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szBulletFilePath/*,0xffffffff*/));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+    this->mPanel->setCenterPoint(-10, 10, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szBulletFilePath/*,0xffffffff*/));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 	this->mLife = 1;
 	this->mFrameCnt = 0;
 	this->mLifeFrame = 0;
@@ -164,7 +164,7 @@ bool Bullet::Update()
 		LVector3 v(this->mPosition);
 		v.z = 0.f;
 		new Effect_Explosion2(v);
-		GameAudio::PlaySE("./Data/Sound/SE/Explosion01.ogg",mSeVol,1.80);
+		GameAudio::playSE("./Data/Sound/SE/Explosion01.ogg",mSeVol,1.80);
 		GameObjectManager::getInstance()->deleteObject( this );	
 		//printf("sibou\n");
 		this->setExit(true);
@@ -208,7 +208,7 @@ bool Bullet::Update()
 			LVector3 v(this->mPosition);
 			v.z = 0.f;
 			new Effect_Explosion2(v);
-			GameAudio::PlaySE("./Data/Sound/SE/Explosion01.ogg",mSeVol,1.80);
+			GameAudio::playSE("./Data/Sound/SE/Explosion01.ogg",mSeVol,1.80);
 			this->setExit(true);
 			//GameObjectManager::getInstance()->deleteObject( this );	
         }
@@ -222,7 +222,7 @@ bool Bullet::Update()
 		//LVector3 v(this->mPosition);
 		//v.z = 0.f;
 		//new Effect_Explosion2(v);
-		//GameAudio::PlaySE("./Data/Sound/SE/Explosion01.ogg",0.30,1.80);
+		//GameAudio::playSE("./Data/Sound/SE/Explosion01.ogg",0.30,1.80);
 		this->setExit(true);
 		//GameObjectManager::getInstance()->deleteObject( this );
 	}

@@ -539,8 +539,8 @@ u32 GameObjectManager::CollisionToObject( const u32 obj_type_, LRect rect_, LVec
 	int player_worldheight = player_rect.Y - player_rect.height;
     */
 
-    dist_->Set( 0, 0 );
-    over_->Set( 0, 0 );
+    dist_->set( 0, 0 );
+    over_->set( 0, 0 );
 
     // 自分のワールド上の左、上、右、下、それらの中心。
     // 上 > 下 な点に注意。下の方が 0 に近い。
@@ -621,7 +621,7 @@ u32 GameObjectManager::CollisionToObject( const u32 obj_type_, LRect rect_, LVec
 
                     
                     // 二つの中心座標の距離
-                    dist_->Set( tc.x - pc.x, tc.y - pc.y );
+                    dist_->set( tc.x - pc.x, tc.y - pc.y );
 
                     break;
 
@@ -761,8 +761,8 @@ u32 GameObjectManager::CollisionToObject( const u32 obj_type_, LRect rect_, LVec
 
 	if ( result == OBJ_UNDEF )
 	{
-		dist_->Set( 0, 0 );
-		over_->Set( 0, 0 );
+		dist_->set( 0, 0 );
+		over_->set( 0, 0 );
 	}
 
 	return result;

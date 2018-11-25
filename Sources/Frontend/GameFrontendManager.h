@@ -46,7 +46,7 @@ public:
     PlayerStateWindow* getPlayerStateWindow() const { return mPlayerStateWindow; }
 
     /// ネームプレートの文字描画に使うフォントの取得
-	LFont getNamePlateFont() const { return mNamePlateFont; }
+	Ref<LFont> getNamePlateFont() const { return mNamePlateFont; }
 
     /// ダメージポップ管理クラスの取得
     DamagePop* getDamagePopManager() const { return mDamagePop; }
@@ -59,7 +59,7 @@ public:
 
 
 
-	LFont getGuidNamePlateFont() const { return mGuidNamePlateFont; }
+    Ref<LFont> getGuidNamePlateFont() const { return mGuidNamePlateFont; }
  
     /// (GuidNamePlate のコンストラクタから呼ばれる)
     void addGuidNamePlate( GuideNamePlate* plate_ );
@@ -100,7 +100,7 @@ private:
 
     LTexture                mNumberTexture1;    ///< 数字テクスチャ
     PlayerStateWindow*      mPlayerStateWindow;
-	LFont					mNamePlateFont;
+    Ref<LFont>					mNamePlateFont;
 
     RapidNumber<int>        mFrameXPos;
 
@@ -108,14 +108,14 @@ private:
 
 
     GuideNamePlateList      mGuideNamePlateList;
-	LFont					mGuidNamePlateFont;     ///< ガイド用の縁取りフォント
+    Ref<LFont>					mGuidNamePlateFont;     ///< ガイド用の縁取りフォント
 
     u32                     mShowCharacterNamePlateCount;
 	EasingValue<float>		mGlobalFadeOpacity;
 
     u32                     mLevelupFrameCount;
-    LSprite                 mLevelupSprites[ 2 ];
-    LSprite                 mLevelEffectSprite;
+    ln::Ref<ln::UISprite>                 mLevelupSprites[ 2 ];
+    ln::Ref<ln::UISprite>                 mLevelEffectSprite;
 
     PointCursor*            mPointCursor;
 
@@ -124,7 +124,7 @@ private:
 	FloatAnimationCurve     mFloorNumAnimAlpha;
 	double					mFloorNumAnimTime;
     LTexture                mFloorInfoTexture;
-    LSprite                 mFloorInfoSprite[ 3 ];
+    ln::Ref<ln::UISprite>                 mFloorInfoSprite[ 3 ];
     float                   mFloorInfoOffset;
 };
 

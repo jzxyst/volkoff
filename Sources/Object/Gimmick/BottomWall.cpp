@@ -139,9 +139,9 @@ bool BottomWall::Update()
 	myPos.y -= 100;
 	if(abs(myPos.y - GameManager::getInstance()->getPlayer()->getPosition().y) <= y && abs(myPos.x - GameManager::getInstance()->getPlayer()->getPosition().x) <= x && this->m_bActive && !this->m_bStart)
 	{
-		GameAudio::PlaySE("./Data/Sound/SE/don01.wav",0.75,1.00);
-		GameAudio::PlaySE("./Data/Sound/SE/don01.wav",0.90,0.70);
-		GameAudio::PlaySE("./Data/Sound/SE/don01.wav",0.90,0.60);
+		GameAudio::playSE("./Data/Sound/SE/don01.wav",0.75,1.00);
+		GameAudio::playSE("./Data/Sound/SE/don01.wav",0.90,0.70);
+		GameAudio::playSE("./Data/Sound/SE/don01.wav",0.90,0.60);
 		this->m_bStart = true;
 	}
 

@@ -84,11 +84,11 @@ bool Window::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(128.0f,192.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-64, 96, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szWindowFilePath));
+    this->mPanel->setCenterPoint(-64, 96, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szWindowFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,128,192));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	return true;
 }
@@ -127,7 +127,7 @@ bool Window::Release()
 bool Window::Update()
 {
 	++this->m_nFrame;
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	//発動条件（適当）//上下差が200以下 かつ 左右差が10以下
 	const int y = 150;
@@ -145,11 +145,11 @@ bool Window::Update()
 		//	pEnemy->setVelocity(LVector3(::rand() % 10 - 5,0,0));
 		//}
 
-		GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.60,0.30);
-		GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.60,0.50);
-		GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.60,0.65);
-		GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.60,1.00);
-		GameAudio::PlaySE("./Data/Sound/SE/crash_grass2.wav",0.60,0.80);
+		GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.60,0.30);
+		GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.60,0.50);
+		GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.60,0.65);
+		GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.60,1.00);
+		GameAudio::playSE("./Data/Sound/SE/crash_grass2.wav",0.60,0.80);
 		this->m_bStart = true;
 	}
 

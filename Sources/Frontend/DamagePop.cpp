@@ -15,7 +15,7 @@
     //---------------------------------------------------------------------
     DamagePop::DamagePop()
     {
-        mNumberTexture = Assets::LoadTexture( "Data/Graphics/Frontend/Number_1.png" );
+        mNumberTexture = Assets::loadTexture( "Data/Graphics/Frontend/Number_1.png" );
     }
 
     //---------------------------------------------------------------------
@@ -106,8 +106,8 @@
         //_p(mPosition.y);
 
 
-        mNumberSprite = Sprite2D::Create( mNumberTexture );
-        mNumberSprite->SetCenter( mNumberTexture->GetWidth() / 2, mNumberTexture->GetHeight() / 2 );
+        mNumberSprite = ln::UISprite::create( mNumberTexture );
+        mNumberSprite->setCenterPoint( mNumberTexture->width() / 2, mNumberTexture->height() / 2 );
         mNumberSprite->SetPriority(-1000);	// Œã‚É‘‚©‚ê‚é‚æ‚¤‚É‚·‚é
         mNumberSprite->SetDepthTestEnabled( false );
     }
@@ -131,18 +131,18 @@
         LVector3 pos_2d = Accessor::Main3Camera->WorldToViewportPoint(mPosition);
         //Engine::Framework::getInstance()->getSceneManager()->getDefaultSceneGraph()->getDefaultCamera()->convertWorldPosToScreenPos( &pos_2d, mPosition );
 		pos_2d.z = 0;
-		mNumberSprite->SetPosition( pos_2d );
+		mNumberSprite->setPosition( pos_2d );
 
 
         if ( mFrameCount <= 7 )
         {
-            mNumberSprite->SetScale( 1.25f + 0.25f * ( 7 - mFrameCount ) );
+            mNumberSprite->setScale( 1.25f + 0.25f * ( 7 - mFrameCount ) );
         }
 
         if ( mFrameCount > 10 )
         {
             float c = static_cast< float >( 40 - mFrameCount ) / 40;
-            mNumberSprite->SetOpacity( c );
+            mNumberSprite->setOpacity( c );
         }
 
         if ( mFrameCount >= 40 )

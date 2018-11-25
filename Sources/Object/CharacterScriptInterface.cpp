@@ -44,7 +44,7 @@ CharacterScriptInterface::CharacterScriptInterface()
             luaL_openlibs( l );
             if ( luaL_dofile( l, CharaResourceNames[ i ].Script ) )
             {
-                LN_ASSERT( 0, "スクリプトのエラー:\n\n%s", lua_tostring( l, lua_gettop( l ) ) );
+                assert( 0, "スクリプトのエラー:\n\n%s", lua_tostring( l, lua_gettop( l ) ) );
             }
 
             // グローバル変数 (定数) の登録
@@ -550,7 +550,7 @@ int CharacterScriptInterface::PlaySE( lua_State *l_ )
 
 	lua_pop( l_, lua_gettop( l_ ) );
 
-    GameAudio::PlaySE(temp.c_str(),0.01f * a, 0.01f * b);
+    GameAudio::playSE(temp.c_str(),0.01f * a, 0.01f * b);
 
 	return 0;
 }
@@ -803,7 +803,7 @@ int CharacterScriptInterface:: SummonEnemy(lua_State *l_)
 	wdata.Data.UseCount   = gWeaponBaseData[wdata.Data.WeaponType].UseCount;
 
 	LVector3 v ;
-	v.Set(900,1000,0);
+	v.set(900,1000,0);
 	v.x += ::rand() % 300 - 150;
 	v.y += 180;
 	wdata.Position = v;
@@ -939,7 +939,7 @@ int CharacterScriptInterface::ThunderGenerate(lua_State *l_)
 	//AttackLect.y=1500;
 	//AttackLect.height =2000;
 	//AttackLect.width =25;
-	GameAudio::PlaySE("./Data/Sound/SE/Thunder01.wav",0.60,1.00);
+	GameAudio::playSE("./Data/Sound/SE/Thunder01.wav",0.60,1.00);
 
 	HitObjectList*  obj_list;
 	if(character->getObjType() == OBJ_CHARACTER)

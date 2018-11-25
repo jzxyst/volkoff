@@ -84,11 +84,11 @@ bool Locker::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(80.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-40, 40, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szLockerFilePath));
+    this->mPanel->setCenterPoint(-40, 40, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szLockerFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,80,80));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	return true;
 }
@@ -127,7 +127,7 @@ bool Locker::Release()
 bool Locker::Update()
 {
 	++this->m_nFrame;
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	//発動条件（適当）//上下差が200以下 かつ 左右差が150以下
 	const int y = 80;
@@ -144,8 +144,8 @@ bool Locker::Update()
 		//	pEnemy->setVelocity(LVector3(::rand() % 10 - 5,0,0));
 		//}
 
-		GameAudio::PlaySE("./Data/Sound/SE/doorclose2.wav",1.00,0.60);
-		GameAudio::PlaySE("./Data/Sound/SE/doorclose2.wav",1.00,1.00);
+		GameAudio::playSE("./Data/Sound/SE/doorclose2.wav",1.00,0.60);
+		GameAudio::playSE("./Data/Sound/SE/doorclose2.wav",1.00,1.00);
 		this->m_bStart = true;
 	}
 

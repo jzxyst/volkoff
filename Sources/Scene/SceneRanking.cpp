@@ -27,9 +27,9 @@ void SceneRanking::onStart()
 	mRankingTexture = Assets::LoadTexture( "Data/Graphics/Frontend/Ranking_1.png" );
     
     mBGWhiteSprite = LSprite::create( mRankingTexture );
-    mBGWhiteSprite.setSrcRect( 320, 0, 32, 32 );
-    mBGWhiteSprite.setScale( 20 );
-	mBGWhiteSprite.setOpacity( 1.0 );
+    mBGWhiteSprite->setSourceRect( 320, 0, 32, 32 );
+    mBGWhiteSprite->setScale( 20 );
+	mBGWhiteSprite->setOpacity( 1.0 );
 
 
 	//RankingManager::getInstance()->PostLocalStoryScore( "Tom", 31200971, 5, 71000 * 60 * 2, 0 );

@@ -83,10 +83,10 @@ void SceneResult::onStart()
     // 背景色
     Graphics.setBGColor( 1.0f, 1.0f, 1.0f );
 
-    mCharacterSprite = Sprite2D::Create(Assets::LoadTexture( "Data/Graphics/Character/Char_Knife.png" ) );
+    mCharacterSprite = ln::UISprite::create(Assets::LoadTexture( "Data/Graphics/Character/Char_Knife.png" ) );
     mCharacterSprite->setSourceRect( 0, 1760, 160, 160 );
     mCharacterSprite->SetPosition( 160, 320, 0 );
-    mWeaponSprite = Sprite2D::Create(Assets::LoadTexture( "Data/Graphics/Object/Weapons.png" ) );
+    mWeaponSprite = ln::UISprite::create(Assets::LoadTexture( "Data/Graphics/Object/Weapons.png" ) );
     mWeaponSprite->setSourceRect( mWeaponNo * 80, 0, 80, 80 );
     mWeaponSprite->SetPosition( 100, 400, 0 );
 
@@ -96,13 +96,13 @@ void SceneResult::onStart()
 	
 	for ( int i = 0; i < 3; ++i )
 	{
-		mScoreLineSprites[ i ] = Sprite2D::Create( mResultTexture );
+		mScoreLineSprites[ i ] = ln::UISprite::create( mResultTexture );
 		mScoreLineSprites[ i ]->setSourceRect( 0, 96 + 32 * i, 352, 32 );
 		mScoreLineSprites[ i ]->SetPosition( 0, LINE_MARGIN_Y - 4 + 48 * i );
 		mScoreLineSprites[ i ]->SetOpacity( 0 );
 	}
 
-	mTotalLineSprite = Sprite2D::Create( mResultTexture );
+	mTotalLineSprite = ln::UISprite::create( mResultTexture );
 	mTotalLineSprite->setSourceRect( 0, 192, 608, 32 );
 	mTotalLineSprite->SetPosition( LINE_MARGIN_X, 256 );
 	mTotalLineSprite->SetOpacity( 0 );
@@ -110,7 +110,7 @@ void SceneResult::onStart()
 	// 時間
 	for ( int i = 0; i < 6; ++i )
 	{
-		mTimeSprite[ i ] = Sprite2D::Create( mResultTexture );
+		mTimeSprite[ i ] = ln::UISprite::create( mResultTexture );
 		mTimeSprite[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mTimeSprite[ i ]->SetPosition(
 			LINE_MARGIN_X + 108 + 11 * i + (i / 2 * 8), LINE_MARGIN_Y + 2 + 48 );
@@ -138,7 +138,7 @@ void SceneResult::onStart()
 	mTimeSprite[ 5 ]->setSourceRect( 11 * buf[1], 0, 11, 16 );
 
 	// ランク
-	mRankSprite = Sprite2D::Create( mResultTexture );
+	mRankSprite = ln::UISprite::create( mResultTexture );
 	mRankSprite->setSourceRect( 272, 20 * GameManager::getInstance()->getRank(), 92, 20 );
 	mRankSprite->SetPosition( LINE_MARGIN_X + 110, LINE_MARGIN_Y - 2 + 96 );
 	mRankSprite->SetOpacity( 0 );
@@ -146,7 +146,7 @@ void SceneResult::onStart()
 	// Score 数値
 	for ( int i = 0; i < 10; ++i )
 	{
-		mScoreNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
+		mScoreNumberSprites[ i ] = ln::UISprite::create( mResultTexture );
 		mScoreNumberSprites[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mScoreNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 234 + 11 * i - 32, LINE_MARGIN_Y + 2 );
 		mScoreNumberSprites[ i ]->SetOpacity( 0 );
@@ -155,7 +155,7 @@ void SceneResult::onStart()
 	// Time 数値
 	for ( int i = 0; i < 10; ++i )
 	{
-		mTimeNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
+		mTimeNumberSprites[ i ] = ln::UISprite::create( mResultTexture );
 		mTimeNumberSprites[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mTimeNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 234 + 11 * i - 32, LINE_MARGIN_Y + 2 + 48 );
 		mTimeNumberSprites[ i ]->SetOpacity( 0 );
@@ -164,7 +164,7 @@ void SceneResult::onStart()
 	// Rank 数値
 	for ( int i = 0; i < 10; ++i )
 	{
-		mRankNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
+		mRankNumberSprites[ i ] = ln::UISprite::create( mResultTexture );
 		mRankNumberSprites[ i ]->setSourceRect( 0, 0, 11, 16 );
 		mRankNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 234 + 11 * i - 32, LINE_MARGIN_Y + 2 + 96 );
 		mRankNumberSprites[ i ]->SetOpacity( 0 );
@@ -173,25 +173,25 @@ void SceneResult::onStart()
 	// Total 数値
 	for ( int i = 0; i < 10; ++i )
 	{
-		mTotalNumberSprites[ i ] = Sprite2D::Create( mResultTexture );
+		mTotalNumberSprites[ i ] = ln::UISprite::create( mResultTexture );
 		mTotalNumberSprites[ i ]->setSourceRect( 0, 16, 18, 24 );
 		mTotalNumberSprites[ i ]->SetPosition( LINE_MARGIN_X + 368 + 18 * i, LINE_MARGIN_Y + 206 );
 		mTotalNumberSprites[ i ]->SetOpacity( 0 );
 	}
 
 	// New Record
-	mNewRecordSprite = Sprite2D::Create( mResultTexture );
+	mNewRecordSprite = ln::UISprite::create( mResultTexture );
 	mNewRecordSprite->setSourceRect( 384, 0, 160, 32 );
 	mNewRecordSprite->SetPosition( 452, 340 );
 	mNewRecordSprite->SetOpacity( 0 );
 
-	mNewRecordBGSprite = Sprite2D::Create( mResultTexture );
+	mNewRecordBGSprite = ln::UISprite::create( mResultTexture );
 	mNewRecordBGSprite->setSourceRect( 0, 224, 32, 32 );
 	mNewRecordBGSprite->SetScale(20);
 	mNewRecordBGSprite->SetPosition(0, 0);
 	mNewRecordBGSprite->SetOpacity( 0 );
 
-	mRankingFrameSprite = Sprite2D::Create(
+	mRankingFrameSprite = ln::UISprite::create(
 		Assets::LoadTexture( "Data/Graphics/Frontend/Ranking_1.png" ));
 	mRankingFrameSprite->SetPosition(320, 200 + 48 / 2);
 	mRankingFrameSprite->SetCenter(256 / 2, 48 / 2);
@@ -229,7 +229,7 @@ void SceneResult::onStart()
 	tex.drawText(
 		"",
 		LRect( 0, 0, 512, 96 ) );
-	mMessageSprite = Sprite2D::Create( tex );
+	mMessageSprite = ln::UISprite::create( tex );
 	mMessageSprite->SetPosition( 100, 100 );
 	mMessageSprite->SetVisible(false);
 

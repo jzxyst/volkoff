@@ -164,8 +164,8 @@ bool Weapon::Initialize( const CreateData& data_ )
     mWeaponData = data_.Data;
 
     mPanel = LBatchPanel::create( 80, 80);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-40, 40, 0);
-    mPanel->SetTexture(Assets::loadTexture( "Data/Graphics/Object/Weapons.png"/*, 0xffffffff*/ ) );
+    this->mPanel->setCenterPoint(-40, 40, 0);
+    mPanel->setTexture(Assets::loadTexture( "Data/Graphics/Object/Weapons.png"/*, 0xffffffff*/ ) );
     mPanel->setSourceRect( 80 * mWeaponData.WeaponType, 0, 80, 80 );
 
     this->mPosition = data_.Position;
@@ -183,7 +183,7 @@ bool Weapon::Initialize( const CreateData& data_ )
 const LRect* Weapon::getBoundingRect()
 {
     static LRect rc;
-    rc.Set(
+    rc.set(
         static_cast< int >( mPosition.x ),
         static_cast< int >( mPosition.y ),
         80, 80 );
@@ -197,7 +197,7 @@ bool Weapon::Update()
 {
     GameObject::Update();
 
-    mPanel->SetPosition( this->mPosition );
+    mPanel->setPosition( this->mPosition );
 
     return true;
 }

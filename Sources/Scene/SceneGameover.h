@@ -44,8 +44,8 @@ private:
 
 private:
 
-    LSprite     mBlindSprite;
-    LSprite     mBlindSprite2;
+    ln::Ref<ln::UISprite>     mBlindSprite;
+    ln::Ref<ln::UISprite>     mBlindSprite2;
 
     int         mStep;
     int         mFrameCount;
@@ -55,16 +55,16 @@ private:
 	EasingValue<float>	mLogoFadeValue;
 	EasingValue<float>	mFadeValue;
 
-    LSprite     mLogoSprite;
+    ln::Ref<ln::UISprite>     mLogoSprite;
 
-    LSprite     mDescWindowSprite;      // 説明ウィンドウの枠
-    LSprite     mDescContentsSprite;
+    ln::Ref<ln::UISprite>     mDescWindowSprite;      // 説明ウィンドウの枠
+    ln::Ref<ln::UISprite>     mDescContentsSprite;
     LTexture    mDescContents;          // 説明ウィンドウの内容
-    LFont       mDescTitleFont;
+    Ref<LFont>       mDescTitleFont;
     int         mWindowFadeCount;
     Utility::FormatText mFormatText;
 
-    LSprite     mCommandSprite[ 2 ];
+    ln::Ref<ln::UISprite>     mCommandSprite[ 2 ];
 
     PointCursor*    mPointCursor;
 

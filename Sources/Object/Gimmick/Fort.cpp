@@ -88,20 +88,20 @@ bool Fort::Initialize()
 	this->m_eAction = FORT_ACT_WAIT;
 
 	this->setAttackedGroup( ATKGROUP_ENEMY );
-	this->mColRect.Set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
+	this->mColRect.set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
 
 	this->mPanel = LBatchPanel::create(60.0f,60.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-30, 30, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szFortFilePath/*,0xffffffff*/));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
-	this->mPanel->SetCenter(17.0f,20.0f,0.0f);
+    this->mPanel->setCenterPoint(-30, 30, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szFortFilePath/*,0xffffffff*/));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
+	this->mPanel->setCenterPoint(17.0f,20.0f,0.0f);
 
 	this->mPanel2 = LBatchPanel::create(20.0f,20.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel2->SetCenter(-10, 10, 0);
-	this->mPanel2->SetTexture(Assets::LoadTexture(g_szFortFilePath2));
-	this->mPanel2->SetPosition(LVector3(this->mPosition.x,this->mPosition.y,0));
-	this->mPanel2->SetVisible(true);
+    this->mPanel2->setCenterPoint(-10, 10, 0);
+	this->mPanel2->setTexture(Assets::loadTexture(g_szFortFilePath2));
+	this->mPanel2->setPosition(LVector3(this->mPosition.x,this->mPosition.y,0));
+	this->mPanel2->setVisible(true);
 
 	return true;
 }
@@ -162,7 +162,7 @@ bool Fort::Update()
 		//Žw’è‚µ‚½ŠÔŠu‚ÅƒvƒŒƒCƒ„[‚Ì•ûŒü‚ÉŒü‚­
 		if(!(this->m_nFrame % scg_nReactionSpeed[GameManager::getInstance()->getRank()]))
 		{
-			this->mPanel->SetAngles(0.0f,0.0f,::atan2f((this->mPosition - pv).y,(this->mPosition - pv).x));
+			this->mPanel->setEulerAngles(0.0f,0.0f,::atan2f((this->mPosition - pv).y,(this->mPosition - pv).x));
 		}
 
 		//’Tõ”ÍˆÍ“à‚Ìê‡‚Ì‚Ý“®ì‚·‚é
@@ -187,7 +187,7 @@ bool Fort::Update()
 		//Žw’è‚µ‚½ŠÔŠu‚ÅƒvƒŒƒCƒ„[‚Ì•ûŒü‚ÉŒü‚­
 		if(!(this->m_nFrame % scg_nReactionSpeed[GameManager::getInstance()->getRank()]))
 		{
-			this->mPanel->SetAngles(0.0f,0.0f,::atan2f((this->mPosition - pv).y,(this->mPosition - pv).x));
+			this->mPanel->setEulerAngles(0.0f,0.0f,::atan2f((this->mPosition - pv).y,(this->mPosition - pv).x));
 		}
 
 		//UŒ‚”ÍˆÍ“à‚Ìê‡‚Ì‚Ý“®ì‚·‚é
@@ -199,7 +199,7 @@ bool Fort::Update()
 				this->m_nAttackFrame = 0;
 				this->m_nShootNum = scg_nShootNum[GameManager::getInstance()->getRank()];
 				this->mShootVec = pv - this->mPosition;
-				this->mShootVec.Normalize();
+				this->mShootVec.normalize();
 				this->mShootVec *= scg_nShootSpeed[GameManager::getInstance()->getRank()];
 				this->m_eAction = FORT_ACT_ATTACK;
 			}
@@ -217,9 +217,9 @@ bool Fort::Update()
 		if(!(this->m_nFrame % scg_nReactionSpeed[GameManager::getInstance()->getRank()]))
 		{
 			this->mShootVec = pv - this->mPosition;
-			this->mShootVec.Normalize();
+			this->mShootVec.normalize();
 			this->mShootVec *= scg_nShootSpeed[GameManager::getInstance()->getRank()];
-			this->mPanel->SetAngles(0.0f,0.0f,::atan2f((this->mPosition - pv).y,(this->mPosition - pv).x));
+			this->mPanel->setEulerAngles(0.0f,0.0f,::atan2f((this->mPosition - pv).y,(this->mPosition - pv).x));
 		}
 		//UŒ‚‰ñ”‚ªŽc‚Á‚Ä‚¢‚éŠÔAUŒ‚‚ðŒJ‚è•Ô‚·
 		if(this->m_nShootNum)
@@ -241,7 +241,7 @@ bool Fort::Update()
 				this->mShootVec.x >= 0 ? obj->setDirection(CHARADIR_RIGHT) : obj->setDirection(CHARADIR_LEFT);
 				obj->setAttackParam(scg_nShootDamage[GameManager::getInstance()->getRank()],1,0,LVector3(0,0,0),5);
 
-				GameAudio::PlaySE("./Data/Sound/SE/gun01.wav",0.30,1.00);
+				GameAudio::playSE("./Data/Sound/SE/gun01.wav",0.30,1.00);
 			}
 			else
 			{
@@ -267,11 +267,11 @@ bool Fort::Update()
 			GameManager::getInstance()->setScore(GameManager::getInstance()->getScore()+(this->getScore()*(GameManager::getInstance()->getFloorNum()+1)*GameManager::getInstance()->getPlayer()->getLife()*((GameManager::getInstance()->getRank()+1)*2))); 
 
 		new Effect_Explosion(this->mPosition);
-		GameAudio::PlaySE("./Data/Sound/SE/Explosion01.ogg",0.50,0.80);
+		GameAudio::playSE("./Data/Sound/SE/Explosion01.ogg",0.50,0.80);
 	}
 
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel2->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel2->setPosition(this->mPosition);
 	return true;
 }
 
@@ -299,7 +299,7 @@ int Fort::HandleEvent(u32 event_,void *args_)
 		case EV_APPLY_DAMAGE:
 			// ƒ_ƒ[ƒWŽó‚¯‚½Žž
 			this->mLife -= arg->Damage;
-			GameAudio::PlaySE("./Data/Sound/SE/Explosion02.mp3",0.90,1.30);
+			GameAudio::playSE("./Data/Sound/SE/Explosion02.mp3",0.90,1.30);
 
 			break;
 	}
@@ -310,7 +310,7 @@ int Fort::HandleEvent(u32 event_,void *args_)
 
 const LRect* Fort::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
+	mColRect.set( mPosition.x+11, mPosition.y-7, 18*mScale.x, 33*mScale.y );
 
 	return &mColRect;
 }

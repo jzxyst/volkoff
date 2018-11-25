@@ -18,9 +18,9 @@ void SceneStartup::onStart()
 	// ”wŒiF
 	Engine::GetMainViewport()->SetBackgroundColor(Color::Black);
 
-	mLogoSprite = Sprite2D::Create(_T("Data/Graphics/Frontend/Logo_1.png"));
+	mLogoSprite = ln::UISprite::create(_T("Data/Graphics/Frontend/Logo_1.png"));
 
-	Texture2DPtr tex = Assets::LoadTexture(_T("Data/Graphics/Frontend/Title_1.png"));
+	Texture2DPtr tex = Assets::loadTexture(_T("Data/Graphics/Frontend/Title_1.png"));
 
 	//mFlashSprite = Sprite2D::Create(tex);
 	//mFlashSprite->SetCenter(64, 8, 0);
@@ -28,7 +28,7 @@ void SceneStartup::onStart()
 	//mFlashSprite->setSourceRect(0, 496, 128, 16);
 
 	// •¶Žš—p
-	mTitleSubTextSprite = Sprite2D::Create(Assets::LoadTexture(_T("Data/Graphics/Frontend/Title_1.png")));
+	mTitleSubTextSprite = ln::UISprite::create(Assets::loadTexture(_T("Data/Graphics/Frontend/Title_1.png")));
 	mTitleSubTextSprite->SetPosition(108, 192, 0);
 	mTitleSubTextSprite->setSourceRect(0, 192 + 16, 424, 16);
 	mTitleSubTextSprite->SetVisible(false);

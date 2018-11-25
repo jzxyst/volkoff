@@ -178,7 +178,7 @@ bool Player::Update()
     //if ( Input.isPress( LN_BUTTON_L ) )
     //{
     //    NEW Effect_Test_1( getPosition() );
-    //    GameAudio::PlaySE("./Data/Sound/SE/sword1.wav");
+    //    GameAudio::playSE("./Data/Sound/SE/sword1.wav");
     //}
 
 	//

@@ -30,7 +30,7 @@ struct LNFormatTextDrawData
 	const lnChar*			Text;   ///< 描画する文字列 ('\0'終端であることは保障されない)
     int						Length; ///< 描画する文字数 (マルチバイト文字の分も考慮済み。"あ"の場合は2となる)
 	Rect					Rect;   ///< 文字を描画する領域
-	FontPtr					Font;   ///< 描画に使うフォント
+    Ref<LFont>					Font;   ///< 描画に使うフォント
 
 	//LString control_code;
 	//LString control_param;
@@ -78,7 +78,7 @@ public:
     //  @brief      フォントを設定する
     //*/
     //---------------------------------------------------------------------
-    void setFont(FontPtr font_ );
+    void setFont(Ref<LFont> font_ );
 
     //---------------------------------------------------------------------
 	///**
@@ -190,7 +190,7 @@ private:
 
     //Core::Base::RefTString  mSrcText;
 	ln_std_tstring          mSrcText;
-    FontPtr			 mFont;
+    Ref<LFont>			 mFont;
     int                     mDefaultFontSize;
     int                     mTypingSpeed;
     Rect                   mDrawRect;
@@ -209,7 +209,7 @@ private:
     int                     mRubyMainStrLen;    ///< mRubyMainStr の文字数
     float                   mRubyX;             ///< ルビを描きだす X 座標
     float                   mRubyOffsetX;       ///< ルビの X 座標加算量
-	FontPtr					mRubyFont;
+    Ref<LFont>					mRubyFont;
 
 
     DrawDataEntryQueue      mDrawDataEntryQueue;

@@ -13,16 +13,16 @@
 //---------------------------------------------------------------------
 Effect_ValfirleDead::Effect_ValfirleDead( const LVector3& pos_ )
 {
-    LTexture tex = Assets::LoadTexture( "Data/Graphics/Effect/Effect_2.png" );
+    LTexture tex = Assets::loadTexture( "Data/Graphics/Effect/Effect_2.png" );
     for ( int i = 0; i < 4; ++i )
     {
         mLinePanels[ i ] = LBatchPanel::create( 32 + i * 12, 256, tex );
         mLinePanels[ i ]->setSourceRect( 0, 0, 128, 512 );
-        mLinePanels[ i ]->SetPosition( pos_ + LVector3( 0, 0, -10 ) );
+        mLinePanels[ i ]->setPosition( pos_ + LVector3( 0, 0, -10 ) );
         mLinePanels[ i ]->SetPriority( -10000 );
         mLinePanels[ i ]->SetDepthTestEnabled( false );
         mLinePanels[ i ]->SetDepthWriteEnabled( false );
-        mLinePanels[ i ]->SetOpacity( 0 );
+        mLinePanels[ i ]->setOpacity( 0 );
         //mLinePanels[ i ]->SetBlendMode( LN_BLEND_SUB );
     }
 
@@ -153,21 +153,21 @@ bool Effect_ValfirleDead::update()
 {
     float op = ( 0.008f * mFrameCount < 1.0f ) ? 0.008f * mFrameCount : 1.0f;
 	
-    mLinePanels[ 0 ]->SetScale( 0.01 * mFrameCount + 1.0f,  0.01 * mFrameCount + 1.0f, 1 );
-    mLinePanels[ 0 ]->SetAngles( 0, 0, -0.002f * mFrameCount );
-    mLinePanels[ 0 ]->SetOpacity( op );
+    mLinePanels[ 0 ]->setScale( 0.01 * mFrameCount + 1.0f,  0.01 * mFrameCount + 1.0f, 1 );
+    mLinePanels[ 0 ]->setEulerAngles( 0, 0, -0.002f * mFrameCount );
+    mLinePanels[ 0 ]->setOpacity( op );
 
-    mLinePanels[ 1 ]->SetScale( 0.01 * mFrameCount + 0.5f,  0.01 * mFrameCount + 2.0f, 1 );
-    mLinePanels[ 1 ]->SetAngles( 0, 0, 0.001f * mFrameCount + 1.0f );
-    mLinePanels[ 1 ]->SetOpacity( op );
+    mLinePanels[ 1 ]->setScale( 0.01 * mFrameCount + 0.5f,  0.01 * mFrameCount + 2.0f, 1 );
+    mLinePanels[ 1 ]->setEulerAngles( 0, 0, 0.001f * mFrameCount + 1.0f );
+    mLinePanels[ 1 ]->setOpacity( op );
 
-    mLinePanels[ 2 ]->SetScale( 0.01 * mFrameCount + 0.25f, 0.01 * mFrameCount + 0.8f, 1 );
-    mLinePanels[ 2 ]->SetAngles( 0, 0, -0.001f * mFrameCount + 2.5f );
-    mLinePanels[ 2 ]->SetOpacity( op );
+    mLinePanels[ 2 ]->setScale( 0.01 * mFrameCount + 0.25f, 0.01 * mFrameCount + 0.8f, 1 );
+    mLinePanels[ 2 ]->setEulerAngles( 0, 0, -0.001f * mFrameCount + 2.5f );
+    mLinePanels[ 2 ]->setOpacity( op );
 
-    mLinePanels[ 3 ]->SetScale( 0.01 * mFrameCount + 0.10f, 0.01 * mFrameCount + 1.5f, 1 );
-    mLinePanels[ 3 ]->SetAngles( 0, 0, 0.005f * mFrameCount + 3.0f );
-    mLinePanels[ 3 ]->SetOpacity( op );
+    mLinePanels[ 3 ]->setScale( 0.01 * mFrameCount + 0.10f, 0.01 * mFrameCount + 1.5f, 1 );
+    mLinePanels[ 3 ]->setEulerAngles( 0, 0, 0.005f * mFrameCount + 3.0f );
+    mLinePanels[ 3 ]->setOpacity( op );
 	
     ++mFrameCount;
 

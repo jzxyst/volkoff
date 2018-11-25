@@ -84,11 +84,11 @@ bool Door::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-70, 40, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szDoorFilePath));
+    this->mPanel->setCenterPoint(-70, 40, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szDoorFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,140,80));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	return true;
 }
@@ -127,7 +127,7 @@ bool Door::Release()
 bool Door::Update()
 {
 	++this->m_nFrame;
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	//発動条件（適当）//上下差が200以下 かつ 左右差が10以下
 	const int y = 100;
@@ -136,8 +136,8 @@ bool Door::Update()
 	myPos.x += 50;
 	if(abs(myPos.y - GameManager::getInstance()->getPlayer()->getPosition().y) <= y && abs(myPos.x - GameManager::getInstance()->getPlayer()->getPosition().x) <= x && this->m_bActive && !this->m_bStart)
 	{
-		GameAudio::PlaySE("./Data/Sound/SE/doorclose2.wav",1.00,1.00);
-		GameAudio::PlaySE("./Data/Sound/SE/doorclose3.wav",0.90,0.80);
+		GameAudio::playSE("./Data/Sound/SE/doorclose2.wav",1.00,1.00);
+		GameAudio::playSE("./Data/Sound/SE/doorclose3.wav",0.90,0.80);
 		this->m_bStart = true;
 	}
 

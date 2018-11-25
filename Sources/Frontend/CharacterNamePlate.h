@@ -56,11 +56,11 @@ private:
 private:
 
     Character*  mCharacter;
-    LSprite     mFrameSprite;
-    LSprite     mHPBarSprite;
-    LSprite     mDieBarSprite;
-    LSprite     mNameTextSprite;
-    LSprite     mBalloonPointSprite;
+    ln::Ref<ln::UISprite>     mFrameSprite;
+    ln::Ref<ln::UISprite>     mHPBarSprite;
+    ln::Ref<ln::UISprite>     mDieBarSprite;
+    ln::Ref<ln::UISprite>     mNameTextSprite;
+    ln::Ref<ln::UISprite>     mBalloonPointSprite;
     LTexture    mNameTextTexture;
 
     RapidNumber< float >  mHPValue;

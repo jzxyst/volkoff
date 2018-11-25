@@ -65,21 +65,21 @@ private:
     LTexture    mNumberTextureS;            ///< 小さい数字テクスチャ
     LTexture    mNumberTextureL;            ///< 大きい数字テクスチャ
 
-    LSprite     mFrameWindow;               ///< 枠
-    LSprite     mFloorNumSprite[ 2 ];       ///< フロア数
-    LSprite     mScoreNumSprite[ 10 ];      ///< スコア
-    LSprite     mHPBarSprite;               ///< HP バー
-    LSprite     mHPDieBarSprite;            ///< HP バーの、ダメージを受けて削られた部分
-    LSprite     mWeaponIconSprite;          ///< 武器アイコン
-    LSprite     mWeaponLevelSprite;         ///< 武器レベル
-    LSprite     mWeaponEXPBar;              ///< 武器経験値バー
-    LSprite     mWeaponCountSprite[ 3 ];    ///< 武器使用回数
-    LSprite     mKeySprite;                 ///< 鍵
-    LSprite     mKeyEffectSprite[ 2 ];      ///< 鍵入手時エフェクト
+    ln::Ref<ln::UISprite>     mFrameWindow;               ///< 枠
+    ln::Ref<ln::UISprite>     mFloorNumSprite[ 2 ];       ///< フロア数
+    ln::Ref<ln::UISprite>     mScoreNumSprite[ 10 ];      ///< スコア
+    ln::Ref<ln::UISprite>     mHPBarSprite;               ///< HP バー
+    ln::Ref<ln::UISprite>     mHPDieBarSprite;            ///< HP バーの、ダメージを受けて削られた部分
+    ln::Ref<ln::UISprite>     mWeaponIconSprite;          ///< 武器アイコン
+    ln::Ref<ln::UISprite>     mWeaponLevelSprite;         ///< 武器レベル
+    ln::Ref<ln::UISprite>     mWeaponEXPBar;              ///< 武器経験値バー
+    ln::Ref<ln::UISprite>     mWeaponCountSprite[ 3 ];    ///< 武器使用回数
+    ln::Ref<ln::UISprite>     mKeySprite;                 ///< 鍵
+    ln::Ref<ln::UISprite>     mKeyEffectSprite[ 2 ];      ///< 鍵入手時エフェクト
 
 
     u32         mLastWeaponCount;           ///< 使用回数の警告開始の判定に使う
-    LSprite     mWeaponCountWarningSprite[ 3 ];    ///< 武器使用回数
+    ln::Ref<ln::UISprite>     mWeaponCountWarningSprite[ 3 ];    ///< 武器使用回数
     u32         mWarningFrameCount;
     u8          mWarningShowedFlag;         ///< 30%以下になった瞬間を表示した場合は 1、15%以下を表示した場合は2
 

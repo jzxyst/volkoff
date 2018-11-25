@@ -682,7 +682,7 @@ bool Enemy::Initialize( const CreateData& data_ )
     mWeaponLevel    = data_.WeaponLevel;
     
 	bool r = Character::Initialize();
-	this->mCharaPanel->SetColorScale(0.5f,0.5f,0.5f);
+	this->mCharaPanel->setColorScale(0.5f,0.5f,0.5f);
 
     
 	this->mLife = this->mMaxLife = scg_nLife[GameManager::getInstance()->getRank()];
@@ -1273,7 +1273,7 @@ bool Enemy::UpdateSelf()
 
 				if ( Catch )
 				{
-					this->mPosition.Set(
+					this->mPosition.set(
 						mPosition.x + mDistance.x,
 						mPosition.y,
 						mPosition.z

@@ -31,8 +31,10 @@ AttackedObject::~AttackedObject()
 //---------------------------------------------------------------------
 // ● このオブジェクトに攻撃を与える
 //---------------------------------------------------------------------
-void AttackedObject::attackEffect( GameObject* attacker_, int damage_, u32 range_rate_, u32 critical_rate_,  LVector3& brow_vec_, u32 stun_frame_ )
+void AttackedObject::attackEffect( GameObject* attacker_, int damage_, u32 range_rate_, u32 critical_rate_, const LVector3& brow_vec__, u32 stun_frame_ )
 {
+    LVector3 brow_vec_ = brow_vec__;
+
     // ちゃんとクリティカルとかの計算をして damage に入れておく
 
     float dmg_rate = static_cast< float >( ( 100 - range_rate_ ) + ( rand() % ( range_rate_ * 2 ) ) ) * 0.01f;

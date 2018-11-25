@@ -61,7 +61,7 @@ public:
 
 	void setGeneObjType(ObjectType gene_obj_type_) {mGeneObjType = gene_obj_type_;}
 	//’e‚ÌˆĞ—Í‚Ìİ’è
-	void setAttackParam(int damage_,u32 range_rate_,u32 critical_rate_,LVector3& brow_vec_,u32 stun_frame_ ){
+	void setAttackParam(int damage_,u32 range_rate_,u32 critical_rate_, const LVector3& brow_vec_,u32 stun_frame_ ){
 						mDamage = damage_;
 						mRangeRate = range_rate_;
 						mCriticalRate = critical_rate_;

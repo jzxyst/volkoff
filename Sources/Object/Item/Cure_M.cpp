@@ -39,7 +39,7 @@
 Cure_M::Cure_M()
     : mGuideNamePlate   ( NULL )
 {
-	mColRect.Set( mPosition.x+(13*mScale.x), mPosition.y, (15*mScale.x)+(13*mScale.x), 27*mScale.y );
+	mColRect.set( mPosition.x+(13*mScale.x), mPosition.y, (15*mScale.x)+(13*mScale.x), 27*mScale.y );
 }
 
 
@@ -78,10 +78,10 @@ bool Cure_M::Initialize()
 	this->Release();
 	this->mScore = 500;
 	this->mPanel = LBatchPanel::create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-20, 20, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szCure_MFilePath));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+    this->mPanel->setCenterPoint(-20, 20, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szCure_MFilePath));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
     mGuideNamePlate = NEW GuideNamePlate();
     mGuideNamePlate->initialize( this, 1, 20, 0 );
@@ -123,7 +123,7 @@ bool Cure_M::Release()
 //---------------------------------------------------------------------------
 bool Cure_M::Update()
 {
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	return true;
 }
@@ -153,7 +153,7 @@ int Cure_M::HandleEvent(u32 event_,void *args_)
 //
 const LRect* Cure_M::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+(13*mScale.x), mPosition.y, (15*mScale.x)+(13*mScale.x), 27*mScale.y );
+	mColRect.set( mPosition.x+(13*mScale.x), mPosition.y, (15*mScale.x)+(13*mScale.x), 27*mScale.y );
 
 	return &mColRect;
 }

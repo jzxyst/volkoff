@@ -127,7 +127,7 @@ namespace Utility
     //---------------------------------------------------------------------
 	// œ ƒtƒHƒ“ƒg‚ğİ’è‚·‚é
     //---------------------------------------------------------------------
-    void FormatText::setFont(FontPtr font_ )
+    void FormatText::setFont(Ref<LFont> font_ )
     {
         mFont = font_;
 

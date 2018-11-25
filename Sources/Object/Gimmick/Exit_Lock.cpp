@@ -40,7 +40,7 @@
 Exit_Lock::Exit_Lock()
     : mGuideNamePlate   ( NULL )
 {
-	mColRect.Set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
+	mColRect.set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
 }
 
 
@@ -80,11 +80,11 @@ bool Exit_Lock::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(140.0f,80.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-70, 40, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szExit_LockFilePath));
+    this->mPanel->setCenterPoint(-70, 40, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szExit_LockFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,140,80));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 	this->mFlameCnt = 0;
     mGuideNamePlate = NEW GuideNamePlate();
     mGuideNamePlate->initialize( this, 2, 70, 20 );
@@ -126,7 +126,7 @@ bool Exit_Lock::Release()
 //---------------------------------------------------------------------------
 bool Exit_Lock::Update()
 {
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	if(GameManager::getInstance()->getOpenflag())
 	{
@@ -140,8 +140,8 @@ bool Exit_Lock::Update()
 
 		if(mFlameCnt ==15)
 		{
-			GameAudio::PlaySE("./Data/Sound/SE/doorclose2.wav",1.00,1.00);
-			GameAudio::PlaySE("./Data/Sound/SE/doorclose3.wav",0.90,0.80);
+			GameAudio::playSE("./Data/Sound/SE/doorclose2.wav",1.00,1.00);
+			GameAudio::playSE("./Data/Sound/SE/doorclose3.wav",0.90,0.80);
 
 
             
@@ -187,7 +187,7 @@ int Exit_Lock::HandleEvent(u32 event_,void *args_)
 
 const LRect* Exit_Lock::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
+	mColRect.set( mPosition.x+40, mPosition.y, 60*mScale.x, 80*mScale.y );
 
 	return &mColRect;
 }

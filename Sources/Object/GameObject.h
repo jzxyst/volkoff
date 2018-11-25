@@ -341,7 +341,7 @@ public:
     //              (ガードブレイクの強さも必要？)
     //*/
     //---------------------------------------------------------------------
-    virtual void attackEffect( GameObject* attacker_, int damage_, u32 range_rate_, u32 critical_rate_,  LVector3& brow_vec_, u32 stun_frame_ );
+    virtual void attackEffect( GameObject* attacker_, int damage_, u32 range_rate_, u32 critical_rate_, const LVector3& brow_vec_, u32 stun_frame_ );
 
     /// イベント処理
     virtual int HandleEvent( u32 event_,void *args_ );

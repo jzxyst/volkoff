@@ -24,9 +24,9 @@ void SceneGameover::onStart()
 {
     LTexture tex = Texture2D::Create( 32, 32 );
     tex->Clear( Color32( 0, 0, 0 ) );
-    mBlindSprite = Sprite2D::Create( tex );
+    mBlindSprite = ln::UISprite::create( tex );
     mBlindSprite->SetScale( 20 );
-    mBlindSprite2 = Sprite2D::Create( tex );
+    mBlindSprite2 = ln::UISprite::create( tex );
     mBlindSprite2->SetScale( 20 );
     mBlindSprite2->SetPosition( 0, 240 );
     mBlindSprite2->SetOpacity( 0 );
@@ -34,12 +34,12 @@ void SceneGameover::onStart()
 
     // 説明ウィンドウ
     LTexture fe_tex = Assets::LoadTexture( "Data/Graphics/Frontend/Frontend_1.png" );
-    mDescWindowSprite = Sprite2D::Create( fe_tex );
+    mDescWindowSprite = ln::UISprite::create( fe_tex );
     mDescWindowSprite->SetPosition( 60, 280 );
     mDescWindowSprite->setSourceRect( 272, 368, 240, 144 );
     mDescWindowSprite->SetOpacity( 0 );
     mDescContents = Texture2D::Create( 240, 144 );
-    mDescContentsSprite = Sprite2D::Create( mDescContents );
+    mDescContentsSprite = ln::UISprite::create( mDescContents );
     mDescContentsSprite->SetPosition( 60, 280 );
     mDescContentsSprite->SetOpacity( 0 );
 
@@ -47,23 +47,23 @@ void SceneGameover::onStart()
     mDescTitleFont->SetSize( 12 );
 
     // コマンド
-    mCommandSprite[ 0 ] = Sprite2D::Create( fe_tex );
+    mCommandSprite[ 0 ] = ln::UISprite::create( fe_tex );
     mCommandSprite[ 0 ]->setSourceRect( 272, 304, 128, 32 );
     mCommandSprite[ 0 ]->SetPosition( COMMAND_POS_X, COMMAND_POS_Y );
     mCommandSprite[ 0 ]->SetOpacity( 0 );
-    mCommandSprite[ 1 ] = Sprite2D::Create( fe_tex );
+    mCommandSprite[ 1 ] = ln::UISprite::create( fe_tex );
     mCommandSprite[ 1 ]->setSourceRect( 272, 336, 128, 32 );
     mCommandSprite[ 1 ]->SetPosition( COMMAND_POS_X, COMMAND_POS_Y + 32 );
     mCommandSprite[ 1 ]->SetOpacity( 0 );
 
     // 制御文字列描画クラス
-    LFont desc_text = Font::Create();
+    Ref<LFont> desc_text = Font::Create();
     desc_text->SetSize( 15 );
     mFormatText.setFont( desc_text );
     mFormatText.setDrawRect( LRect( 12, 20, 224, 120 ) );
 
     // GameOver
-    mLogoSprite = Sprite2D::Create( fe_tex );
+    mLogoSprite = ln::UISprite::create( fe_tex );
     mLogoSprite->setSourceRect( 160, 224, 352, 64 );
     mLogoSprite->SetPosition( 320, 128 );
     mLogoSprite->SetCenter( 352 / 2, 64 / 2 );

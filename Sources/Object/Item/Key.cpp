@@ -40,7 +40,7 @@
 GateKey::GateKey()
     : mGuideNamePlate   ( NULL )
 {
-	mColRect.Set( mPosition.x, mPosition.y, 40*mScale.x, 40*mScale.y );
+	mColRect.set( mPosition.x, mPosition.y, 40*mScale.x, 40*mScale.y );
 }
 
 
@@ -85,10 +85,10 @@ bool GateKey::Initialize()
 	this->Release();
 	this->mScore = 500; 
 	this->mPanel = LBatchPanel::create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-20, 20, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szKeyFilePath));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+    this->mPanel->setCenterPoint(-20, 20, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szKeyFilePath));
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 
     mGuideNamePlate = NEW GuideNamePlate();
@@ -133,7 +133,7 @@ bool GateKey::Release()
 //---------------------------------------------------------------------------
 bool GateKey::Update()
 {
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	return true;
 }
@@ -163,7 +163,7 @@ int GateKey::HandleEvent(u32 event_,void *args_)
 //
 const LRect* GateKey::getBoundingRect()
 {
-	mColRect.Set( mPosition.x, mPosition.y, 40*mScale.x, 40*mScale.y );
+	mColRect.set( mPosition.x, mPosition.y, 40*mScale.x, 40*mScale.y );
 
 	return &mColRect;
 }

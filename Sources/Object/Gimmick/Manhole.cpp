@@ -85,11 +85,11 @@ bool Manhole::Initialize()
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(40.0f,40.0f);//,LN_PANELDIR_UPPER_REFT);
-    this->mPanel->SetCenter(-20, 20, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szManholeFilePath));
+    this->mPanel->setCenterPoint(-20, 20, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szManholeFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,40,40));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	return true;
 }
@@ -128,7 +128,7 @@ bool Manhole::Release()
 bool Manhole::Update()
 {
 	++this->m_nFrame;
-	this->mPanel->SetPosition(this->mPosition);
+	this->mPanel->setPosition(this->mPosition);
 
 	//発動条件（適当）//上下差が200以下 かつ 左右差が10以下
 	const int y = 100;
@@ -138,9 +138,9 @@ bool Manhole::Update()
 	myPos.y -= 50;
 	if(abs(myPos.y - GameManager::getInstance()->getPlayer()->getPosition().y) <= y && abs(myPos.x - GameManager::getInstance()->getPlayer()->getPosition().x) <= x && this->m_bActive && !this->m_bStart)
 	{
-		GameAudio::PlaySE("./Data/Sound/SE/manhole03.wav",1.00,1.50);
-		GameAudio::PlaySE("./Data/Sound/SE/manhole02.wav",1.00,1.30);
-		GameAudio::PlaySE("./Data/Sound/SE/manhole01.wav",1.00,1.00);
+		GameAudio::playSE("./Data/Sound/SE/manhole03.wav",1.00,1.50);
+		GameAudio::playSE("./Data/Sound/SE/manhole02.wav",1.00,1.30);
+		GameAudio::playSE("./Data/Sound/SE/manhole01.wav",1.00,1.00);
 		this->m_bStart = true;
 	}
 

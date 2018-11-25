@@ -159,7 +159,7 @@ public:
 
 private:
 
-    LPanel  mPanel;
+    Ref<LPanel>  mPanel;
     u32     mFrameCount;
 
 };
@@ -188,7 +188,7 @@ public:
 
 private:
 
-    LPanel  mPanel;
+    Ref<LPanel>  mPanel;
     u32     mFrameCount;
 
 };

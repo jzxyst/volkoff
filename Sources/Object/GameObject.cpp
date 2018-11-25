@@ -80,7 +80,7 @@ bool GameObject::Update()
 			mVelocity.y = 0;
 		}
 
-        if ( mVelocity.GetLengthSquared() < 1.0f )
+        if ( mVelocity.lengthSquared() < 1.0f )
         {
             mVelocity = Vector3::Zero;
 		}
@@ -156,14 +156,15 @@ u32 GameObject::judgeCollisionToMap( float* dx_, float* dy_ )
     /// ‘¬“x‚ÌÝ’è (UŒ‚‚É‚æ‚é‚Ó‚Á”ò‚Î‚µ“™‚ÅŽg‚¤)
 void GameObject::setVelocity(const LVector3& vel_ )
 {
+    LVector3 vel = vel_;
 	if(!mOnGround)
 	{
-		if(vel_.x>=16)
-			vel_.x=16;
-		if(vel_.x<=-16)
-			vel_.x=-16;		
+		if(vel.x>=16)
+            vel.x=16;
+		if(vel.x<=-16)
+            vel.x=-16;
 	}
-	mVelocity = vel_; 
+	mVelocity = vel;
 }
 
 //=============================================================================

@@ -145,19 +145,19 @@ bool MidBoss1::Initialize( const CreateData& data_ )
 	case WEAPON_BOSS_KATANA:
 		this->m_pszName = "眠りを売る山本";
 		r = Character::Initialize();
-		this->mCharaPanel->SetColorScale(0.25f,0.80f,0.25f);
+		this->mCharaPanel->setColorScale(Color(0.25f,0.80f,0.25f));
 		break;
 
 	case WEAPON_BOSS_TAEKWONDO:
 		this->m_pszName = "花の服部";
 		r = Character::Initialize();
-		this->mCharaPanel->SetColorScale(0.95f,0.7f,0.7f);
+		this->mCharaPanel->setColorScale(Color(0.95f,0.7f,0.7f));
 		break;
 
 	case WEAPON_BOSS_KNIFE:
 		this->m_pszName = "三角木馬の石黒";
 		r = Character::Initialize();
-		this->mCharaPanel->SetColorScale(0.7f,0.7f,0.95f);
+		this->mCharaPanel->setColorScale(Color(0.7f,0.7f,0.95f));
 		break;
 	case WEAPON_VALFIRLE_TOKEN:
 		this->m_pszName = "Valfirle";
@@ -741,7 +741,7 @@ bool MidBoss1::UpdateSelf()
 
 				if ( Catch )
 				{
-					this->mPosition.Set(
+					this->mPosition.set(
 						mPosition.x + mDistance.x,
 						mPosition.y,
 						mPosition.z

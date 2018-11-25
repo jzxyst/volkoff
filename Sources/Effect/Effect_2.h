@@ -38,7 +38,7 @@ public:
 private:
 
     int             mFrameCount;
-    LPanel          mLinePanels[ 4 ];
+    Ref<LPanel>          mLinePanels[ 4 ];
 #if MIGRATION
 #else
     LParticle       mParticle;

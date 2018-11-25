@@ -40,8 +40,8 @@
         // 描画する名前
         const char* name = ( mCharacter->getName() ) ? mCharacter->getName() : "名無しさん！";
 
-        LTexture tex = Assets::LoadTexture( "Data/Graphics/Frontend/Frontend_1.png" );
-        FontPtr font = GameFrontendManager::getInstance()->getNamePlateFont();
+        LTexture tex = Assets::loadTexture( "Data/Graphics/Frontend/Frontend_1.png" );
+        Ref<LFont> font = GameFrontendManager::getInstance()->getNamePlateFont();
 
         if ( !font )
         {
@@ -71,37 +71,37 @@
 
 
         // 枠
-        mFrameSprite = Sprite2D::Create( tex );
+        mFrameSprite = ln::UISprite::create( tex );
         mFrameSprite->setSourceRect( 0, mSrcRectOY, mFrameWidth, 18 );
 
         // バー
-        mHPBarSprite  = Sprite2D::Create( tex );
+        mHPBarSprite  = ln::UISprite::create( tex );
         mHPBarSprite->setSourceRect( 8, mSrcRectOY + 24, 8, 8 );
-        mDieBarSprite = Sprite2D::Create( tex );
+        mDieBarSprite = ln::UISprite::create( tex );
         mDieBarSprite->setSourceRect( 8, mSrcRectOY + 24, 8, 8 );
 
         // 吹き出し
-        mBalloonPointSprite = Sprite2D::Create( tex );
+        mBalloonPointSprite = ln::UISprite::create( tex );
         mBalloonPointSprite->setSourceRect( 0, mSrcRectOY + 25, 5, 4 );
 
         // 名前を描画するテクスチャ
-        mNameTextTexture = Texture2D::Create( mFrameWidth - 8, 16 );
+        mNameTextTexture = Texture2D::create( mFrameWidth - 8, 16 );
 		mNameTextTexture->DrawText(name, LRect(0, 0, mFrameWidth - 8, 16), font, Color32::White, Color32::White, 0, TextAlignment::Center);
        
         // 名前スプライト
-        mNameTextSprite = Sprite2D::Create( mNameTextTexture );
+        mNameTextSprite = ln::UISprite::create( mNameTextTexture );
         
-        //mNameTextSprite->setSrcRect( 0, 48, 40, 16 );   // 仮
+        //mNameTextSprite->setSourceRect( 0, 48, 40, 16 );   // 仮
 
         mHPValue.setInitValue( mCharacter->getLife() );
 
 
         // 最初は全部非表示
-        mFrameSprite->SetVisible( false );
-        mBalloonPointSprite->SetVisible( false );
-        mHPBarSprite->SetVisible( false );
-        mDieBarSprite->SetVisible( false );
-        mNameTextSprite->SetVisible( false );
+        mFrameSprite->setVisible( false );
+        mBalloonPointSprite->setVisible( false );
+        mHPBarSprite->setVisible( false );
+        mDieBarSprite->setVisible( false );
+        mNameTextSprite->setVisible( false );
 
         mVisibleFrameCount = 0;
     }
@@ -122,17 +122,17 @@
         if ( mVisible )
         {
             mVisibleFrameCount = 210;
-            mFrameSprite->SetOpacity( 1.0f );
-            mBalloonPointSprite->SetOpacity( 1.0f );
-            mHPBarSprite->SetOpacity( 1.0f );
-            mDieBarSprite->SetOpacity( 1.0f );
-            mNameTextSprite->SetOpacity( 1.0f );
+            mFrameSprite->setOpacity( 1.0f );
+            mBalloonPointSprite->setOpacity( 1.0f );
+            mHPBarSprite->setOpacity( 1.0f );
+            mDieBarSprite->setOpacity( 1.0f );
+            mNameTextSprite->setOpacity( 1.0f );
 
-            mFrameSprite->SetVisible( true );
-            mBalloonPointSprite->SetVisible( true );
-            mHPBarSprite->SetVisible( true );
-            mDieBarSprite->SetVisible( true );
-            mNameTextSprite->SetVisible( true );
+            mFrameSprite->setVisible( true );
+            mBalloonPointSprite->setVisible( true );
+            mHPBarSprite->setVisible( true );
+            mDieBarSprite->setVisible( true );
+            mNameTextSprite->setVisible( true );
 
             mHPValue.set( mCharacter->getLife() );
 
@@ -216,11 +216,11 @@
             if ( mVisibleFrameCount <= 30 )
             {
                 float op = 0.033f * mVisibleFrameCount;    // 0.033 = 1/30
-                mFrameSprite->SetOpacity( op );
-                mBalloonPointSprite->SetOpacity( op );
-                mHPBarSprite->SetOpacity( op );
-                mDieBarSprite->SetOpacity( op );
-                mNameTextSprite->SetOpacity( op );
+                mFrameSprite->setOpacity( op );
+                mBalloonPointSprite->setOpacity( op );
+                mHPBarSprite->setOpacity( op );
+                mDieBarSprite->setOpacity( op );
+                mNameTextSprite->setOpacity( op );
             }
 
             
@@ -228,11 +228,11 @@
         }
         else
         {
-            mFrameSprite->SetVisible( false );
-            mBalloonPointSprite->SetVisible( false );
-            mHPBarSprite->SetVisible( false );
-            mDieBarSprite->SetVisible( false );
-            mNameTextSprite->SetVisible( false );
+            mFrameSprite->setVisible( false );
+            mBalloonPointSprite->setVisible( false );
+            mHPBarSprite->setVisible( false );
+            mDieBarSprite->setVisible( false );
+            mNameTextSprite->setVisible( false );
         }
     }
 
@@ -241,7 +241,7 @@
     //---------------------------------------------------------------------
     void CharacterNamePlate::_setPosition( float x_, float y_, const LVector3& screen_pos_ )
     {
-        mBalloonPointSprite->SetPosition( x_ - 1, y_ - 3 );
+        mBalloonPointSprite->setPosition( x_ - 1, y_ - 3 );
 
 
         float ox = 62.0f * screen_pos_.x;
@@ -250,10 +250,10 @@
         float x = x_ - 1 - ox;
         float y = y_ - 20;
 
-        mFrameSprite->SetPosition( x, y );
-        mNameTextSprite->SetPosition( x + 4, y + 1 );
-        mHPBarSprite->SetPosition( x + 4, y + 12 );
-        mDieBarSprite->SetPosition( x + 4 + mHPBarSprite->GetSrcRect().width, y + 12 );
+        mFrameSprite->setPosition( x, y );
+        mNameTextSprite->setPosition( x + 4, y + 1 );
+        mHPBarSprite->setPosition( x + 4, y + 12 );
+        mDieBarSprite->setPosition( x + 4 + mHPBarSprite->sourceRect().width, y + 12 );
     }
 
 //=============================================================================

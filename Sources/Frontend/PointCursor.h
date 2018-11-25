@@ -30,9 +30,9 @@ public:
         mXPos.setSpeed( 5 );
         mYPos.setInitValue( 0 );
         mYPos.setSpeed( 5 );
-        mCursorSprite = Sprite2D::Create(Assets::LoadTexture( "Data/Graphics/Frontend/Cursor_1.png" ) );
+        mCursorSprite = ln::UISprite::create(Assets::loadTexture( "Data/Graphics/Frontend/Cursor_1.png" ) );
         mCursorSprite->setSourceRect( 0, 0, 32, 32 );
-        mCursorSprite->SetOpacity( 0 );
+        mCursorSprite->setOpacity( 0 );
         mFrameCount = 0;
     }
 
