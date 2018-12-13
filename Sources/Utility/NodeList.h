@@ -48,7 +48,6 @@ namespace Base
 //*/
 //=============================================================================
 template< class TYPE_ > class NodeList
-    : public NonCopyable
 {
 public:
 
@@ -275,6 +274,7 @@ public:
 	}
 
 private:
+    LN_DISALLOW_COPY_AND_ASSIGN(NodeList);
 
 	// マージソート実行
 	TYPE_* _mergeSort( TYPE_* front_head )

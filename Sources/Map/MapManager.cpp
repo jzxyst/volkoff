@@ -62,24 +62,24 @@ void MapManager::changeMap( u32 map_id_ )
 	if (mTilemap == nullptr)
 	{
 		// マップチップの画像を読み込む
-		LTexture t = Assets::LoadTexture("Data/Graphics/MapChip_1.png");
+		LTexture t = Assets::loadTexture("Data/Graphics/MapChip_1.png");
 
-		m_tileset = TileSet::Create();
+		m_tileset = Tileset::create();
 		m_tileset->SetImageSource(t);
-		m_tileset->SetTileSize(SizeI(20, 20));
+		m_tileset->setTilePixelSize(20, 20);
 
 
-		auto tilemapModel = TileMapModel::Create();
+		auto tilemapModel = TilemapModel::create();
 		tilemapModel->SetTileSet(m_tileset);
 
-		m_tileLayer = TileLayer::Create();
-		m_tileLayer->Resize(100, 100);
+		m_tileLayer = TilemapLayer::create();
+		m_tileLayer->resize(100, 100);
 		tilemapModel->GetLayers()->Add(m_tileLayer);
 
-		mTilemap = TileMap::Create3D();
+		mTilemap = Tilemap::create();
 		mTilemap->SetTileMap(tilemapModel);
 		mTilemap->SetPriority(1000);
-		mTilemap->SetDepthWriteEnabled(false);
+		mTilemap->setDepthWriteEnabled(false);
 
 
 		//auto cb = RefPtr<CylinderMouseMoveCameraBehavior>::Create();
@@ -89,7 +89,7 @@ void MapManager::changeMap( u32 map_id_ )
 
 	for (int i = 0; i < 100 * 100; ++i)
 	{
-		m_tileLayer->SetTileId(i % 100, i / 100, mMapData[i]);
+		m_tileLayer->setTileId(i % 100, i / 100, mMapData[i]);
 	}
 #else
     
@@ -422,7 +422,7 @@ void MapManager::changeMap( u32 map_id_ )
 			++mDuctCnt;
 			break;
 		case MAP_BOX:
-			mBox[mBoxCnt] = new Box();
+			mBox[mBoxCnt] = new ::Box();
 			mBox[mBoxCnt]->Initialize();
 			mBox[mBoxCnt]->setPosition(LVector3((i%100)*20.0f-20,2000.0f-((i/100)*20)+20,0.f));
 			++mBoxCnt;
@@ -534,7 +534,7 @@ void MapManager::changeMap( u32 map_id_ )
 	
 	if ( this->mMapID == 7 )
 	{
-		GameAudio::PlayBGM("./Data/Sound/BGM/Theme_of_Valfirle.ogg",0.60);			
+		GameAudio::playBGM("./Data/Sound/BGM/Theme_of_Valfirle.ogg",0.60);			
 	}
 	else
 	{
@@ -681,17 +681,17 @@ LVector3 MapManager::getStartPosition()
 // タイルマップ解放 (タイトルへ戻るときなど)
 void MapManager::releaseTilemap()
 {
-	m_tileset.SafeRelease();
-	mTilemap.SafeRelease();
+    m_tileset = nullptr;
+	mTilemap = nullptr;
 }
 
 bool MapManager::BulletCollision( LRect rect_)
 {
 //	int blockx,blocky;
-	LRect block;
+    RectI block;
 	rect_.y=2000-rect_.y;
-	block.x=rect_.x-rect_.x%20;
-	block.y=rect_.y-rect_.y%20;
+    block.x = rect_.x - static_cast<int>(rect_.x) % 20;
+    block.y = rect_.y - static_cast<int>(rect_.y) % 20;
 	//block.Y+20;
 	block.height = 20;
 	block.width = 20;

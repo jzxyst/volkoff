@@ -197,9 +197,10 @@ private:
 
 	int							mMapData[100 * 100];
 
-	TileSetPtr					m_tileset;
-	TileLayerPtr				m_tileLayer;
-	TileMapPtr					mTilemap;
+	Ref<Tileset>					m_tileset;
+	Ref<TilemapLayer>				m_tileLayer;
+    Ref<TilemapModel>				m_tilemapModel;
+	Ref<Tilemap>					mTilemap;
 
 
 
@@ -241,7 +242,7 @@ private:
 	Mine* mMine[30];//地雷クラス
 	u32 mMineCnt;//地雷の数
 
-	Box* mBox[30];//箱クラス
+	::Box* mBox[30];//箱クラス
 	u32 mBoxCnt;//箱の数
 
 	Fort* mFort[20];

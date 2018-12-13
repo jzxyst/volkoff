@@ -80,7 +80,7 @@
 
         
 
-        mNumberTexture = Texture2D::Create( num_w * digit, num_h );
+        mNumberTexture = Texture2D::create( num_w * digit, num_h );
         int x = num_w * digit - num_w;
         for ( int i = 0; i < digit; ++i )
         {

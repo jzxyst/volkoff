@@ -26,7 +26,6 @@ class PointCursor;
 //*/
 //=============================================================================
 class GameFrontendManager
-    : public ln::NonCopyable
 {
 public:
 
@@ -81,6 +80,8 @@ private:
 
     /// デストラクタ
     ~GameFrontendManager();
+
+    LN_DISALLOW_COPY_AND_ASSIGN(GameFrontendManager);
 
 private:
 

@@ -36,7 +36,6 @@ namespace Base
 //*/
 //=============================================================================
 template< typename TYPE_ > class Stack
-    : public NonCopyable
 {
 public:
 
@@ -120,6 +119,7 @@ public:
 	TYPE_& top() const;
 
 private:
+    LN_DISALLOW_COPY_AND_ASSIGN(Stack);
 
     struct
     {

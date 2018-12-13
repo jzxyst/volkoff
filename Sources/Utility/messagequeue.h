@@ -39,7 +39,6 @@ namespace Utility
 //*/
 //=============================================================================
 class MessageQueue
-    : public NonCopyable
 {
 public:
 
@@ -65,6 +64,8 @@ public:
     
 	/// デストラクタ
 	~MessageQueue();
+
+    LN_DISALLOW_COPY_AND_ASSIGN(MessageQueue);
 
 public:
 

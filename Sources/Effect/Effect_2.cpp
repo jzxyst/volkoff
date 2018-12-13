@@ -20,8 +20,8 @@ Effect_ValfirleDead::Effect_ValfirleDead( const LVector3& pos_ )
         mLinePanels[ i ]->setSourceRect( 0, 0, 128, 512 );
         mLinePanels[ i ]->setPosition( pos_ + LVector3( 0, 0, -10 ) );
         mLinePanels[ i ]->SetPriority( -10000 );
-        mLinePanels[ i ]->SetDepthTestEnabled( false );
-        mLinePanels[ i ]->SetDepthWriteEnabled( false );
+        mLinePanels[ i ]->setDepthTestEnabled( false );
+        mLinePanels[ i ]->setDepthWriteEnabled( false );
         mLinePanels[ i ]->setOpacity( 0 );
         //mLinePanels[ i ]->SetBlendMode( LN_BLEND_SUB );
     }

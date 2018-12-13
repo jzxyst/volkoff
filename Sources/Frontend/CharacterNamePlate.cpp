@@ -180,8 +180,8 @@
 
             //-------------------------------------------------
             // ˆÊ’u
-            const LMatrix& vp_mat = Accessor::Main3Camera->GetViewProjectionMatrix();
-			LVector3 sc_pos = LVector3::TransformCoord(mCharacter->getPosition(), vp_mat);
+            const LMatrix& vp_mat = Accessor::Main3Camera->viewProjectionMatrix();
+			LVector3 sc_pos = LVector3::transformCoord(mCharacter->getPosition(), vp_mat);
 			
             sc_pos.y *= -1.0f;  // y ‚Í‰º‚ª + ‚È‚Ì‚Åã‰º”½“]
             sc_pos += 1.0f;     // 0.0`2.0 ‚É‚·‚é
@@ -191,7 +191,7 @@
             // _setPosition ‚É“n‚·—p‚ÉˆêŽž‘Þ”ð
             LVector3 tpos = sc_pos;
 
-            auto size = Engine::GetMainViewport()->GetSize();
+            auto size = Engine::mainViewport()->GetSize();
             sc_pos.x *= size.width;
             sc_pos.y *= size.height;
 

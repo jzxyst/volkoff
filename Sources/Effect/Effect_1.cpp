@@ -113,7 +113,7 @@ Effect_Explosion::Effect_Explosion( const LVector3& pos_ )
     mPanel->setEulerAngles( 0, 0, 0 );//random.getFloat( 3.0f ) );
     mPanel->setPosition( pos_ );
 
-	Vector3 scr = Vector3::transformCoord(pos_, Accessor::Main3Camera->GetProjectionMatrix());
+	Vector3 scr = Vector3::transformCoord(pos_, Accessor::Main3Camera->projectionMatrix());
 	Accessor::BlurLayer->play(0.5, Vector2(scr.x, scr.y), 1.05, 0.6);
 	//LLayer::getBGLayer()->blur(0.6, 0.5, 1.05, pos_, true );
 
@@ -250,7 +250,7 @@ Effect_Thunder::Effect_Thunder( const LVector3& pos_ )
   //  mPanel->SetAngle( 0, 0, LMath::PI / 2 );//random.getFloat( 3.0f ) );
     mPanel->setPosition( pos_ );
 
-	Vector3 scr = Vector3::transformCoord(pos_, Accessor::Main3Camera->GetProjectionMatrix());
+	Vector3 scr = Vector3::transformCoord(pos_, Accessor::Main3Camera->projectionMatrix());
 	Accessor::BlurLayer->play(0.5, Vector2(scr.x, scr.y), 1.05, 0.6);
 	//LLayer::getBGLayer()->blur(0.6, 0.5, 1.05, pos_, true );
 

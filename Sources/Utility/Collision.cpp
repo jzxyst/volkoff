@@ -4,9 +4,7 @@
 // 当たり判定をするクラス
 //
 
-#include "StdAfx.h"
 #include "Collision.h"
-#include <windows.h>
 
 // コンストラクタ
 Collision::Collision()
@@ -75,7 +73,7 @@ LRect* Collision::getAtkCollision( const unsigned int ActionIdx, const unsigned 
 		frame += 6;
 	}
 
-	mAtkArea.Set(
+	mAtkArea.set(
 		mLoadData[ idx*SET_H_NUM + frame ].Atk_pos.H,
 		mLoadData[ idx*SET_H_NUM + frame ].Atk_pos.V,
 		mLoadData[ idx*SET_H_NUM + frame ].Atk_size.H,
@@ -126,7 +124,7 @@ LRect* Collision::getDmgCollision( const unsigned int ActionIdx, const unsigned 
 		frame += 6;
 	}
 
-	mDmgArea.Set(
+	mDmgArea.set(
 		mLoadData[ idx*SET_H_NUM + frame ].Dmg_pos.H,
 		mLoadData[ idx*SET_H_NUM + frame ].Dmg_pos.V,
 		mLoadData[ idx*SET_H_NUM + frame ].Dmg_size.H,
@@ -175,7 +173,7 @@ LVector2 Collision::getOrigin( const unsigned int ActionIdx, const unsigned int 
 // [山本] 攻撃用当たり判定をコマ番号から取得する (コマ番号は左上から右にかけて +1、下に行くにつれて +12)
 LRect* Collision::getAtkCollisionByIndex( const unsigned int index_ )
 {
-    mAtkArea.Set(
+    mAtkArea.set(
 		mLoadData[ index_ ].Atk_pos.H,
 		mLoadData[ index_ ].Atk_pos.V,
 		mLoadData[ index_ ].Atk_size.H,
@@ -195,7 +193,7 @@ LRect* Collision::getAtkCollisionByIndex( const unsigned int index_ )
 // [山本] ダメージ用当たり判定をコマ番号から取得する
 LRect* Collision::getDmgCollisionByIndex( const unsigned int index_ )
 {
-    mDmgArea.Set(
+    mDmgArea.set(
 		mLoadData[ index_ ].Dmg_pos.H,
 		mLoadData[ index_ ].Dmg_pos.V,
 		mLoadData[ index_ ].Dmg_size.H,

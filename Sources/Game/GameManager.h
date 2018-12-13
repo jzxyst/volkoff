@@ -41,7 +41,6 @@ class Character;
 //*/
 //=============================================================================
 class GameManager
-    : public ln::NonCopyable
 {
 public:
 
@@ -191,12 +190,14 @@ public:
 	}
 
 private:
+    LN_DISALLOW_COPY_AND_ASSIGN(GameManager);
 
     /// コンストラクタ
     GameManager();
 
     /// デストラクタ
     ~GameManager();
+
 
 private:
 

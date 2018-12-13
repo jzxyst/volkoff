@@ -15,13 +15,13 @@
 // œ ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 //---------------------------------------------------------------------
 GameFrontendManager::GameFrontendManager()
-    : mPlayerStateWindow    ( NULL )
+    : mPlayerStateWindow    ( nullptr )
     , mStep                 ( GFM_PTEP_SETUP )
     , mFrameCount           ( 0 )
-    , mNamePlateFont        ( NULL )
-    , mDamagePop            ( NULL )
-    , mGuidNamePlateFont    ( NULL )
-    , mPointCursor          ( NULL )
+    , mNamePlateFont        ( nullptr )
+    , mDamagePop            ( nullptr )
+    , mGuidNamePlateFont    ( nullptr )
+    , mPointCursor          ( nullptr )
     , mFloorInfoOffset      ( 0.0f )
 {
     mFrameXPos.setInitValue( -32 );
@@ -62,15 +62,15 @@ void GameFrontendManager::initialize( Player* player_ )
 
 	mPlayerStateWindow = NEW PlayerStateWindow(player_);
 
-	mNamePlateFont = Font::Create();
-	mNamePlateFont->setFamily("„M‚r ‚oƒSƒVƒbƒN");
+	mNamePlateFont = Font::create();
+	mNamePlateFont->setFamily(u"„M‚r ‚oƒSƒVƒbƒN");
 	mNamePlateFont->setSize(10);
 	//mNamePlateFont->SetColor( LColor( 1, 1, 1 ) );
 	mNamePlateFont->setAntiAlias(false);
 
 
-	mGuidNamePlateFont = Font::Create();
-	mGuidNamePlateFont->setFamily("„M‚r ‚oƒSƒVƒbƒN");
+	mGuidNamePlateFont = Font::create();
+	mGuidNamePlateFont->setFamily(u"„M‚r ‚oƒSƒVƒbƒN");
 	mGuidNamePlateFont->setSize(10);
 	//mGuidNamePlateFont->SetColor( LColor( 1, 1, 1 ) );
 	//mGuidNamePlateFont->setEdgeSize( 1 );

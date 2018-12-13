@@ -20,7 +20,7 @@ using namespace LNote;
 #define SAFE_DELETE			LN_SAFE_DELETE
 #define SAFE_DELETE_ARRAY	LN_SAFE_DELETE_ARRAY
 #define nil					nullptr
-#define LN_ASSERT_S(r, ...)	LN_THROW(r, InvalidOperationException, __VA_ARGS__);
+#define LN_ASSERT_S(r, ...)	LN_CHECK(r)
 
 typedef uint8_t		u8;
 typedef int32_t		s32;
