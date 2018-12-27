@@ -275,7 +275,7 @@ bool Character::Initialize()
 	this->mCharaPanel = LBatchPanel::create(160.0f,160.0f);//,LN_PANELDIR_UPPER_REFT);
     this->mCharaPanel->setCenterPoint(-80, 80, 0);
 	this->mCharaPanel->setTexture(Assets::loadTexture(CharaResourceNames[mWeaponData.WeaponType].Character));//0xffffffff));
-	this->mCharaPanel->SetCullingMode(CullMode::None);
+	this->mCharaPanel->setCullMode(CullMode::None);
 	//this->mCharaPanel->SetCenter(0.0f,0.0f,0.0f);
 	this->mCharaPanel->setSourceRect(LRect(0,0,160,160));
 	this->mCharaPanel->setPosition(0.0f,0.0f,0.0f);

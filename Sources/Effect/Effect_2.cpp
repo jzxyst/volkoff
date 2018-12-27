@@ -19,7 +19,7 @@ Effect_ValfirleDead::Effect_ValfirleDead( const LVector3& pos_ )
         mLinePanels[ i ] = LBatchPanel::create( 32 + i * 12, 256, tex );
         mLinePanels[ i ]->setSourceRect( 0, 0, 128, 512 );
         mLinePanels[ i ]->setPosition( pos_ + LVector3( 0, 0, -10 ) );
-        mLinePanels[ i ]->SetPriority( -10000 );
+        mLinePanels[ i ]->setRenderPriority( -10000 );
         mLinePanels[ i ]->setDepthTestEnabled( false );
         mLinePanels[ i ]->setDepthWriteEnabled( false );
         mLinePanels[ i ]->setOpacity( 0 );

@@ -92,7 +92,7 @@ namespace Utility
     // ● コンストラクタ
     //---------------------------------------------------------------------
     FormatText::FormatText()
-        : mFont             ( NULL )
+        : mFont             ( nullptr )
         , mDefaultFontSize  ( 20 )
         , mTypingSpeed      ( 2 )
         , mIndex            ( 0 )
@@ -104,7 +104,7 @@ namespace Utility
         //, mRubyChar     ( NULL )
         , mRubyLength       ( 0 )
         , mRubyX            ( 0 )
-        , mRubyFont         ( NULL )
+        , mRubyFont         (nullptr)
     {
     }
 
@@ -133,9 +133,9 @@ namespace Utility
 
         if (mFont != nullptr)
         {
-            mDefaultFontSize = mFont->GetSize();
-            mRubyFont = mFont->Clone();
-            mRubyFont->SetSize( mFont->GetSize() / 2 );
+            mDefaultFontSize = mFont->size();
+            mRubyFont = mFont->clone();
+            mRubyFont->setSize( mFont->size() / 2 );
         }
     }
 
@@ -250,13 +250,13 @@ namespace Utility
             // マルチバイト文字かどうかでチェックする文字列長さを決める unicode の場合は常に 1
             int len = Core::Base::StringUtil::checkMultiByteChar( &text[ mIndex ] ) ? 2 : 1;
 
-            Size size = mFont->MeasureRenderSize(StringRef(&text[ mIndex ], len));
+            Size size = mFont->measureRenderSize(StringRef(&text[ mIndex ], len));
 
 
             DrawDataEntry entry;
             entry.DrawData.Text = &text[ mIndex ];
             entry.DrawData.Length = len;
-            entry.DrawData.Rect.Set( mX, mY + ( mLineHeight - size.height), size.width, size.height);
+            entry.DrawData.Rect.set( mX, mY + ( mLineHeight - size.height), size.width, size.height);
             entry.DrawData.Font = mFont;
             mDrawDataEntryQueue.push_back( entry );
 
@@ -316,7 +316,7 @@ namespace Utility
         *width_  = 0;
         *height_ = 0;
 
-        int org_fontsize = mFont->GetSize();
+        int org_fontsize = mFont->size();
         int i = 0;
         int w = 0;
         int h = org_fontsize;
@@ -334,7 +334,7 @@ namespace Utility
             // 改行か終端まで
             if ( str_[ i ] == _T( '\n' ) || str_[ i ] == _T( '\0' ) )
             {
-				Size size = mFont->MeasureRenderSize(
+				Size size = mFont->measureRenderSize(
                     StringRef(&str_[ start_normal_char_idx ],
                     ( last_normal_char_idx - start_normal_char_idx )));
                 //printf("1:%d w:%d\n",last_normal_char_idx - start_normal_char_idx, rc.width);
@@ -386,7 +386,7 @@ namespace Utility
                             i += mCtrlArgs.CommandLength;       // ] の次を指す
 
                             // ひとつでもあれば行の高さを増やす
-                            ruby_size = mFont->GetSize() / 2;
+                            ruby_size = mFont->size() / 2;
                         }
                         break;
                     }
@@ -397,7 +397,7 @@ namespace Utility
             // フォントサイズ変更などで、last_normal_char_idx までの文字列幅を計算する必要がある場合
             if ( font_changed )
             {
-				Size size = mFont->MeasureRenderSize(
+				Size size = mFont->measureRenderSize(
                     StringRef(&str_[ start_normal_char_idx ],
                     ( last_normal_char_idx - start_normal_char_idx )));
                 //printf("2:%d w:%d\n",last_normal_char_idx - start_normal_char_idx, rc.width);
@@ -405,7 +405,7 @@ namespace Utility
                 start_normal_char_idx = i;
                 
 
-                mFont->SetSize( new_font_size );
+                mFont->setSize( new_font_size );
                 font_changed = false;
             }
 
@@ -423,7 +423,7 @@ namespace Utility
             last_normal_char_idx = i;
         }
 
-        mFont->SetSize( org_fontsize );
+        mFont->setSize( org_fontsize );
         *height_ = h + ruby_size;
         return;
     }
@@ -475,11 +475,11 @@ namespace Utility
                         int size;
                         if ( mCtrlArgs.Args[ 0 ].IsOptional )
                         {
-                            mFont->SetSize( mDefaultFontSize );
+                            mFont->setSize( mDefaultFontSize );
                         }
                         else
                         {
-                            mFont->SetSize( _getIntArg( mCtrlArgs.Args[ 0 ] ) );
+                            mFont->setSize( _getIntArg( mCtrlArgs.Args[ 0 ] ) );
                         }
                     
                         break;
@@ -505,15 +505,15 @@ namespace Utility
 
                         // ルビとメイン文字列の幅を取得
                         int ruby_w, main_w;
-						Size size = mFont->MeasureRenderSize( tmp.c_str() );
+						Size size = mFont->measureRenderSize( tmp.c_str() );
                         main_w = size.width;
-						size = mRubyFont->MeasureRenderSize( mRubyText.c_str() );
+						size = mRubyFont->measureRenderSize( mRubyText.c_str() );
                         ruby_w = size.width;
 
                         // マルチバイトの場合はそれを1文字とした文字数を計算
                         int true_len = Core::Base::StringUtil::strlenMB( mRubyText.c_str() );
 
-                        mRubySize = mRubyFont->GetSize();
+                        mRubySize = mRubyFont->size();
                         //_p(mRubySize);
                         
                         // ルビの描画を始める X 座標と加算量の計算
@@ -693,12 +693,12 @@ namespace Utility
                     mRubyLength -= len;
 
 
-                    Size size = mRubyFont->MeasureRenderSize(StringRef(&str[ idx ], len));
+                    Size size = mRubyFont->measureRenderSize(StringRef(&str[ idx ], len));
 
                     DrawDataEntry entry;
                     entry.DrawData.Text = &str[ idx ];
                     entry.DrawData.Length = len;
-                    entry.DrawData.Rect.Set( mRubyX, mY + ( mLineHeight - mFont->GetSize() - mRubySize ), size.width, size.height);
+                    entry.DrawData.Rect.set( mRubyX, mY + ( mLineHeight - mFont->size() - mRubySize ), size.width, size.height);
                     entry.DrawData.Font = mRubyFont;
                     mDrawDataEntryQueue.push_back( entry );
 

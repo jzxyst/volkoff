@@ -47,6 +47,7 @@ private:
     ln::Ref<ln::UISprite> mFrameSprite;
     ln::Ref<ln::UISprite> mNumberSprite;
     ln::Ref<ln::UISprite> mRankSprite;
+    Ref<LFont> mNameFont;
 	LTexture mNameTexture;
     ln::Ref<ln::UISprite> mNameSprite;
 

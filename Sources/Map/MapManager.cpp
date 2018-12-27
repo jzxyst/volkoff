@@ -50,7 +50,7 @@ void MapManager::changeMap( u32 map_id_ )
 {
     // ƒtƒƒA”•\Ž¦
     GameFrontendManager::getInstance()->showFloorNum( map_id_ + 1 );
-	Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.1f);
+	Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 0.1f);
 
 #if MIGRATION
 
@@ -65,20 +65,20 @@ void MapManager::changeMap( u32 map_id_ )
 		LTexture t = Assets::loadTexture("Data/Graphics/MapChip_1.png");
 
 		m_tileset = Tileset::create();
-		m_tileset->SetImageSource(t);
+		m_tileset->setMaterial(Material::create(t));
 		m_tileset->setTilePixelSize(20, 20);
 
 
 		auto tilemapModel = TilemapModel::create();
-		tilemapModel->SetTileSet(m_tileset);
+		tilemapModel->addTileset(m_tileset);
 
 		m_tileLayer = TilemapLayer::create();
 		m_tileLayer->resize(100, 100);
-		tilemapModel->GetLayers()->Add(m_tileLayer);
+		tilemapModel->addLayer(m_tileLayer);
 
 		mTilemap = Tilemap::create();
-		mTilemap->SetTileMap(tilemapModel);
-		mTilemap->SetPriority(1000);
+		mTilemap->setTilemapModel(tilemapModel);
+		mTilemap->setRenderPriority(1000);
 		mTilemap->setDepthWriteEnabled(false);
 
 
@@ -672,7 +672,7 @@ LVector3 MapManager::getStartPosition()
 	{
 		if(( mMapData[i]==MAP_ENTRY)||(mMapData[i]==MAP_ENTRYWALL))
 		{
-			StartPos.Set((i%100)*20.0f+30,2000.0f-((i/100)*20)-80,-1.f);
+			StartPos.set((i%100)*20.0f+30,2000.0f-((i/100)*20)-80,-1.f);
 		}
 	}
 	return StartPos;
@@ -701,7 +701,7 @@ bool MapManager::BulletCollision( LRect rect_)
 	{
 	//	printf("aa\n");
 		//if((block.contains(LPoint(rect_.X,rect_.Y)))||(block.contains(LPoint(rect_.X+rect_.width,rect_.Y)))||(block.contains(LPoint(rect_.X,rect_.Y+rect_.height)))||(block.contains(LPoint(rect_.X+rect_.width,rect_.Y+rect_.height))))
-		if(block.Contains(LPoint(rect_.x,rect_.y)))
+		if(block.contains(LPoint(rect_.x,rect_.y)))
 		{
 			return true;
 		}

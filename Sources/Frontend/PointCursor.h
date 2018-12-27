@@ -46,24 +46,24 @@ public:
     {
         mXPos.set( x_ );
         mYPos.set( y_ );
-        mFadeValue.Start( mFadeValue.GetValue(), 1.0f, 10 );
+        mFadeValue.start( mFadeValue.getValue(), 1.0f, 10 );
     }
 
     /// 初期位置へもどしながらフェードアウト
     void moveToInit()
     {
-        mFadeValue.Start( mFadeValue.GetValue(), 0.0f, 10 );
+        mFadeValue.start( mFadeValue.getValue(), 0.0f, 10 );
     }
 
     /// フレーム更新
     void update()
     {
-        mFadeValue.AdvanceTime( 1.0f );
+        mFadeValue.advanceTime( 1.0f );
         mXPos.update();
         mYPos.update();
 
-        mCursorSprite->SetPosition( (float)mXPos.getValue(), (float)mYPos.getValue() );
-        mCursorSprite->SetOpacity( mFadeValue.GetValue() );
+        mCursorSprite->setPosition( (float)mXPos.getValue(), (float)mYPos.getValue() );
+        mCursorSprite->setOpacity( mFadeValue.getValue() );
 
         mCursorSprite->setSourceRect( ( mFrameCount / 10 ) * 32, 0, 32, 32 );
         if ( mFrameCount >= 59 )
@@ -81,7 +81,7 @@ private:
     RapidNumber< int > mYPos;
 	EasingValue< float >   mFadeValue;
 
-    Sprite2DPtr mCursorSprite;
+    ln::Ref<UISprite> mCursorSprite;
     int     mFrameCount;
     
 };

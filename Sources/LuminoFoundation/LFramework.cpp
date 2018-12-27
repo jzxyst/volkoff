@@ -31,7 +31,7 @@ namespace LNote
 	bool LFramework::update()
 	{
         if ( gGameSceneManager->getActiveGameScene() != NULL ) { return true; }
-		return Engine::Update();
+		return Engine::update();
 	}
 
     //// 登録されているゲームシーンを指定して実行開始
@@ -66,7 +66,7 @@ namespace LNote
         {
             gGameSceneManager->update();
 
-        } while (Engine::Update());
+        } while (Engine::update());
     } 
 
     // ゲームシーンを実行中かどうかを判定する

@@ -43,11 +43,11 @@ void SceneCredit::onStart()
     printf( "-------------------------------------------------\n" );
 
     
-    mBGBlackSprite = LSprite::create( LTexture::create( "Data/Graphics/Frontend/Logo_1.png" ) );
+    mBGBlackSprite = LSprite::create( ln::Assets::loadTexture( "Data/Graphics/Frontend/Logo_1.png" ) );
     mBGBlackSprite->setSourceRect( 0, 0, 32, 32 );
     mBGBlackSprite->setScale( 20 );
 
-    LLayer::getBGLayer().setTone( LTone( 0, 0, 0 ), 1.0f );
+    Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 1.0f);
 
 
     mPhase = 0;
@@ -78,7 +78,7 @@ void SceneCredit::onUpdate()
             // I—¹
             //if ( Input.isOnTrigger( LN_BUTTON_A ) )
             {
-                LLayer::getBGLayer().setTone( LTone( 1, 1, 1 ), 3.0f );
+                Accessor::ToneLayer->play(ToneF(1, 1, 1, 0), 3.0f);
                 mPhase = -1;
                 mFrameCount = 0;
                 return;

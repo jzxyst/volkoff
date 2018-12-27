@@ -38,11 +38,11 @@
 	@exception      none
 */
 //---------------------------------------------------------------------------
-Box::Box()
+::Box::Box()
 {
 	// 攻撃対象グループは敵側
     setAttackedGroup( ATKGROUP_ENEMY );
-	mColRect.Set( mPosition.x+20, mPosition.y-20, 60*mScale.x, 60*mScale.y );
+	mColRect.set( mPosition.x+20, mPosition.y-20, 60*mScale.x, 60*mScale.y );
 }
 
 
@@ -57,7 +57,7 @@ Box::Box()
 	@exception      none
 */
 //---------------------------------------------------------------------------
-Box::~Box()
+::Box::~Box()
 {
 	this->Release();
 }
@@ -76,16 +76,16 @@ Box::~Box()
 	@exception      none
 */
 //---------------------------------------------------------------------------
-bool Box::Initialize()
+bool ::Box::Initialize()
 {
 	this->Release();
 
 	this->mPanel = LBatchPanel::create(100.0f,80.0f);
-    this->mPanel->SetCenter(-50, 40, 0);
-	this->mPanel->SetTexture(Assets::loadTexture(g_szBoxFilePath));
+    this->mPanel->setCenterPoint(-50, 40, 0);
+	this->mPanel->setTexture(Assets::loadTexture(g_szBoxFilePath));
 	this->mPanel->setSourceRect(LRect(0,0,100,80));
-	this->mPanel->SetPosition(this->mPosition);
-	this->mPanel->SetVisible(true);
+	this->mPanel->setPosition(this->mPosition);
+	this->mPanel->setVisible(true);
 
 	this->mLife = 1;
 	this->m_nAnime = 0;
@@ -110,7 +110,7 @@ bool Box::Initialize()
 	@exception      none
 */
 //---------------------------------------------------------------------------
-bool Box::Release()
+bool ::Box::Release()
 {
 	return true;
 }
@@ -127,11 +127,11 @@ bool Box::Release()
 	@exception      none
 */
 //---------------------------------------------------------------------------
-bool Box::Update()
+bool ::Box::Update()
 {
 	if ( this->mLife > 0 )
 	{
-		this->mPanel->SetPosition(this->mPosition);
+		this->mPanel->setPosition(this->mPosition);
 	}
 
 
@@ -223,7 +223,7 @@ bool Box::Update()
 	@exception      none
 */
 //---------------------------------------------------------------------------
-int Box::HandleEvent(u32 event_,void *args_)
+int ::Box::HandleEvent(u32 event_,void *args_)
 {
 	AttackedObject::HandleEvent( event_, args_ );
 
@@ -250,9 +250,9 @@ int Box::HandleEvent(u32 event_,void *args_)
 //
 // 細田追加・当たり判定を返す
 //
-const LRect* Box::getBoundingRect()
+const LRect* ::Box::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+20, mPosition.y-20, 60*mScale.x, 60*mScale.y );
+	mColRect.set( mPosition.x+20, mPosition.y-20, 60*mScale.x, 60*mScale.y );
 
 	return &mColRect;
 }

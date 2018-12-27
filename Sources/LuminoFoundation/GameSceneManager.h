@@ -15,7 +15,6 @@
 //-------------------------------------------------------------------------
 #include <queue>
 #include <map>
-#include <Lumino/Base/Cache.h>
 
 //-------------------------------------------------------------------------
 //
@@ -86,7 +85,7 @@ public:
     //              registerSceneInstance< TestScene >( "TestScene" ); Ç∆Ç¢Ç§å`Ç≈åƒÇ—èoÇµÇ‹Ç∑ÅB
     //*/
     //---------------------------------------------------------------------
-    template < typename TYPE_ > bool registerSceneInstance() { TYPE_* t = NEW TYPE_; return registSceneInstance( t ); }
+    template < typename TYPE_ > bool registerSceneInstance() { TYPE_* t = LN_NEW TYPE_; return registSceneInstance( t ); }
 
     //---------------------------------------------------------------------
     ///**
@@ -222,8 +221,8 @@ private:
     };
 
     
-    typedef std::map< ln::CacheKey, GameScene* >  RegistedGameSceneMap;
-    typedef std::pair< ln::CacheKey, GameScene* > RegistedGameScenePair;
+    typedef std::map< ln::String, GameScene* >  RegistedGameSceneMap;
+    typedef std::pair< ln::String, GameScene* > RegistedGameScenePair;
 
 private:
 

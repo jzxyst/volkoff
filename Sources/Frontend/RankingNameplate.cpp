@@ -22,32 +22,29 @@
     //---------------------------------------------------------------------
 	void RankingNameplate::initialize(int no_, const char* name_, int rank_, lnU32 time_, lnU32 score_ )
 	{
-		mRankingTexture = LTexture::create("Data/Graphics/Frontend/Ranking_1.png");
+		mRankingTexture = Assets::loadTexture("Data/Graphics/Frontend/Ranking_1.png");
 
 		mFrameSprite = LSprite::create(mRankingTexture);
 		mFrameSprite->setSourceRect(0, 0, 320, 47);
 
-		mNumberSprite = LSprite::create(LTexture::create("Data/Graphics/Frontend/Number_2.png"));
+		mNumberSprite = LSprite::create(Assets::loadTexture("Data/Graphics/Frontend/Number_2.png"));
 		mNumberSprite->setSourceRect(7 * no_, 0, 7, 11);
 
 		mRankSprite = LSprite::create(mRankingTexture);
 		mRankSprite->setSourceRect(0, rank_ * 16 + 96, 48, 12);
 
-        Ref<LFont> name_font = LFont::createDefaultFont();
-		name_font.setColor(LColor(0, 0, 0));
+        mNameFont = LFont::create();
 
-		mNameTexture = LTexture::create(128, 32);
-		mNameTexture.setFont(name_font);
-		mNameTexture.drawText(name_, LRect(0, 0, 0, 0));
+		mNameTexture = Texture2D::create(128, 32);
+		mNameTexture->drawText(name_, LRect(0, 0, 0, 0), mNameFont, Color(0, 0, 0), TextAlignment::Left);
 
 		mNameSprite = LSprite::create(mNameTexture);
 
 
-        Ref<LFont> time_font = LFont::createDefaultFont();
-		time_font.setColor(LColor(0, 0, 0));
-		time_font.setSize(15);
+        Ref<LFont> time_font = LFont::create();
+		time_font->setSize(15);
 
-		mTextTexture = LTexture::create(128, 48);
+		mTextTexture = Texture2D::create(128, 48);
 		
 		// ŽžŠÔ
 		lnU32 h, m, s;
@@ -55,16 +52,13 @@
 		GameManager::getInstance()->splitGameTime(
 			GameManager::getInstance()->getGameTime(),
 			&h, &m, &s );
-		LRefTString tm;
-		tm.format("Time %02d:%02d:%02d", h, m, s);
-		mTextTexture.setFont(time_font);
-		mTextTexture.drawText(tm.c_str(), LRect(0, 0, 110, 32), LN_TEXTALIGN_RIGHT);
+		//LRefTString tm;
+		//tm.format("Time %02d:%02d:%02d", h, m, s);
+        auto tm = ln::String::format(u"Time {0}:{1}:{2}", h, m, s);
+		mTextTexture->drawText(tm, LRect(0, 0, 110, 32), time_font, Color(0, 0, 0), TextAlignment::Right);
 
 		// ƒXƒRƒA
-		LRefTString sc;
-		sc.format("%d", score_);
-		mTextTexture.setFont(name_font);
-		mTextTexture.drawText(sc.c_str(), LRect(0, 16, 110, 32), LN_TEXTALIGN_RIGHT);
+		mTextTexture->drawText(ln::String::fromNumber(score_), LRect(0, 16, 110, 32), mNameFont, Color(0, 0, 0), TextAlignment::Right);
 
 		mTextSprite = LSprite::create(mTextTexture);
 
@@ -117,12 +111,11 @@
 	{
 		if (mInited)
 		{
-			mNameTexture->clear(LColor::TRANSPARENCY_WHITE);
-			mNameTexture->drawText(name_, LRect(0, 0, 0, 0));
+			mNameTexture->clear(Color::TransparencyWhite);
+			mNameTexture->drawText(name_, LRect(0, 0, 0, 0), mNameFont, Color::Black);
 
-			LRect r;
-			mNameTexture->getFont().getTextSize(name_, strlen(name_), &r);
-			mCaretX = r.w;
+            auto size = mNameFont->measureRenderSize(name_);
+			mCaretX = size.width;
 			mCaretSprite->setPosition(mPosition.x + 16 + mCaretX, mPosition.y + 23);
 		}
 	}

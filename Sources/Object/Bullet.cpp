@@ -141,7 +141,7 @@ bool Bullet::Update()
 		//mBrowVec*=-1;
 	}
 	mPosition+=mVelocity;
-	this->mPanel->SetPosition(this->mPosition );
+	this->mPanel->setPosition(this->mPosition );
 	//printf("x%f,  y%f\n",mVelocity.x,mVelocity.y);
 //	printf("x%f,  y%f\n",getPosition().x+8,getPosition().y+8);
     //float dx, dy;
@@ -264,7 +264,7 @@ int Bullet::HandleEvent(u32 event_,void *args_)
 //
 const LRect* Bullet::getBoundingRect()
 {
-	mColRect.Set( mPosition.x+8, mPosition.y-8, 4, 4 );
+	mColRect.set( mPosition.x+8, mPosition.y-8, 4, 4 );
 
 	return &mColRect;
 }

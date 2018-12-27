@@ -48,7 +48,7 @@ namespace LNote
 	//---------------------------------------------------------------------
 	void finalize()
     {
-		Engine::Terminate();
+		//Engine::terminate();
         // I—¹ˆ—
         //gFramework->finalize();
         //Base::Error::finalize();
@@ -97,7 +97,7 @@ namespace LNote
 
 		try
 		{
-			Engine::Initialize();
+			Engine::initialize();
 			//gFramework->initialize( *init_data );
 			//LN_PCALL( lr );
 
@@ -124,13 +124,13 @@ namespace LNote
 			}
 
 			gGameSceneManager->finalize();
-			LN_SAFE_RELEASE( gGameSceneManager );
+            ln::RefObjectHelper::release(gGameSceneManager);
 
 			Accessor::finalizeLNGlobalAccessor();
 		}
 		catch (Exception& e)
 		{
-			printf(e.what());
+            std::cout << e.getMessage();
 			throw;
 		}
         

@@ -83,7 +83,7 @@ void GameFrontendManager::initialize( Player* player_ )
 
 
 	mShowCharacterNamePlateCount = 0;
-	mGlobalFadeOpacity.Start(1.0f, 1.0f, 0.1f);
+	mGlobalFadeOpacity.start(1.0f, 1.0f, 0.1f);
 
 	mLevelupFrameCount = 0;
 
@@ -109,17 +109,21 @@ void GameFrontendManager::initialize( Player* player_ )
 
 
 
-	mFloorNumAnim.AddKeyFrame(0, 0.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnim.AddKeyFrame(30, 1.0f, InterpolationMode_Linear);
-	mFloorNumAnim.AddKeyFrame(90, 1.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnim.AddKeyFrame(120, 2.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnim.SetTime(1000);
+    auto curve1 = KeyFrameAnimationCurve::create();
+    curve1->addKeyFrame(0, 0.0f, TangentMode::Auto);
+    curve1->addKeyFrame(30, 1.0f, TangentMode::Linear);
+    curve1->addKeyFrame(90, 1.0f, TangentMode::Auto);
+    curve1->addKeyFrame(120, 2.0f, TangentMode::Auto);
+    mFloorNumAnim = ScalarAnimationTrack::create();
+    mFloorNumAnim->setCurve(curve1);
 
-	mFloorNumAnimAlpha.AddKeyFrame(0, 0.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnimAlpha.AddKeyFrame(30, 1.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnimAlpha.AddKeyFrame(90, 1.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnimAlpha.AddKeyFrame(120, 0.0f, InterpolationMode_CatmullRom);
-	mFloorNumAnimAlpha.SetTime(1000);
+    auto curve2 = KeyFrameAnimationCurve::create();
+    curve2->addKeyFrame(0, 0.0f, TangentMode::Auto);
+    curve2->addKeyFrame(30, 1.0f, TangentMode::Auto);
+    curve2->addKeyFrame(90, 1.0f, TangentMode::Auto);
+    curve2->addKeyFrame(120, 0.0f, TangentMode::Auto);
+    mFloorNumAnimAlpha = ScalarAnimationTrack::create();
+    mFloorNumAnimAlpha->setCurve(curve2);
 
 	mFloorInfoTexture = Assets::loadTexture("Data/Graphics/Frontend/FloorInfo_1.png");
 	for (int i = 0; i < 3; ++i)
@@ -197,14 +201,14 @@ void GameFrontendManager::update()
 		--mShowCharacterNamePlateCount;
 		if (mShowCharacterNamePlateCount == 0)
 		{
-			mGlobalFadeOpacity.Start(mGlobalFadeOpacity.GetValue(), 1.0f, 20.0);
+			mGlobalFadeOpacity.start(mGlobalFadeOpacity.getValue(), 1.0f, 20.0);
 		}
 	}
 
 	// GuidNamePlate 全体の透明度
-	if (!mGlobalFadeOpacity.IsFinished())
+	if (!mGlobalFadeOpacity.isFinished())
 	{
-		mGlobalFadeOpacity.AdvanceTime(1.0);
+		mGlobalFadeOpacity.advanceTime(1.0);
 	}
 
 
@@ -263,26 +267,24 @@ void GameFrontendManager::update()
 
 	//---------------------------------------------------------
 	// フロア数
-	if (mFloorNumAnimTime < mFloorNumAnim.GetLastFrameTime())
+	if (mFloorNumAnimTime < mFloorNumAnim->lastFrameTime())
 	{
-		float v = mFloorNumAnim.GetValue();
+		float v = mFloorNumAnim->evaluate(mFloorNumAnimTime);
 
 		mFloorInfoSprite[0]->setPosition(300 - v * 32, 448);
 		mFloorInfoSprite[1]->setPosition(mFloorInfoOffset + 320 + v * 32, 400);
 		mFloorInfoSprite[2]->setPosition(520, 320 + v * 48);
 
-		float a = mFloorNumAnimAlpha.GetValue();
+		float a = mFloorNumAnimAlpha->evaluate(mFloorNumAnimTime);
 		for (int i = 0; i < 3; ++i)
 		{
 			mFloorInfoSprite[i]->setOpacity(a);
 		}
 
 		mFloorNumAnimTime += 1.0f;
-		mFloorNumAnim.SetTime(mFloorNumAnimTime);
-		mFloorNumAnimAlpha.SetTime(mFloorNumAnimTime);
 
 		// finished
-		if (mFloorNumAnimTime >= mFloorNumAnim.GetLastFrameTime())
+		if (mFloorNumAnimTime >= mFloorNumAnim->lastFrameTime())
 		{
 			for (int i = 0; i < 3; ++i)
 			{
@@ -339,9 +341,7 @@ void GameFrontendManager::showFloorNum( int num_ )
         mFloorInfoOffset = -50.0;
     }
 
-
-    mFloorNumAnim.SetTime( 0.0f );
-    mFloorNumAnimAlpha.SetTime( 0.0f );
+    mFloorNumAnimTime = 0;
 }
 
 //---------------------------------------------------------------------
@@ -371,7 +371,7 @@ void GameFrontendManager::onShowCharacterNamePlate()
 { 
     mShowCharacterNamePlateCount = 100; 
 
-    mGlobalFadeOpacity.Start( mGlobalFadeOpacity.GetValue(), 0.0f, 20.0 );
+    mGlobalFadeOpacity.start( mGlobalFadeOpacity.getValue(), 0.0f, 20.0 );
 }
 
 

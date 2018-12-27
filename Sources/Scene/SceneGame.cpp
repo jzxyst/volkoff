@@ -59,12 +59,12 @@ SceneGame::SceneGame()
 void SceneGame::onStart()
 {
 	// 背景色
-	Engine::GetMainViewport()->SetBackgroundColor(Color::Gray);
+	Engine::mainViewport()->SetBackgroundColor(Color::Gray);
 
 
 
 	//BGM
-	GameAudio::PlayBGM(MAIN_BGM_NAME, 0.60);
+	GameAudio::playBGM(MAIN_BGM_NAME, 0.60);
 
 
 
@@ -174,8 +174,8 @@ void SceneGame::onUpdate()
     {
         mBossCollapseCount = 300;
         NEW Effect_ValfirleDead( boss->getPosition() + LVector3( 0, 15, 0 ) );
-		Accessor::ToneLayer->ChangeTone(ToneF(1, 1, 1, 0), 0.5); // 画面フェードアウト
-        GameAudio::StopBGM( 5.0f );                                  // 5秒かけてBGMをフェードアウト
+		Accessor::ToneLayer->play(ToneF(1, 1, 1, 0), 0.5); // 画面フェードアウト
+        GameAudio::stopBGM( 5.0f );                                  // 5秒かけてBGMをフェードアウト
         return;
     }
 
@@ -336,9 +336,9 @@ void SceneGame::onUpdate()
 	// 演出用
 	if(!this->mBeginScene)
 	{
-		if (Input::IsTriggered(LN_BUTTON_A))
+		if (Input::isTriggered(LN_BUTTON_A))
 		{
-			Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.0);
+			Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 0.0);
 			CameraManager::getInstance()->ChaseObject(GameManager::getInstance()->getPlayer());
 			GameManager::getInstance()->getPlayer()->setPosition(LVector3(MapManager::getInstance()->getStartPosition().x,MapManager::getInstance()->getStartPosition().y + 40,MapManager::getInstance()->getStartPosition().z));
 			GameManager::getInstance()->getPlayer()->setDefPosition(MapManager::getInstance()->getStartPosition());
@@ -354,8 +354,8 @@ void SceneGame::onUpdate()
 		switch(this->mFrameCount)
 		{
 		case 1:
-			Accessor::ToneLayer->ChangeTone(ToneF(-1, -1, -1, 0), 0.0);
-			Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 1.5);
+			Accessor::ToneLayer->play(ToneF(-1, -1, -1, 0), 0.0);
+			Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 1.5);
 			v = LVector3(600,200,-400);
 			CameraManager::getInstance()->Move(v,LVector3(0,0,-3));
 
@@ -363,12 +363,12 @@ void SceneGame::onUpdate()
 			break;
 
 		case 180:
-			Accessor::ToneLayer->ChangeTone(ToneF(-1, -1, -1, 0), 0.4);
+			Accessor::ToneLayer->play(ToneF(-1, -1, -1, 0), 0.4);
 			GameManager::getInstance()->getPlayer()->setPosition(LVector3(1999.0f,1999.0f,1999.0f));
 			break;
 
 		case 200:
-			Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.4);
+			Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 0.4);
 			v = LVector3(1000,180,-1000);
 			CameraManager::getInstance()->Move(v,LVector3(0,2.5,0));
 
@@ -376,12 +376,12 @@ void SceneGame::onUpdate()
 			break;
 
 		case 370:
-			Accessor::ToneLayer->ChangeTone(ToneF(-1, -1, -1, 0), 0.4);
+			Accessor::ToneLayer->play(ToneF(-1, -1, -1, 0), 0.4);
 			GameManager::getInstance()->getPlayer()->setPosition(LVector3(1999.0f,1999.0f,1999.0f));
 			break;
 
 		case 390:
-			Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.4);
+			Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 0.4);
 			v = LVector3(1200,650,-400);
 			CameraManager::getInstance()->Move(v,LVector3(4,0,0));
 
@@ -389,12 +389,12 @@ void SceneGame::onUpdate()
 			break;
 
 		case 570:
-			Accessor::ToneLayer->ChangeTone(ToneF(-1, -1, -1, 0), 0.4);
+			Accessor::ToneLayer->play(ToneF(-1, -1, -1, 0), 0.4);
 			GameManager::getInstance()->getPlayer()->setPosition(LVector3(1999.0f,1999.0f,1999.0f));
 			break;
 
 		case 600:
-			Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.6);
+			Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 0.6);
 			v = LVector3(1000,300,-1300);
 			CameraManager::getInstance()->Move(v,LVector3(0,0,-15));
 

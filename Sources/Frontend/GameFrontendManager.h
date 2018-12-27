@@ -69,7 +69,7 @@ public:
     /// CharacterNamePlate::show が呼ばれた時のコールバック
     void onShowCharacterNamePlate();
 
-    float getGlobalFadeOpacity() { return mGlobalFadeOpacity.GetValue(); }
+    float getGlobalFadeOpacity() { return mGlobalFadeOpacity.getValue(); }
 
     PointCursor* getPointCursor() const { return mPointCursor; }
 
@@ -120,9 +120,9 @@ private:
 
     PointCursor*            mPointCursor;
 
+    ln::Ref<ln::ScalarAnimationTrack> mFloorNumAnim;
+    ln::Ref<ln::ScalarAnimationTrack> mFloorNumAnimAlpha;
 
-	FloatAnimationCurve     mFloorNumAnim;
-	FloatAnimationCurve     mFloorNumAnimAlpha;
 	double					mFloorNumAnimTime;
     LTexture                mFloorInfoTexture;
     ln::Ref<ln::UISprite>                 mFloorInfoSprite[ 3 ];

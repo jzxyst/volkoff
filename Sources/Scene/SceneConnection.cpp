@@ -30,7 +30,7 @@ void SceneConnection::onStart()
 void SceneConnection::onUpdate()
 {
     // •”‰®‚ðì‚é
-    if ( Input.isOnTrigger( LN_BUTTON_A ) )
+    if ( Input::isTriggered( LN_BUTTON_A ) )
     {
         // e‚Æ‚µ‚Ä‰Šú‰»‚µA•”‰®‰æ–Ê‚ÉˆÚ“®
         GameManager::getInstance()->initializeParent();
@@ -39,7 +39,7 @@ void SceneConnection::onUpdate()
     }
 
     // •”‰®‚É“ü‚é
-    if ( Input.isOnTrigger( LN_BUTTON_B ) )
+    if ( Input::isTriggered( LN_BUTTON_B ) )
     {
 
         char addr[ 64 ];

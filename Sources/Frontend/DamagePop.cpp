@@ -93,12 +93,12 @@
         }
 
 
-        static Randomizer random;
+        static Random random;
 
-        mPosition.x = random.GetFloatRange( pos_.x - 10.f, pos_.x + 10.f );
-        mPosition.y = random.GetFloatRange( pos_.y - 10.f, pos_.y + 10.f );
+        mPosition.x = random.getFloatRange( pos_.x - 10.f, pos_.x + 10.f );
+        mPosition.y = random.getFloatRange( pos_.y - 10.f, pos_.y + 10.f );
 
-        mVelocity.x = random.GetFloatRange( -3.f, 3.f );
+        mVelocity.x = random.getFloatRange( -3.f, 3.f );
         mVelocity.y = 4.f;//random.getFloat( 0.f, 10.f );
         mVelocity.z = 0;
 
@@ -108,8 +108,8 @@
 
         mNumberSprite = ln::UISprite::create( mNumberTexture );
         mNumberSprite->setCenterPoint( mNumberTexture->width() / 2, mNumberTexture->height() / 2 );
-        mNumberSprite->SetPriority(-1000);	// 後に書かれるようにする
-        mNumberSprite->SetDepthTestEnabled( false );
+        mNumberSprite->setRenderPriority(-1000);	// 後に書かれるようにする
+        //mNumberSprite->SetDepthTestEnabled( false );
     }
 
     //---------------------------------------------------------------------
@@ -128,7 +128,7 @@
         mVelocity.y -= 0.25f;
 
         // スクリーン座標に変換
-        LVector3 pos_2d = Accessor::Main3Camera->WorldToViewportPoint(mPosition);
+        LVector3 pos_2d = Accessor::Main3Camera->worldToViewportPoint(mPosition);
         //Engine::Framework::getInstance()->getSceneManager()->getDefaultSceneGraph()->getDefaultCamera()->convertWorldPosToScreenPos( &pos_2d, mPosition );
 		pos_2d.z = 0;
 		mNumberSprite->setPosition( pos_2d );

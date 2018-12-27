@@ -6,6 +6,7 @@
 #define NOMINMAX
 #include "targetver.h"
 #include <winsock2.h>
+#include <tchar.h>
 
 #define LN_MSVC_AUTO_LINK_LIBRARIES
 #include <LuminoEngine.hpp>
@@ -42,7 +43,7 @@ typedef ln::Font                LFont;
 #define LN_BUTTON_DOWN	InputButtons::Down
 #define LN_BUTTON_LEFT	InputButtons::Left
 #define LN_BUTTON_RIGHT	InputButtons::Right
-#define LN_BUTTON_A		InputButtons::Ok
+#define LN_BUTTON_A		InputButtons::Submit
 #define LN_BUTTON_B		InputButtons::Cancel
 #define LN_BUTTON_C		_T("Guard")
 #define LN_BUTTON_X		_T("Action")

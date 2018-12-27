@@ -53,7 +53,7 @@
         else
         {
             // 名前を描画した時の幅によって、ウィンドウサイズを決める
-            Size rc = font->MeasureRenderSize(name);
+            Size rc = font->measureRenderSize(name);
             if ( rc.width > 64 )
             {
                 mFrameWidth = 96;
@@ -86,7 +86,7 @@
 
         // 名前を描画するテクスチャ
         mNameTextTexture = Texture2D::create( mFrameWidth - 8, 16 );
-		mNameTextTexture->DrawText(name, LRect(0, 0, mFrameWidth - 8, 16), font, Color32::White, Color32::White, 0, TextAlignment::Center);
+		mNameTextTexture->drawText(name, LRect(0, 0, mFrameWidth - 8, 16), font, Color::White, TextAlignment::Center);
        
         // 名前スプライト
         mNameTextSprite = ln::UISprite::create( mNameTextTexture );
@@ -191,7 +191,7 @@
             // _setPosition に渡す用に一時退避
             LVector3 tpos = sc_pos;
 
-            auto size = Engine::mainViewport()->GetSize();
+            auto size = Engine::mainViewSize();
             sc_pos.x *= size.width;
             sc_pos.y *= size.height;
 

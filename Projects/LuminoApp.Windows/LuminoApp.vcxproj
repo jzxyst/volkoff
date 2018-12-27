@@ -114,7 +114,6 @@
     <ClInclude Include="..\..\Sources\Game\GameManager.h" />
     <ClInclude Include="..\..\Sources\Game\GameServer.h" />
     <ClInclude Include="..\..\Sources\Game\GameSession.h" />
-    <ClInclude Include="..\..\Sources\Game\RankingManager.h" />
     <ClInclude Include="..\..\Sources\Lua\lapi.h" />
     <ClInclude Include="..\..\Sources\Lua\lauxlib.h" />
     <ClInclude Include="..\..\Sources\Lua\lcode.h" />
@@ -225,7 +224,6 @@
     <ClCompile Include="..\..\Sources\Game\GameManager.cpp" />
     <ClCompile Include="..\..\Sources\Game\GameServer.cpp" />
     <ClCompile Include="..\..\Sources\Game\GameSession.cpp" />
-    <ClCompile Include="..\..\Sources\Game\RankingManager.cpp" />
     <ClCompile Include="..\..\Sources\Lua\lapi.c" />
     <ClCompile Include="..\..\Sources\Lua\lauxlib.c" />
     <ClCompile Include="..\..\Sources\Lua\lbaselib.c" />

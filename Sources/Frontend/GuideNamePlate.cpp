@@ -55,10 +55,10 @@
         // 名前
         Ref<LFont> font = GameFrontendManager::getInstance()->getGuidNamePlateFont();
 		
-        Size size = font->MeasureRenderSize( mGameObject->getName() );
+        Size size = font->measureRenderSize( mGameObject->getName() );
 
         mNameTextTexture = Texture2D::create( size.width , 20 );
-		mNameTextTexture->DrawText(mGameObject->getName(), Rect(0, 0, size.width, size.height), font, Color32::White, Color32::Black, 0, TextAlignment::Left);
+		mNameTextTexture->drawText(mGameObject->getName(), Rect(0, 0, size.width, size.height), font, Color::White, TextAlignment::Left);
 
         mNameTextSprite = ln::UISprite::create( mNameTextTexture );
         mNameTextSprite->setVisible( false );
@@ -110,7 +110,7 @@
 		{
 			mIsNearPlayer = true;
 
-			mFadeOpacity.Start(mFadeOpacity.GetValue(), 1.0f, 20);
+			mFadeOpacity.start(mFadeOpacity.getValue(), 1.0f, 20);
 
 			mArrowSprite->setVisible(true);
 			mFrameSprite->setVisible(true);
@@ -126,25 +126,25 @@
 		else if (mIsNearPlayer && length >= 60000)
 		{
 			mIsNearPlayer = false;
-			mFadeOpacity.Start(mFadeOpacity.GetValue(), 0.0f, 20);
+			mFadeOpacity.start(mFadeOpacity.getValue(), 0.0f, 20);
 
 
 		}
 
-		float op = GameFrontendManager::getInstance()->getGlobalFadeOpacity() * mFadeOpacity.GetValue();
+		float op = GameFrontendManager::getInstance()->getGlobalFadeOpacity() * mFadeOpacity.getValue();
 
-		mArrowSprite->setOpacity(mFadeOpacity.GetValue());  // 矢印だけは Global が透明でも表示する
+		mArrowSprite->setOpacity(mFadeOpacity.getValue());  // 矢印だけは Global が透明でも表示する
 		mFrameSprite->setOpacity(op);
 		mNameTextSprite->setOpacity(op);
 
 
 
 
-		mFadeOpacity.AdvanceTime(1.0);
+		mFadeOpacity.advanceTime(1.0);
 
 
 		// 完全にフェードアウトした場合は非表示にする
-		if (mFadeOpacity.IsFinished() && mFadeOpacity.GetValue() == 0.0f)
+		if (mFadeOpacity.isFinished() && mFadeOpacity.getValue() == 0.0f)
 		{
 			mArrowSprite->setVisible(false);
 			mFrameSprite->setVisible(false);
@@ -155,7 +155,7 @@
 
 
 			// オブジェクトの座標をスクリーン座標に変換
-			LVector3 pos_2d = Accessor::Main3Camera->WorldToViewportPoint((object_pos + mOffsetPos));
+			LVector3 pos_2d = Accessor::Main3Camera->worldToViewportPoint((object_pos + mOffsetPos));
 
 			_setPosition(pos_2d);
 		}

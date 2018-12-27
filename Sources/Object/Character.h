@@ -339,11 +339,11 @@ public:
 	// 武器が壊れた場合にtrueを設定する(スクリプトで使用
 	void setBreakWeapon( bool break_ ){ mBreakWeapon = break_; }
 
-	void setVisible( bool flg_ ) {this->mCharaPanel->SetVisible(flg_); }
+	void setVisible( bool flg_ ) {this->mCharaPanel->setVisible(flg_); }
     
 	void setInvincibleFrame(u32 invincible_frame_) {mInvincibleFrame = invincible_frame_;}
 
-	void setOpacity(float opacity_) {this->mCharaPanel->SetOpacity(opacity_);}
+	void setOpacity(float opacity_) {this->mCharaPanel->setOpacity(opacity_);}
 	//---------------------------------------------------------------------------
 	/*! 
 		@brief Character::Character

@@ -88,7 +88,7 @@ namespace Utility
         }
 
         std::pair< RegistedGameSceneMap::iterator, bool > res;
-        mRegistedGameSceneMap.insert( RegistedGameScenePair( CacheKey( scene_->getSceneName() ), scene_ ) );
+        mRegistedGameSceneMap.insert( RegistedGameScenePair( scene_->getSceneName(), scene_ ) );
         return res.second;
     }
 
@@ -108,11 +108,11 @@ namespace Utility
     //---------------------------------------------------------------------
     void GameSceneManager::changeScene( const TCHAR* scene_name_ )
     {
-        RegistedGameSceneMap::iterator itr = mRegistedGameSceneMap.find( CacheKey( scene_name_ ) );
+        RegistedGameSceneMap::iterator itr = mRegistedGameSceneMap.find(scene_name_);
         if ( itr != mRegistedGameSceneMap.end() )
         {
             changeScene( itr->second );
-            itr->second->AddRef();
+            RefObjectHelper::retain(itr->second);
         }
     }
 
@@ -132,11 +132,11 @@ namespace Utility
     //---------------------------------------------------------------------
     void GameSceneManager::pushScene( const TCHAR* scene_name_ )
     {
-        RegistedGameSceneMap::iterator itr = mRegistedGameSceneMap.find( CacheKey( scene_name_ ) );
+        RegistedGameSceneMap::iterator itr = mRegistedGameSceneMap.find(scene_name_);
         if ( itr != mRegistedGameSceneMap.end() )
         {
             pushScene( itr->second );
-            itr->second->AddRef();
+            RefObjectHelper::retain(itr->second);
         }
     }
 
@@ -230,7 +230,7 @@ namespace Utility
                     GameScene* old = mScene;
                     mScene = mScene->_lngs.mParent;
                     old->onTerminate();
-                    old->Release();
+                    RefObjectHelper::release(old);
                     break;
                 }
             }
@@ -270,7 +270,7 @@ namespace Utility
 
             tmp = scene;
             scene = scene->_lngs.mParent;
-            tmp->Release();
+            RefObjectHelper::release(tmp);
         }
         mScene = NULL;
     }
@@ -286,7 +286,7 @@ namespace Utility
         {
             tmp = scene;
             scene = scene->_lngs.mParent;
-            tmp->Release();
+            RefObjectHelper::release(tmp);
         }
         mShouldAddedScene = NULL;  
     }

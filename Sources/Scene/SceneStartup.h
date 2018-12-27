@@ -37,9 +37,9 @@ public:
 	virtual void onTerminate();
 
 private:
-	Sprite2DPtr			mLogoSprite;
-	Sprite2DPtr			mFlashSprite;
-	Sprite2DPtr			mTitleSubTextSprite;
+	ln::Ref<ln::UISprite> mLogoSprite;
+    ln::Ref<ln::UISprite> mFlashSprite;
+    ln::Ref<ln::UISprite> mTitleSubTextSprite;
 	EasingValue<float>	mFlashScale;
 	int         mStep;
 	int         mFrameCount;

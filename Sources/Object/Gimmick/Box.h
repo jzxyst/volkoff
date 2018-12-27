@@ -140,7 +140,7 @@ public:
 	//
 	// ×“c’Ç‰ÁE“–‚½‚è”»’è‚ğ•Ô‚·
 	//
-	const LRect* Box::getBoundingRect();
+	const LRect* getBoundingRect();
 };
 
 

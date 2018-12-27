@@ -21,10 +21,10 @@ namespace LNote
 
 		void initializeLNGlobalAccessor()
 		{
-			BlurLayer = ScreenMotionBlurImageEffect::Create();
+			BlurLayer = ScreenBlurImageEffect::create();
             Engine::mainViewport()->addImageEffect(BlurLayer);
 
-			ToneLayer = ToneImageEffect::Create();
+			ToneLayer = ToneImageEffect::create();
             Engine::mainViewport()->addImageEffect(ToneLayer);
 
             Main3Camera = Engine::mainCamera();

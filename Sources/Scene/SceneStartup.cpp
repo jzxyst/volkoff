@@ -16,11 +16,11 @@
 void SceneStartup::onStart()
 {
 	// 背景色
-	Engine::GetMainViewport()->SetBackgroundColor(Color::Black);
+	Engine::mainViewport()->SetBackgroundColor(Color::Black);
 
-	mLogoSprite = ln::UISprite::create(_T("Data/Graphics/Frontend/Logo_1.png"));
+	mLogoSprite = ln::UISprite::create(ln::Assets::loadTexture(_T("Data/Graphics/Frontend/Logo_1.png")));
 
-	Texture2DPtr tex = Assets::loadTexture(_T("Data/Graphics/Frontend/Title_1.png"));
+	auto tex = ln::Assets::loadTexture(_T("Data/Graphics/Frontend/Title_1.png"));
 
 	//mFlashSprite = Sprite2D::Create(tex);
 	//mFlashSprite->SetCenter(64, 8, 0);
@@ -29,11 +29,11 @@ void SceneStartup::onStart()
 
 	// 文字用
 	mTitleSubTextSprite = ln::UISprite::create(Assets::loadTexture(_T("Data/Graphics/Frontend/Title_1.png")));
-	mTitleSubTextSprite->SetPosition(108, 192, 0);
+	mTitleSubTextSprite->setPosition(108, 192, 0);
 	mTitleSubTextSprite->setSourceRect(0, 192 + 16, 424, 16);
-	mTitleSubTextSprite->SetVisible(false);
+	mTitleSubTextSprite->setVisible(false);
 
-	mFlashScale.Start(0, 60, 5);
+	mFlashScale.start(0, 60, 5);
 
     mStep = 0;
     mFrameCount = 0;
@@ -55,15 +55,15 @@ void SceneStartup::onUpdate()
 
 			if (mFrameCount < 20)
 			{
-				Accessor::BlurLayer->SetBlurStatus(0.9f, Vector2((20 - mFrameCount) * 0.1 - 1.0, 0.0), 1.02);
+				Accessor::BlurLayer->play(0.9f, Vector2((20 - mFrameCount) * 0.1 - 1.0, 0.0), 1.02);
 			}
 			else if (mFrameCount == 20)
 			{
-				Accessor::BlurLayer->SetBlurStatus(0.9f, Vector2((20 - mFrameCount) * 0.1 - 1.0, 0.0), 1.02, 0.2);
+				Accessor::BlurLayer->play(0.9f, Vector2((20 - mFrameCount) * 0.1 - 1.0, 0.0), 1.02, 0.2);
 			}
 
 			// ボタンが押された場合、150 フレーム目まで飛ばす
-			if (Input::IsTriggered(InputButtons::Any) && mFrameCount < 150)
+			if (Input::isTriggered(InputButtons::Any) && mFrameCount < 150)
 			{
 				mFrameCount = 150;
 			}
@@ -71,19 +71,19 @@ void SceneStartup::onUpdate()
 			// フェードアウト開始
 			if (mFrameCount == 150)
 			{
-				Accessor::ToneLayer->ChangeTone(ToneF(-1, -1, -1, 0), 0.5);
+				Accessor::ToneLayer->play(ToneF(-1, -1, -1, 0), 0.5);
 			}
 
 			// 文字表示へ
 			if (mFrameCount >= 200)
 			{
 				// フェードイン
-				Accessor::ToneLayer->ChangeTone(ToneF(0, 0, 0, 0), 0.5);
+				Accessor::ToneLayer->play(ToneF(0, 0, 0, 0), 0.5);
 
-				Accessor::BlurLayer->SetAmount(0);
+				Accessor::BlurLayer->setAmount(0);
 				//LLayer::getBGLayer()->blur(0, 0, 1.00, LVector3(0, 0, 0), false);
 
-				mLogoSprite->SetVisible(false);
+				mLogoSprite->setVisible(false);
 				mStep = 1;
 				mFrameCount = 0;
 			}
@@ -95,12 +95,12 @@ void SceneStartup::onUpdate()
 			if (mFrameCount >= 50 && mFrameCount <= (50 + 53 * 2)) // 53 文字
 			{
 				int count = mFrameCount - 50;
-				mTitleSubTextSprite->SetVisible(true);
+				mTitleSubTextSprite->setVisible(true);
 				mTitleSubTextSprite->setSourceRect(0, 192 + 16, count / 2 * 8, 16);
 			}
 
 			// ボタン五された場合、220 フレーム目まで飛ばす
-			if (Input::IsTriggered(InputButtons::Any) && mFrameCount < 220)
+			if (Input::isTriggered(InputButtons::Any) && mFrameCount < 220)
 			{
 				mFrameCount = 220;
 			}
@@ -108,7 +108,7 @@ void SceneStartup::onUpdate()
 			// フェードアウト開始
 			if (mFrameCount == 220)
 			{
-				Accessor::ToneLayer->ChangeTone(ToneF(1, 1, 1, 0), 0.4);
+				Accessor::ToneLayer->play(ToneF(1, 1, 1, 0), 0.4);
 			}
 
 			// タイトル画面へ

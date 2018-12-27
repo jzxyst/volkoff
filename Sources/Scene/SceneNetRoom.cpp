@@ -46,7 +46,7 @@ void SceneNetRoom::onUpdate()
 
     if ( session->isParent() )
     {
-        if ( Input.isOnTrigger( LN_BUTTON_A ) )
+        if ( Input::isTriggered( LN_BUTTON_A ) )
         {
             session->sendToServer( SYSEV_GOTO_SCENEGAME, NULL, 0 );
 
